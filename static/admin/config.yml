@@ -1,12 +1,14 @@
+# GitHubのブランチ指定
 backend:
-  name: github
-  repo: komaizukoshitsu/sensyuvets.git # GitHubのリポジトリ　「https://github.com/」の後ろの部分
+  name: git-gateway
+  # repo: komaizukoshitsu/sensyuvets.git
   # branch: master
-
+  branch: master
+locale: 'ja'
 media_folder: "static/images"
+public_folder: "/images"
 
-public_folder: "images"
-
+# 編集オブジェクト
 collections:
   - label: "Blog" # 管理画面のサイドバーで使う
     name: "blog" # 管理画面のパスで使う　例：/admin/collections/blog
