@@ -1,0 +1,22 @@
+{{ partial "header" . }}
+
+{{ partial "breadcrumb" . }}
+
+<section class="list section">
+    <div class="container">
+        <div class="row">
+            <main class="col s12 offset-m1 m10 l8 px17_5">
+                <div class="list-title-wrap">
+                    <h1 class=""><span class="ja">{{ .Title }}：</span></h1>
+                </div>
+                <div class="row equal-height">
+                    {{ range (.Paginator 10).Pages }} {{ partial "list-item-news" . }} {{ end }}
+                </div>
+                {{ partial "paginator" . }}
+            </main>
+            {{ partial "sidebar-news" . }}
+        </div>
+    </div>
+</section>
+
+{{ partial "footer-index" . }}

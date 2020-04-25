@@ -1,0 +1,109 @@
+//
+// Scroll
+//
+
+@import "base";
+
+.scroll-down-wrap {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+
+    > p {
+        .scroll-down {
+            padding-top: 70px;
+            text-decoration: none;
+
+            > span {
+                position: absolute;
+                top: -70px;
+                left: 50%;
+                width: 24px;
+                height: 24px;
+                margin-left: -12px;
+                border-left: 1px solid $keyCol;
+                border-bottom: 1px solid $keyCol;
+                //-webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                //-webkit-animation: sdb 1.5s infinite;
+                animation: sdb 1.5s infinite;
+                box-sizing: border-box;
+                }
+        }
+    }
+}
+
+@-webkit-keyframes sdb {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+
+@keyframes sdb {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    display: none;
+
+    a {
+        display: inline-flex;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease-out;
+
+        &::after {
+            content: "";
+            display: block;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: $keyCol;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: $white;
+            z-index: 1;
+        }
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+}
+
+@media (min-width: 993px) { // PCの処理
+    .scroll-top {
+        display: block;
+    }
+}

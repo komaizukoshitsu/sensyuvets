@@ -1,0 +1,58 @@
+//
+// Footer
+//
+
+@import "base";
+
+.footer {
+	.border-top {
+		&::before {
+			left: 20px;
+			width: calc(100% - 40px);
+		}
+		&::after {
+			left: 20px;
+			width: calc(100% - 40px);
+		}
+	}
+
+	.footer-nav-wrap {
+		overflow: hidden;
+		height: 36px; /* 可視領域の高さ */
+		//width: 100%;
+
+		.mask {
+			height: 50px; /* 横スクロールする理屈上の高さ */
+			//width: 100%;
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;  /* 慣性スクロール */
+		}
+	}
+
+	.copyright-wrap {
+		text-align: center;
+	}
+}
+
+@media (min-width: 601px) { // TB用
+	.footer {
+		.border-top {
+			&::before {
+				left: 30px;
+				width: calc(100% - 90px);
+			}
+			&::after {
+				left: 30px;
+				width: calc(100% - 90px);
+			}
+		}
+
+		.footer-nav {
+			justify-content: flex-start;
+		}
+
+		.copyright-wrap {
+			text-align: right;
+		}
+	}
+}

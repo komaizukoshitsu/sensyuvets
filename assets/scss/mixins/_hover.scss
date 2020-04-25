@@ -1,0 +1,33 @@
+@mixin linkColor($color) {
+     color: $color;
+
+     &:hover, &:active, &:focus {
+         color: lighten($color, 20%);
+     }
+}
+
+@mixin bgColor-darken($bg-color) {
+     background: $bg-color;
+
+     &:hover, &:active, &:focus {
+         background: darken($bg-color, 10%);
+     }
+}
+
+@mixin bgColor-lighten($bg-color) {
+     background: $bg-color;
+
+     &:hover, &:active, &:focus {
+         background: lighten($bg-color, 5%);
+     }
+}
+
+@mixin invertColor($color) {
+     color: $color;
+     background: $white;
+
+     &:hover, &:active, &:focus {
+         color: $white;
+         background: $color;
+     }
+}

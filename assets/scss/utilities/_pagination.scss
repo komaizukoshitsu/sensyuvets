@@ -1,0 +1,98 @@
+//
+// pagination
+//
+
+.pagination__2 {
+	background: none;
+	box-shadow: none;
+	color: $gray-light;
+	height: 42px;
+
+	ul {
+		display: flex;
+		justify-content: center;
+
+		li {
+			display: inline-block;
+			font-size: $h4-fsize;
+			height: 42px;
+			line-height: 42px;
+
+			span.current {
+				display: inline-block;
+				line-height: 42px;
+			    height: 42px;
+				padding: 0 10px;
+				position: relative;
+
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 5px;
+					background: $gray;
+					height: 1px;
+					width: calc(100% - 10px);
+
+				}
+			}
+
+			a {
+				font-size: $h4-fsize;
+			    line-height: 42px;
+			    height: 42px;
+			    padding: 0 10px;
+			    //letter-spacing: .1em;
+			    display: inline-block;
+			    color: $keyCol;
+			    position: relative;
+
+				.chevronleft {
+					display: block;
+				    position: relative;
+				    width: 100%;
+				    height: 100%;
+
+				    &::after {
+						position: absolute;
+					    content: "";
+					    border-right: 2px solid $keyCol;
+					    border-top: 2px solid $keyCol;
+					    width: 11px;
+					    height: 10px;
+					    transform: rotate(-135deg);
+					    top: calc(50% - 4px);
+					    left: -4px;
+					}
+				}
+
+				.chevronright {
+					display: block;
+				    position: relative;
+				    width: 100%;
+				    height: 100%;
+
+				    &::after {
+						position: absolute;
+					    content: "";
+					    border-right: 2px solid $keyCol;
+					    border-top: 2px solid $keyCol;
+					    width: 11px;
+					    height: 10px;
+					    transform: rotate(45deg);
+					    top: calc(50% - 4px);
+					    left: -8px;
+					}
+				}
+
+				&:hover {
+					background: none;
+				}
+				&:focus {
+					background: none;
+				}
+			}
+		}
+	}
+}
+

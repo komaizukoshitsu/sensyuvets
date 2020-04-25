@@ -1,0 +1,30 @@
+{{ partial "header" . }}
+
+{{ partial "breadcrumb" . }}
+<div class="single">
+    <div class="section">
+        <div class="single container">
+            <div class="row">
+                <main class="col s12 l8 px30">
+                    <div class="main-wrap">
+                        <div class="entry-title-wrap">
+                            <h1>{{ .Title }}</h1>
+                            <div class="meta">
+                                {{ partial "time" . }}
+                            </div>
+                            <!-- <h5>{{ .Description }}</h5> -->
+                        </div>
+                        <div align="start" class="content">{{ .Content }}</div>
+
+                        {{ partial "tags" . }}
+                    </div>
+
+                </main>
+
+                {{ partial "sidebar-news" . }}
+
+            </div>
+        </div>
+    </div>
+</div>
+{{ partial "footer-index" . }}

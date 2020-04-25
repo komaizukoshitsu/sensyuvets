@@ -1,0 +1,30 @@
+<aside class="widget-sidebar col s12 l4 px40-l_px30-m hide-on-small-only">
+    <div class="memberList widget-item">
+        <h5 class="widget-title border-hrz-lr">会員病院一覧</h5>
+        {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
+            {{ if eq "tags" $taxonomyName }}
+                <div id="target" class="">
+                    {{ range $tagName, $entries := $taxonomy }}
+                        {{ if ge (where $entries.Pages "Section" "member") 1 }}   
+                            <h5 class="tag-title">{{ $tagName }}</h5>
+                            <ul id="pagelist" class="hospital-list">
+                            {{range where $entries.Pages "Section" "member" }}
+                                <li><a href="{{ .RelPermalink }}">{{ .Title }}{{ partial "recruitment" . }}</a>
+                            {{ end }}
+                            </ul>
+                        {{ end }}
+                    {{ end }}
+                </div>
+            {{ end }}
+        {{ end }}
+        <!-- <div id="target" class="">
+            <ul id="pagelist" class="hospital-list">
+                {{ range where .Site.RegularPages "Section" "member" }}
+                    <li><a href="{{ .RelPermalink }}">{{ .Title }}
+                        {{ partial "recruitment" . }}
+                        <i class="small material-icons">chevron_right</i></a>
+                {{ end }}
+            </ul>
+        </div> -->
+    </div>
+</aside>

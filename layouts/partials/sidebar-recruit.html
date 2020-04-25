@@ -1,0 +1,21 @@
+<aside class="widget-sidebar col s12 l4 px40-l_px30-m hide-on-small-only">
+    <div class="recruitList widget-item">
+        <h5 class="widget-title border-hrz-lr">求人一覧</h5>
+        {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
+            {{ if eq "tags" $taxonomyName }}
+                <div class="widget-body">
+                    {{ range $tagName, $entries := $taxonomy }}
+                        {{ if ge (where $entries.Pages "Section" "recruit") 1 }}   
+                            <h5 class="tag-title">{{ $tagName }}</h5>
+                            <ul class="hospital-list">
+                            {{range where $entries.Pages "Section" "recruit" }}
+                                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            {{ end }}
+                            </ul>
+                        {{ end }}
+                    {{ end }}
+                </div>
+            {{ end }}
+        {{ end }}
+    </div>
+</aside>

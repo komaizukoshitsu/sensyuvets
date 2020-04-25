@@ -1,0 +1,105 @@
+//
+// SNS Button
+//
+
+.sns-wrap {
+	display: flex;
+
+	li {
+		display: inline-block;
+		height: 36px;
+
+		.sns-icon {
+			display: inline-flex;
+		    width: 36px;
+		    height: 36px;
+		    line-height: 36px;
+		    align-items: center;
+		    justify-content: center;
+		    position: relative;
+		    padding: 0;
+
+		    &:hover{
+		    	background: none;
+
+		    	&::after {
+				    transform: scale(1);
+			    }
+		    }
+		    &:after {
+			    content: "";
+			    display: block;
+			    top: 0;
+			    left: 0;
+			    right: 0;
+			    bottom: 0;
+			    background: $gray-lighter;
+			    border-radius: 50%;
+			    position: absolute;
+			    transform: scale(0);
+			    transition: transform .3s ease-in-out;
+			}
+			svg {
+				width: 14px;
+				height: 14px;
+				fill: $keyCol;
+				z-index: 1;
+			}
+		}
+	}
+}
+
+.share-button-wrap {
+	display: flex;
+    justify-content: center;
+
+	li {
+		display: inline-block;
+		height: 50px;
+		margin: 0 10px;
+
+		.sns-icon {
+			display: inline-flex;
+		    width: 50px;
+		    height: 50px;
+		    line-height: 50px;
+		    align-items: center;
+		    justify-content: center;
+		    position: relative;
+		    padding: 0;
+
+		    &:hover{
+		    	background: none;
+
+		    	&::after {
+				    //transform: scale(1);
+				    background: $keyCol;
+			    }
+			    svg {
+			    	fill: $white;
+			    }
+		    }
+		    &:after {
+			    content: "";
+			    display: block;
+			    top: 0;
+			    left: 0;
+			    right: 0;
+			    bottom: 0;
+			    background: $white;
+			    border-radius: 50%;
+			    position: absolute;
+			    transition: all 0.3s ease-out;
+			    //transform: scale(0);
+			    //transition: transform .3s ease-in-out;
+			}
+			svg {
+				width: 20px;
+				height: 20px;
+				fill: $keyCol;
+				z-index: 1;
+				//transition: all .15s ease-out;
+			}
+		}
+	}
+}

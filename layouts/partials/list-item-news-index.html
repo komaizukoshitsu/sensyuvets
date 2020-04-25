@@ -1,0 +1,28 @@
+<article class="thumb-wrap col s12 offset-m1 m10 l4 px30">
+    <a href="{{ .RelPermalink }}">
+        <p class="thumb-img mb20 zoomIn">
+            {{ $eyecatch_image := findRE "<img.*?src=([^>]*)?>" .Content 1 }}
+                {{ if ge (len $eyecatch_image ) 1 }}
+                    {{ range $eyecatch_image }}
+                    {{ . | safeHTML }}
+                    {{ end }}
+                {{ else }}
+                <img src="{{ .Site.BaseURL }}images/img-4.jpg"  class="responsive-img" alt="noimage">
+            {{ end}}
+        </p>
+    </a>
+    <div class="thumb-caption">
+        <div class="meta">
+            {{ partial "time" . }}
+        </div>
+        <div class="thumb-title-wrap">
+            <h4 class="thumb-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+        </div>
+        <ul class="tag-list">
+            {{ range .Params.tags }}
+            <li class="item-tag"><span>{{ . }}</span></li>
+            {{ end }}
+        </ul>
+        <!-- <p class="thumb-desc">{{ .Description }}</p> -->
+    </div>
+</article>

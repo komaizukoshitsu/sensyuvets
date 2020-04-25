@@ -1,0 +1,16 @@
+{{ $.Scratch.Set "link" .RelPermalink }}
+{{ with .Params.link }} {{ $.Scratch.Set "link" . }} {{ end }}
+{{/*  <p class="thumb-img mb15">
+    {{ $eyecatch_image := findRE "<img.*?src=([^>]*)?>" .Content 1 }}
+        {{ if ge (len $eyecatch_image ) 1 }}
+            {{ range $eyecatch_image }}
+            {{ . | safeHTML }}
+            {{ end }}
+        {{ else }}
+        <img src="../../images/img-4.jpg"  class="responsive-img" alt="noimage">
+    {{ end}}
+</p>  */}}
+<li class="">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+    <h4><a href="{{ .Scratch.Get "link" }}">{{ .Title }}</a></h4>
+</li>

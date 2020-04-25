@@ -1,0 +1,21 @@
+//
+// Zoom In
+//
+
+.is_PC {
+	a {
+		.zoomIn {
+			overflow: hidden;
+
+			> img {
+				transition-duration: 0.3s;
+			}
+		}
+
+		&:hover {
+			.zoomIn > img {
+				transform: scale(1.1);
+			}
+		}
+	}
+}

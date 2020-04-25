@@ -1,0 +1,47 @@
+//
+// Breadcrumbs
+//
+@import "base";
+
+.breadcrumb-group {
+	display: flex;
+	align-items: center;
+	height: 40px;
+	margin-bottom: 50px;
+
+	li {
+		//line-height: 36px;
+		font-size: $h6-fsize;
+
+		&:not(:last-child)::after {
+			content: "";
+			display: inline-block;
+			height: 13px;
+			width: 13px;
+			background-size: 13px 13px;
+			background-image: url(../img/chevron-right.svg);
+			background-repeat: no-repeat;
+			margin-left: 6px;
+			margin-right: 6px;
+			vertical-align: -2px;
+		}
+
+		&:last-child {
+			width: 150px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+
+		> a {
+			display: inline-block;
+			font-size: $h6-fsize;
+			//line-height: 36px;
+		}
+
+		> span {
+			//font-size: $h6-fsize;
+		}
+	}
+}

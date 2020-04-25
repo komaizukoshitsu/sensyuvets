@@ -1,0 +1,23 @@
+{{ partial "header" . }}
+
+{{ partial "breadcrumb" . }}
+
+<section class="list news section">
+    <div class="container">
+        <div class="row">
+            <main class="col s12 offset-m1 m10 l8 px17_5">
+                <div class="list-title-wrap">
+                    <h1>NEWS<span class="ja">お知らせ</span></h1>
+                </div>
+                <div class="row equal-height">
+                    {{ range (.Paginator 10).Pages }} {{ partial "list-item-news" . }} {{ end }}
+                </div>
+            </main>
+            {{ partial "sidebar-news" . }}
+        </div>
+    </div>
+</section>
+
+{{ partial "paginator" . }}
+
+{{ partial "footer-index" . }}

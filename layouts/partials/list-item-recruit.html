@@ -1,0 +1,30 @@
+<article class="thumb-wrap col s12 px30-m_px0-s">
+    <div class="row">
+        <a href="{{ .RelPermalink }}">
+            <div class="thumb-img col s12 l5 mb0-l_mb20-m">
+                <p class="zoomIn">
+                    {{ $eyecatch_image := findRE "<img.*?src=([^>]*)?>" .Content 1 }}
+                        {{ if ge (len $eyecatch_image ) 1 }}
+                            {{ range $eyecatch_image }}
+                            {{ . | safeHTML }}
+                            {{ end }}
+                        {{ else }}
+                        <img src="../../images/img-4.jpg"  class="responsive-img" alt="noimage">
+                    {{ end}}
+                </p>
+            </div>
+        </a>
+        <div class="thumb-caption col s12 l7 pl30-l">
+            <div class="meta">{{ partial "time" . }}</div>
+            <div class="thumb-title-wrap">
+                <h4 class="thumb-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+                <ul class="tag-list">
+                    {{ range .Params.tags }}
+                    <li class="item-tag"><span>{{ . }}</span></li>
+                    {{ end }}
+                </ul>
+            </div>
+            <p class="thumb-desc"><span>募集</span>{{ .Description }}</p>
+        </div>
+    </div>
+</article>

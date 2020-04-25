@@ -1,0 +1,47 @@
+//
+// Fade in
+//
+
+#hoge {
+	//display: none;
+}
+
+.animate {
+    animation: animation1 0.8s ease;
+}
+
+.inView {
+	animation: slideup .5s ease;
+
+	&.delay-1 {
+		animation: slideup .5s ease .15s;
+	}
+
+	&.delay-2 {
+		animation: slideup .5s ease .3s;
+	}
+}
+
+
+
+@keyframes animation1 {
+    0% {
+        position: relative;
+        left: -800px;
+    }
+    100% {
+        position: relative;
+        left: 0;
+    }
+}
+
+@keyframes slideup {
+	0% {
+		//opacity: 0;
+	    transform: translateY(70px);
+	}
+	100% {
+		//opacity: 1;
+		transform: translateY(0);
+	}
+}

@@ -1,0 +1,52 @@
+//
+// Balloon
+//
+
+@import "base";
+@import "mixins";
+
+.balloon{
+    &.__2 {
+        display: inline-block;
+        position: relative;
+        padding: 0px 10px;
+        background-color: $white;
+        border: 1px solid $keyCol;
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            left: 20px;
+            bottom: -10px;
+            border-top: 10px solid $keyCol;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            left: 20px;
+            bottom: -9px;
+            border-top: 10px solid $white;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+        }
+    }
+}
+
+.balloon {
+    &.__3 {
+        display: inline-block;
+        position: relative;
+        padding: 0px 30px;
+        //background-color: $white;
+        border: 1px solid $keyCol;
+        @include border-radius(22px);
+    }
+}

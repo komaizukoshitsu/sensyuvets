@@ -1,0 +1,28 @@
+<div class="thumb-vrt col s12 m6 l3">
+    <div class="py25 px15 mx5 white">
+        <a href="{{ .RelPermalink }}">
+            <p class="thumb-img">
+                {{ $eyecatch_image := findRE "<img.*?src=([^>]*)?>" .Content 1 }}
+                    {{ if ge (len $eyecatch_image ) 1 }}
+                        {{ range $eyecatch_image }}
+                        {{ . | safeHTML }}
+                        {{ end }}
+                    {{ else }}
+                    <img src="{{ .Site.BaseURL }}images/img-4.jpg"  class="responsive-img" alt="noimage">
+                {{ end}}
+            </p>
+        </a>
+        <div class="thumb-caption">
+            <div class="thumb-title-wrap">
+                <h4 class="thumb-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+            </div>
+            <p class="thumb-desc">{{ .Description }}</p>
+            <ul class="tag-list">
+                {{ range .Params.tags }}
+                <li class="item-tag"><span>{{ . }}</span></li>
+                {{ end }}
+            </ul>
+            {{/*  <div class="meta">{{ partial "time" . }}</div>  */}}
+        </div>
+    </div>
+</div>

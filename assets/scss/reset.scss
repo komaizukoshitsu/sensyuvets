@@ -1,0 +1,23 @@
+// RESET
+div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, ul, li, table, td, th {
+	margin: 0;
+ 	padding: 0;
+}
+
+img, svg {
+	border: 0;
+	vertical-align: bottom;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+li {
+	list-style: none;
+}

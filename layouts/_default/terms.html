@@ -1,0 +1,43 @@
+{{ partial "header" . }}
+
+{{ partial "breadcrumb" . }}
+
+<section class="list section">
+    <div class="container">
+        <div class="row">
+            <main class="col s12 offset-m1 m10 l8 px40-l_px30-m">
+                <div class="list-title-wrap">
+                    <h1 class=""><span class="ja">{{ .Title }}：</span></h1>
+                </div>
+                    {{ if eq .Title "Tags"}}
+                        {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
+                            {{ if eq "tags" $taxonomyName }}
+                                <ul class="">
+                                    {{ range $tagName, $entries := $taxonomy }}
+                                        {{ range where $entries.Pages "Section" "news" }}
+                                            <li><a href="{{ $.Site.BaseURL | relURL }}tags/{{ $tagName | urlize }}">{{ $tagName }}<span class="count">({{ $entries.Count }})</span></a></li>
+                                        {{ end }}
+                                    {{ end }}
+                                </ul>
+                            {{ end }}
+                        {{ end }}
+                    {{ else if eq .Title "Categories"}}
+                        {{ range $categoryName, $categories := .Site.Taxonomies }}
+                            {{ if eq "categories" $categoryName }}
+                                <ul>
+                                    {{ range $catName, $entries := $categories }}
+                                        {{ if ge (where $entries.Pages "Section" "news") 1 }} 
+                                            <li><a href="{{ $.Site.BaseURL | relURL }}categories/{{ $catName | urlize }}">{{ $catName }}<span class="count">({{ $entries.Count }})</span></a>
+                                        {{ end }}
+                                    {{ end }}
+                                </ul>
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+            </main>
+            
+            {{ partial "sidebar-news" . }}
+        </div>
+    </div>
+</section>
+{{ partial "footer-index" . }}

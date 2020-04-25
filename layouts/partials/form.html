@@ -1,0 +1,23 @@
+<form class="container" name="contact" method="POST" netlify>
+    <div class="row">
+        <div class="col s12 offset-m1 m10 offset-l2 l8">
+            <div class="row">
+                <p class="col s12 px30 mb30">
+                    <label for="comment">Comment</label>
+                    <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea>
+                </p>
+                <p class="col s12 l6 px30">
+                    <label for="name">Name *</label>
+                    <input id="name" type="text" name="name" value="" size="30" maxlength="245" required="required"/>  
+                </p>
+                <p class="col s12 l6 px30">
+                    <label for="email">Email *</label>
+                    <input id="email" type="email" name="email" value="" size="30" maxlength="100" arua-describedby="email-notes" required="required"/>
+                </p>
+                <p class="col s12 px30 center-align">
+                    <button class="button-send form-submit mt40" type="submit">送&nbsp;信</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</form>

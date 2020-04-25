@@ -1,0 +1,6 @@
+{{ $dir := .Get "dir" }}
+{{ $src := .Get "src" }}
+{{ $page := .Page.GetPage $dir }}
+{{ $imagePath := ($page.Resources.GetMatch $src).RelPermalink }}
+
+<p class="main-img"><img src="{{ $imagePath }}" class="responsive-img"></p>

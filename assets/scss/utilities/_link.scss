@@ -1,0 +1,148 @@
+//
+// Link
+//
+
+@import "base";
+
+a {
+	color: #333;
+}
+
+.thumb-wrap-hrz,
+.thumb-wrap-vrt,
+.thumb-wrap-vrt-m_hrz-s {
+	position: relative;
+
+	a {
+		&:before {
+			content: "";
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    bottom: 0;
+		    left: 0;
+		    z-index: 1;
+		}
+		&:hover {
+			.the-arrow-line {
+				left: 3px;
+
+			    &:after {
+			    	opacity: 1;
+			    }
+			}
+		}
+	}
+	.the-arrow {
+	    display: inline-flex;
+	    align-items: center;
+	    justify-content: center;
+	    transition: all .15s ease-out;
+
+		.the-arrow-line {
+		    display: inline-flex;
+		    position: relative;
+		    left: 0;
+		    transition: all .2s ease-out;
+
+		    &:before {
+			    content: "";
+			    display: inline-block;
+			    position: relative;
+			    top: -1px;
+			    margin-right: 15px;
+			    width: 20px;
+			    height: 2px;
+			    background: $gray-light;
+			}
+			&:after {
+			    content: "";
+			    width: 10px;
+			    height: 10px;
+			    border: 2px solid $gray-light;
+			    display: block;
+			    border-width: 2px 2px 0 0;
+			    transform: rotate(45deg);
+			    position: absolute;
+			    top: -5px;
+			    left: 10px;
+			    box-sizing: border-box;
+			    opacity: 0;
+			    transition: opacity .1s ease-out;
+			}
+		}
+	}
+}
+
+.chevron-left {
+    font-size: $h4-fsize;
+    width: 60px;
+    line-height: 60px;
+    height: 60px;
+    display: inline-block;
+    color: $keyCol;
+    position: relative;
+	@include border-radius(50%);
+	//background: $gray-lighter;
+
+	.arrow {
+		display: block;
+	    position: relative;
+	    width: 100%;
+	    height: 100%;
+
+
+	    &::after {
+			position: absolute;
+		    content: "";
+		    border-right: 2px solid $keyCol;
+		    border-top: 2px solid $keyCol;
+		    width: 11px;
+		    height: 10px;
+		    transform: rotate(-135deg);
+		    top: calc(50% - 4px);
+		    left: calc(50% - 5px);
+		    transition: left .2s ease-out;
+		}
+	}
+	.line {
+		position: relative;
+
+		&::after {
+		    content: "";
+		    display: block;
+			height: 2px;
+			width: 20px;
+			background: $keyCol;
+		    left: 20px;
+		    top: -30px;
+		    position: absolute;
+		    transform: scale(0, 1);
+		    transition: .2s;
+		    //-webkit-backface-visibility: hidden;
+		}
+	}
+
+	&:hover {
+		.arrow {
+			&::after {
+				left: calc(50% - 10px);
+			}
+		}
+		.line {
+			&::after {
+				transform: scale(1);
+			}
+		}
+	}
+}
+
+.link-underline {
+	a {
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

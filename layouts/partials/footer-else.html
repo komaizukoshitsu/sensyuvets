@@ -1,0 +1,56 @@
+<footer class="footer">
+    <div class="widget-footer container">
+        <div class="row">
+            <div class="profile widget-item col s12 l4">
+                <h5 class="widget-title border-hrz-lr">ABOUT</h5>
+                <div class="widget-body">
+                    <p class="mb20"><img src="/images/img-1.jpg" class="responsive-img"></p>
+                    <div class="widget-body">
+                        <p>私たちは大阪府堺市以南の地域（泉州）を中心とした、小動物臨床に携わる獣医師の集まりです。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tagCloud widget-item col s12 l4">
+                <h5 class="widget-title border-hrz-lr">TAG</h5>
+                {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
+                    {{ if eq "tags" $taxonomyName }}
+                        <ul class="widget-body">
+                            {{ range $tagName, $entries := $taxonomy }}
+                                {{ range where $entries.Pages "Section" "news" }}
+                                    <li><a href="{{ $.Site.BaseURL | relURL }}tags/{{ $tagName | urlize }}">{{ $tagName }}</a></li>
+                                {{ end }}
+                            {{ end }}
+                        </ul>
+                    {{ end }}
+                {{ end }}
+            </div>
+            <div class="catList widget-item col s12 l4">
+                <h5 class="widget-title border-hrz-lr">CATEGORY</h5>
+                {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
+                    {{ if eq "categories" $taxonomyName }}
+                        <div class="widget-body">
+                            <ul class="">
+                            {{ range $catName, $entries := $taxonomy }}
+                                {{ if ge (where $entries.Pages "Section" "news") 1 }} 
+                                    <li><a href="{{ $.Site.BaseURL | relURL }}categories/{{ $catName | urlize }}">{{ $catName }}<span class="count">({{ $entries.Count }})</span></a>
+                                {{ end }}
+                            {{ end }}
+                            </ul>
+                        </div>
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p class="small">{{ .Site.Params.copyright | default "&copy; All rights reserved. Powered by [Hugo](https://gohugo.io) and [Minimal](https://github.com/calintat/minimal)." | markdownify }}</p>
+    </div>
+</footer>
+
+{{ partial "body-close" . }}
+
+{{ partial "js" . }}
+
+</body>
+
+</html>

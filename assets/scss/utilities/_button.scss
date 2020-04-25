@@ -1,0 +1,42 @@
+//
+// Button
+//
+
+@import "base";
+@import "mixins";
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+    background: $white;
+    border: 1px solid $keyCol;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.is_PC {
+    .button {
+        transition: all .15s ease-out;
+
+        &:hover {
+            background: $keyCol;
+            color: $white;
+            border: 1px solid $keyCol;
+        }
+    }
+}
+
+.is_SP {
+    .button.hover {
+        background: $keyCol;
+        color: $white;
+        border: 1px solid $keyCol;
+    }
+}
+
+iframe.storesjp-button-cart {
+    margin: 36px 0;
+}

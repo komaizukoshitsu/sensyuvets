@@ -1,0 +1,25 @@
+{{ partial "header" . }}
+
+{{ partial "breadcrumb" . }}
+<div class="single member section grey lighten-5">
+    <div class="container">
+        <div class="row">
+            {{ partial "sidebar-3" . }}
+            <main class="col s12 l8">
+                <div class="main-wrap">
+                    <div class="main-header">
+                        <div class="entry-title-wrap">
+                            <!-- {{ partial "tags" . }} -->
+                            <h1 class="hospital-name">{{ .Title }}</h1>
+                            {{ partial "recruitment" . }}
+                        </div>
+                        <h2 class="subTitle">{{ .Description }}</h2>
+                    </div>
+                    <div align="start" class="main-body content">{{ .Content }}</div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+
+{{ partial "footer" . }}

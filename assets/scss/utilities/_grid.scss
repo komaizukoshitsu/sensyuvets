@@ -1,0 +1,103 @@
+//
+// Grid
+//
+@import "base/variables";
+
+.full-container {
+	width: 100%;
+	//max-width: 1440px;
+}
+
+.container {
+	width: 100%;
+	max-width: 1440px;
+}
+.row {
+	margin-bottom: 0;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-s {
+	display: flex;
+
+	.flex-fixed {
+		width: 120px;
+		}
+
+	.flex-flow {
+		flex: 1;
+	}
+}
+
+.equal-height {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+	&::after {
+		content: "";
+		flex: auto;
+	}
+}
+
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+@media (min-width: 601px) { // TBの処理
+	.flex-s {
+		display: block;
+
+		.flex-fixed {
+			width: auto;
+		}
+
+		.flex-flow {
+			display: block;
+		}
+	}
+
+	.container-inner {
+	    display: block;
+	}
+	.col.main{
+	    width: 66%;
+	    margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.col.sidebar {
+		width: 34%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+
+}
+
+@media (min-width: 993px) { // PCの処理
+	.container-inner {
+	    display: flex;
+	}
+	.col.main {
+	    flex: 1;
+	    padding: 0 30px;
+	}
+	.col.main-2 {
+	    flex: 1;
+	    padding: 0 50px;
+	}
+	.col.sidebar {
+		width: 360px;
+	    padding: 0 30px;
+	}
+	.col.sidebar-2 {
+		width: 310px;
+	    padding: 0 50px;
+	}
+}

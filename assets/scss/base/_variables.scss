@@ -1,0 +1,300 @@
+// Variables
+//
+// Copy settings from this file into the provided `_custom.scss` to override
+// the Bootstrap defaults without modifying key, versioned files.
+
+
+// Table of Contents
+//
+// Colors
+// Options
+// Spacing
+// Body
+// Links
+// Grid breakpoints
+// Grid containers
+// Grid columns
+// Fonts
+// Components
+// Tables
+// Buttons
+// Forms
+// Dropdowns
+// Z-index master list
+// Navbar
+// Navs
+// Pagination
+// Jumbotron
+// Form states and alerts
+// Cards
+// Tooltips
+// Pagination
+// Popovers
+// Badges
+// Modals
+// Alerts
+// Progress bars
+// List group
+// Image thumbnails
+// Figures
+// Breadcrumbs
+// Carousel
+// Close
+// Code
+
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+// Start with assigning color names to specific hex values.
+$white:  #fff !default;
+$black:  #000 !default;
+$red:    #d9534f !default;
+$orange: #f0ad4e !default;
+$yellow: #ffd500 !default;
+$green:  #5cb85c !default;
+$blue:   #0275d8 !default;
+$teal:   #5bc0de !default;
+$pink:   #ff5b77 !default;
+$purple: #613d7c !default;
+$silver: #c0c0c0 !default;
+
+// Create grayscale
+$gray-dark:                 #333 !default;
+$gray:                      #464a4c !default;
+$gray-light:                #636c72 !default;
+$gray-lighter:              #eceeef !default;
+$gray-lightest:             #f7f7f9 !default;
+
+// Chairo
+$komugi: #d4a168 !default;
+$oudoiro: #b8883b !default;
+$yamabuki: #d19826 !default;
+
+// White
+$nyuhaku: #fffffb !default;
+$ginhaku: #eee4d4 !default;
+
+// Theme colr
+$keyCol: $gray-light !default;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer:   1rem !default;
+$spacer-x: $spacer !default;
+$spacer-y: $spacer !default;
+$spacers: (
+  0: (
+    x: 0,
+    y: 0
+  ),
+  1: (
+    x: ($spacer-x * .25),
+    y: ($spacer-y * .25)
+  ),
+  2: (
+    x: ($spacer-x * .5),
+    y: ($spacer-y * .5)
+  ),
+  3: (
+    x: $spacer-x,
+    y: $spacer-y
+  ),
+  4: (
+    x: ($spacer-x * 1.5),
+    y: ($spacer-y * 1.5)
+  ),
+  5: (
+    x: ($spacer-x * 3),
+    y: ($spacer-y * 3)
+  )
+) !default;
+
+// Body
+$body-bg: $white;
+$header-bg: $white;
+//$footer-bg: $gray-lighter;
+//$footer-lower-bg: $keyCol;
+
+// Links
+$link-color: $keyCol;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$gutter-width: 3.0rem;
+
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+
+//@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:600&display=swap');
+
+$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-gothic: -apple-system, BlinkMacSystemFont, Helvetica Neue, Segoe UI, Hiragino Kaku Gothic ProN, Hiragino Sans, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, sans-serif;
+$font-family-Mincho: 游明朝体, "Yu Mincho", YuMincho, "Hiragino Mincho ProN", HGS明朝E, メイリオ, Meiryo,serif;
+//$font-noto: 'Noto Serif JP', serif;
+
+$html-font-family: $font-family-gothic;
+
+$h1-fsize: 3.6rem !default;
+$h2-fsize: 2.4rem !default;
+$h3-fsize: 2.1rem !default;
+$h4-fsize: 1.7rem !default;
+$h5-fsize: 1.4rem !default;
+$h6-fsize: 1.1rem !default;
+
+$headings-margin: 2.5em 0 1em !default;
+$headings-padding: 0.5em 0 0.5em 0.5em !default;
+//$headings-ffamily:   inherit !default;
+$headings-fweight:   500 !default;
+$headings-color:         inherit !default;
+$headings-hover-color: $gray !default;
+
+// paragraph
+$p-fsize: 1.4rem !default;
+$p-lheight: 2 !default;
+$body-fsize: 1.4rem !default;
+$paragraph-txt: $gray-dark !default;
+
+// navigation a
+$font-size-nav-ul-a: 1.4rem;
+
+// time
+$time-fsize: 1.4rem;
+$time-ffamily: $font-family-gothic;
+$time-color: lighten($keyCol, 10%);
+
+// view-count
+$font-size-view: 1.2rem;
+$letter-spacing-view: 0.1em;
+$view-color: $keyCol;
+
+// meta-items
+$meta-item-fsize: $h5-fsize;
+$meta-item-ffamily: $font-family-gothic;
+$meta-item-color: $silver !default;
+
+// post
+$post-title-fsize: 2.7rem !default;
+$post-cat-color: $silver !default;
+$post-title-marginY: $post-title-fsize !default;
+
+// widget-heading
+$widget-header-txt: $keyCol !default;
+$widget-header-bg: none !default;
+//$widget-header-border-top: none !default;
+//$widget-header-border-bottom: 1px solid $keyCol !default;
+$widget-header-padding: 0.25em 0 !default;
+$widget-header-margin: 0 0 0.5em !default;
+$widget-header-lspacing: 0.1em !default;
+$widget-header-fsize: 1.6rem !default;
+$widget-header-ffamily: $font-family-gothic !default;
+$widget-body-bg: none !default;
+
+$thumb-title-fsize: 1.6rem !default;
+//$thumb-title-lheight: 1.3em !default;
+$thumb-title-margin: 0.5em 0 !default;
+
+// profile
+$profile-avatar-width: 120px;
+$profile-avatar-height: 120px;
+$profile-fsize: $h4-fsize;
+// Sub-contents
+
+
+
+// Buttons
+$btn-tag-color: $white;
+$btn-tag-bg-normal: $keyCol;
+$btn-tag-radius: 0px !default;
+
+// tag
+$tag-txt: $white;
+$tag-bg: $keyCol;
+
+// Navbar
+$navbar-bg: $white;
+$navbar-font-color: $white;
+$navbar-hover-color: $white;
+$navbar-hover-bg: darken( $keyCol, 5% );
+
+
+// Cards
+$element-top-padding: $gutter-width / 2;
+$element-bottom-padding: $gutter-width / 2;
+
+
+// Pagination
+// $pagination-radius: 50%;
+// $pagination-hover-bg: darken( $white, 5% );
+$pagination-active-color: $white !default;
+$pagination-active-bg: $keyCol;
+$pagination-color: $white;
+$pagination-bg: $silver;
+$pagination-hover-color: $white;
+$pagination-hover-back: darken( $keyCol, 5% );
+
+
+// List group
+
+//$list-group-color:  $body-color !default;
+$list-group-bg: none !default;
+$list-group-padding: 0.1em 0 !default;
+//$list-group-border-color:        rgba($black,.125) !default;
+//$list-group-border-width:        $border-width !default;
+//$list-group-border-radius:       $border-radius !default;
+
+//$list-group-item-padding-x:      1.25rem !default;
+//$list-group-item-padding-y:      .75rem !default;
+
+//$list-group-hover-bg:            $gray-lightest !default;
+$list-group-active-color:        $green !default;
+//$list-group-active-bg:           $component-active-bg !default;
+//$list-group-active-border:       $list-group-active-bg !default;
+//$list-group-active-text-color:   lighten($list-group-active-bg, 50%) !default;
+
+//$list-group-disabled-color:      $gray-light !default;
+//$list-group-disabled-bg:         $list-group-bg !default;
+//$list-group-disabled-text-color: $list-group-disabled-color !default;
+
+$list-group-link-color:          $gray !default;
+//$list-group-link-heading-color:  $gray-dark !default;
+
+$list-group-link-active-color:   $blue !default;
+$list-group-link-active-bg:      $nyuhaku !default;
+$list-group-link-hover-color:    $gray !default;
+$list-group-hover-bg: none !default;
+$list-group-arrow-color: $gray !default;
+
+
+// categories
+$categories-txt:          $gray !default;
+$categories-bg:                  $white !default;
+$categories-padding: 0.5em !default;
+
+
+
+// Breadcrumbs
+/* breadcrumb */
+$font-size-breadcrumb: 1.2rem;
+$font-size-breadcrumb-before: 1.5rem;
+$breadcrumb-color: $gray;
+$breadcrumb-lastchild-color: $gray; /* active */
+$breadcrumb-before-color: $silver; /* separator */
+$breadcrumb-hover-color: $keyCol;
+
+// toc
+$toc-bg: $gray-lightest !default;

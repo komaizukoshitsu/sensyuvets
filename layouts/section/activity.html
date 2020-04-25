@@ -1,0 +1,55 @@
+{{ partial "header" . }}
+
+{{ partial "breadcrumb" . }}
+
+<section class="list activity section">
+    <div class="container">
+        <div class="row">
+            <main class="col s12 l8 px40">
+                <h1 class="">{{ .Title }}</h1>
+                <div class="">
+                    <h2>定例会</h2>
+                    <p>毎月最終水曜日診療後の時間に会員が集まって勉強会を開いています。ここで会員は年に一度スライド発表を行います。  
+                    内容は症例発表が中心ですが、海外の大学見学報告やマネージメントなどもあります。</p>
+                    <div class="row">
+                        <p class="button-wrap col s12 l8 offset-l2">
+                            <a href="../tags/定例会/" class="button-default w100">定例会一覧</a>
+                        </p>
+                    </div>
+                    <h2>新人研修</h2>
+                    <p>主に会員病院に就職した新卒の獣医師を対象に基礎的な内容の研修を行い、一人前の獣医師になるお手伝いをしています。講師も会員が行っているため、近い距離間で実際の経験を元にした本音を交えた講義を聴くことができます。  
+                    また、同期の獣医師と知り合い、悩みを打ち明けあえる仲間を作る機会にもなります。</p>
+                    <div class="row">
+                        <p class="button-wrap col s12 l8 offset-l2">
+                            <a href="../tags/新人研修/" class="button-default w100">新人研修一覧</a>
+                        </p>
+                    </div>
+                    <h2>外部講師セミナー</h2>
+                    <p>年に一度、外部より講師をお招きしセミナーを行っています。大会場でのセミナーと比べるとざっくばらんな雰囲気ですので、普段聴けない話が聴けるかもしれません。</p>
+                    <div class="row">
+                        <p class="button-wrap col s12 l8 offset-l2">
+                            <a href="../tags/外部講師セミナー/" class="button-default w100">外部講師セミナー一覧</a>
+                        </p>
+                    </div>
+                    <h2 class="mb30">過去の活動内容</h2>
+                    <p>これまでの活動は下記からご覧いただけます。</p>
+                    <div class="row">
+                        {{ range .RegularPages }}
+                            <p class="button-wrap col s12 l8 offset-l2">
+                                <a href="{{ .RelPermalink }}" class="button-default w100">{{ .Title }}</a>
+                            </p>
+                        {{ end }}
+                    </div>
+                </div>
+                
+            </main>
+
+            {{ partial "sidebar-member" . }}
+
+        </div>
+    </div>
+</section>
+
+{{ partial "paginator" . }}
+
+{{ partial "footer-else" . }}

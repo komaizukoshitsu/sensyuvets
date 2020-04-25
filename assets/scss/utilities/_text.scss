@@ -1,0 +1,138 @@
+//
+// Text
+//
+
+@import "base";
+
+html {
+	font-size: 62.5%; /* font-size:10px */
+	color: #333;
+	line-height: 1.5;
+}
+
+body {
+	font-size: $body-fsize;
+	font-family: $html-font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  //margin: $headings-margin;
+  font-weight: $headings-fweight;
+  line-height: 1.3;
+  //color: $headings-color;
+}
+
+.h1 {
+	font-size: $h1-fsize !important;
+}
+.h2 {
+	font-size: $h2-fsize !important;
+}
+.h3 {
+	font-size: $h3-fsize !important;
+}
+.h4 {
+	font-size: $h4-fsize !important;
+}
+.h5 {
+	font-size: $h5-fsize !important;
+}
+.h6 {
+	font-size: $h6-fsize !important;
+}
+p {
+ 	font-size: $p-fsize;
+ 	letter-spacing: .05rem;
+ 	//line-height: $p-lheight;
+ 	//margin-bottom: $p-fsize;
+
+ 	&.hh {
+		font-size: $h2-fsize;
+		font-weight: $headings-fweight;
+		line-height: 1.3;
+	}
+}
+
+span {
+	&.small {
+		font-size: $p-fsize * .75;
+	}
+	&.big {
+		font-size: $p-fsize * 1.3;
+	}
+	&.biggest {
+		font-size: $p-fsize * 2.3;
+	}
+	&.txt-red {
+		color: $red;
+	}
+	&.txt-blue {
+		color: $blue;
+	}
+	&.txt-green {
+		color: $green;
+	}
+	&.txt-orange {
+		color: $orange;
+	}
+	&.txt-silver {
+		color: $silver;
+	}
+	&.keiko-blue {
+	    background: linear-gradient(transparent 50%, rgba(107,182,255,.24) 50%);
+	}
+	&.keiko-yellow {
+	    background: linear-gradient(transparent 50%, rgba(255,252,107,.69) 50%);
+	}
+	&.keiko-green {
+	    background: linear-gradient(transparent 50%, rgba(151,232,154,.69) 50%);
+	}
+}
+
+
+a {
+	.card .card-content{
+		h1, h2, h3, h4, h5, h6, p {
+		color: $headings-hover-color;
+		}
+	}
+}
+
+.lh__12 {
+	line-height: 1.2;
+}
+.lh__13 {
+	line-height: 1.3;
+}
+.lh__14 {
+	line-height: 1.4;
+}
+.lh__15 {
+	line-height: 1.5;
+}
+.lh__18 {
+	line-height: 1.8;
+}
+.lh__20 {
+	line-height: 2;
+}
+
+.ls__05 {
+	letter-spacing: .05em;
+}
+.ls__1 {
+	letter-spacing: .1em;
+}
+.ls__2 {
+	letter-spacing: .2em;
+}
+
+.big {
+	font-size: 2rem !important;
+}
+.small {
+	font-size: 1.2rem;
+}
+.bold {
+	font-weight: 700;
+}

@@ -1,0 +1,5 @@
+{{- $url := .Get "url" -}}
+{{- if not $url -}}
+  {{ errorf "missing value for param 'url': ％s" .Position }}
+{{- end -}}
+<p class="center-align"><a href="{{ $url }}" class="button-recruit">募集内容を見る</a></p>

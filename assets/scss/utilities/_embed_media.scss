@@ -1,0 +1,41 @@
+//
+// Embed Media
+//
+.wp-block-embed {
+	margin: 36px 0;
+}
+
+.wp-block-embed-youtube {
+	.wp-block-embed__wrapper {
+	    position: relative;
+	    width: 100%;
+	    height: 0;
+	    padding-top: 56.25%;
+
+		iframe {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100% !important;
+		    height: 100% !important;
+		}
+	}
+}
+
+.wp-googlemaps {
+
+	.wp-block-embed__wrapper{
+		position: relative;
+	    width: 100%;
+	    height: 0;
+	    padding-top: 56.25%;
+
+		iframe {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  width: 100% !important;
+		  height: 100% !important;
+		}
+	}
+}

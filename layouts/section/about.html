@@ -1,0 +1,22 @@
+{{ partial "header" . }}
+
+{{ partial "breadcrumb" . }}
+
+<section class="list about section">
+    <div class="container">
+        <div class="row">
+            <div class="list-wrap col s12 offset-m1 m10 offset-l2 l8 px40-l_px30-m">
+                <main class="list-body">
+                    <div class="list-title-wrap">
+                        <h1>ABOUT<span class="ja">研究会について</span></h1>
+                    </div>
+                    {{ .Content }}
+                </main>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "paginator" . }}
+
+{{ partial "footer-index" . }}

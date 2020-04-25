@@ -1,0 +1,114 @@
+@import "base";
+@import "mixins";
+
+// 見出しの種類
+.hh {
+	margin: $headings-margin;
+	padding: $headings-padding;
+
+	&.hh-1 {
+		border-bottom: 2px solid $keyCol;
+	}
+	&.hh-2 {
+		border-bottom: 2px dashed $keyCol;
+	}
+	&.hh-3 {
+		border-bottom: 6px double $keyCol;
+	}
+	&.hh-4 {
+		border-top: 2px solid $keyCol;
+		border-bottom: 2px solid $keyCol;
+	}
+	&.hh-5 {
+		background: $keyCol;
+	}
+}
+
+.heading__1 {
+	padding: 0 0 .25em 0;
+	margin-bottom: .5em;
+ 	border-bottom: 1px solid $keyCol;
+}
+.heading__2 {
+	padding: 1rem 0 1rem 2rem;
+ 	margin-bottom: 3rem;
+ 	border-top: 1px solid #d7cab8;
+ 	border-right: 1px solid #d7cab8;
+ 	border-bottom: 4px solid $keyCol;
+ 	border-left: 1px solid #d7cab8;
+ 	background: $white;
+ 	@include border-top-left-radius(.5rem);
+ 	@include border-top-right-radius(.5rem);
+}
+.heading__3 {
+	border-left: 4px solid $red;
+	padding-left: .5em;
+}
+.heading__4 {
+	border-top: 1px solid $silver;
+	border-bottom: 1px solid $silver;
+	padding: .25em 1em;
+	background: #EBE6D0;
+}
+.heading__5 {
+	padding: .25em 1em;
+	border: 1px solid $silver;
+	background: $white;
+	@include border-radius(.5rem);
+}
+.heading__6 {
+	position: relative;
+	padding: .25em 1em;
+	border-bottom: 2px dotted $silver;
+
+	&::after {
+		display: block;
+	    position: absolute;
+	    left: 0;
+	    bottom: -3px;
+	    width: 40%;
+	    border-bottom: solid 4px $keyCol;
+	    content: " ";
+	}
+}
+.heading__7 {
+	padding: .5em 0;
+
+	&::before {
+		content: '●';
+		color: $keyCol;
+		margin-right: .25em;
+	}
+}
+
+.heading__8 {
+	display: block;
+    text-transform: uppercase;
+    overflow: hidden;
+
+	&::before {
+		border-top: 1px solid $silver;
+		content: "";
+		display: inline-block;
+		height: .1em;
+		position: relative;
+		vertical-align: middle;
+		width: 50%;
+		margin-bottom: .15em;
+		right: 1.5em;
+		margin-left: -50%;
+	}
+
+	&::after {
+		border-top: 1px solid $silver;
+		content: "";
+		display: inline-block;
+		height: .1em;
+		position: relative;
+		vertical-align: middle;
+		width: 50%;
+		margin-bottom: .15em;
+		left: 1.5em;
+		margin-right: -50%;
+	}
+}

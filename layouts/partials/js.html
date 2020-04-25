@@ -1,0 +1,102 @@
+<!-- highlight.js -->
+{{ if .Site.Params.highlight | default false }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    {{ range .Site.Params.highlightLanguages }}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/{{ . }}.min.js"></script>
+    {{ end }}
+    <script>hljs.initHighlightingOnLoad();</script>
+{{ end }}
+
+<!-- custom -->
+{{ range .Site.Params.js }} <script src="{{ . | absURL }}"></script> {{ end }}
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+{{/*  <!-- bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>  */}}
+
+<!-- UAParser.js -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min.js"></script>
+
+<!-- materialize.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<!-- Barba.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
+
+<!-- dismiss expanded navigation bar with click -->
+{{/*  <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>  */}}
+
+<script>
+    //
+	// UAParser.js
+	//  └ https://github.com/faisalman/ua-parser-js
+	var result = UAParser() // UA判定用
+	console.log(result.device) // result.deviceにデバイスに関する情報が入っています
+
+	//var topBtn = $('#scroll-top'); // スクロールトップボタン用
+	//topBtn.hide(); // スクロールトップボタン用
+
+	if (result.device.type !== 'mobile') { // モバイル端末以外から閲覧されている場合
+		document.getElementById('body').classList.add('is_PC');
+	} else { // モバイル端末から閲覧されている場合
+		document.getElementById('body').classList.add('is_SP');
+	}
+
+
+	//
+	// スマホ用：タッチ動作でhoverクラスを付け外し
+	//  └ UAParser.jsとセット
+	$('li, a, input[type="button"], input[type="submit"], button, .touch-hover').on('touchstart', function(){
+		$(this).addClass('hover');
+	}).on('touchend', function(){
+		$(this).removeClass('hover');
+    });
+    
+    
+    //
+    // Collapsible
+    //
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.collapsible');
+        var instances = M.Collapsible.init(elems);
+    });
+
+
+    //
+	// Sidenav / MaterializeCSS
+	//
+	document.addEventListener('DOMContentLoaded', function() {
+		var elems = document.querySelectorAll('.sidenav'),
+			options = {};
+		var instances = M.Sidenav.init(elems, options);
+    });
+    
+
+    //
+	// Carousel
+	//
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.carousel'),
+            options = {
+                fullWidth: true,
+                indicators: true,
+                //dist: 0,
+                //numVisible: 2,
+            };
+        var instances = M.Carousel.init(elems, options);
+    });
+
+    $(document).ready(function() {
+        var activeUrl = location.pathname.split("/")[2];
+          navList = $(".hospital-list").find("a");
+     
+        navList.each(function(){
+            if( $(this).attr("href").split("/")[2] == activeUrl ) {
+             $(this).parent().addClass("current");
+           };
+      });
+    });
+    
+</script>

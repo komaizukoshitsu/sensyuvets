@@ -1,0 +1,57 @@
+//
+// logo
+//
+
+.loader-logo {
+  width: 100px;
+  height: 100px;
+  fill: $gray-dark;
+}
+
+.header-logo-wrap {
+	display: none;
+}
+
+.drawer-logo {
+	height: 48px;
+	width: 48px;
+	fill: $keyCol;
+}
+
+.footer-logo {
+	height: 14px;
+	width: 14px;
+	fill: $keyCol;
+	vertical-align: -1px;
+}
+
+
+@media (min-width: 601px) { // TB用
+	.header-logo-wrap {
+		display: inline-block;
+		width: 60px;
+		position: absolute;
+		top: 60px;
+	    right: 0;
+	    left: 30px;
+	    margin: 0;
+	    transition: fill .4s ease-in-out,margin .4s cubic-bezier(.49,.12,0,1.02);
+
+	    &.hidden {
+		    margin-top: -118px;
+		}
+
+		.header-logo {
+			height: 60px;
+			width: 60px;
+			fill: $gray-dark;
+		}
+	}
+}
+
+@media (min-width: 993px) { // PC用
+	.header-logo-wrap {
+		top: 60px;
+	    left: 60px;
+	}
+}
