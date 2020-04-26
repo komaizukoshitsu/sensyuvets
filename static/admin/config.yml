@@ -4,8 +4,8 @@ backend:
   # repo: komaizukoshitsu/sensyuvets.git
   # branch: master
   branch: master
-locale: 'ja'
 publish_mode: editorial_workflow
+locale: 'ja'
 media_folder: "static/images"
 public_folder: "/images"
 
