@@ -5,6 +5,7 @@ backend:
   # branch: master
   branch: master
 locale: 'ja'
+publish_mode: editorial_workflow
 media_folder: "static/images"
 public_folder: "/images"
 
