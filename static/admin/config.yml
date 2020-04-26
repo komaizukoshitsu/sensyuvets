@@ -15,6 +15,7 @@ collections:
     folder: "content/news" # Markdownを保存するディレクトリ。Hugoのsectionにあたる
     create: true # 新しいページを作ることを許可する
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Markdownのファイル名　例：YYYY-MM-DD-title.md
+    show_preview_links: true
     fields: # ページ作成画面で使う。Front Matterの値を書く
       - {label: "タイトル", name: "title", widget: "string"}
       - {label: "公開日", name: "date", widget: "datetime"}
