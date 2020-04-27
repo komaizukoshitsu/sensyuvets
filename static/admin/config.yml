@@ -35,14 +35,15 @@ collections:
       - {label: "サムネイル画像", name: "thumbnail", widget: "image"}
       - {label: "レーティング", name: "rating", widget: "number"}
       - {label: "本文", name: "body", widget: "markdown"}
-  - label: "Recruit" # 管理画面のサイドバーで使う
-    name: "recruit" # 管理画面のパスで使う　例：/admin/collections/blog
-    folder: "content/recruit" # Markdownを保存するディレクトリ。Hugoのsectionにあたる
-    create: true # 新しいページを作ることを許可する
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Markdownのファイル名　例：YYYY-MM-DD-title.md
-    fields: # ページ作成画面で使う。Front Matterの値を書く
+  - name: "recruit"
+    label: "Recruit"
+    folder: "content/recruit"
+    create: true
+    slug: "{{id}}"
+    fields:
       - {label: "タイトル", name: "title", widget: "string"}
       - {label: "公開日", name: "date", widget: "datetime"}
+      - {label: "募集人数", name: "description"", widget: "string"}
+      - {label: "市町村名", name: "tag", widget: "string"}
       - {label: "サムネイル画像", name: "thumbnail", widget: "image"}
-      - {label: "レーティング", name: "rating", widget: "number"}
       - {label: "本文", name: "body", widget: "markdown"}
