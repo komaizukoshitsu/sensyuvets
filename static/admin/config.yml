@@ -24,16 +24,18 @@ collections:
       - {label: "更新日", name: "updateDate", widget: "datetime", format: "YYYY,MM,DD"}
       - {label: "サムネイル画像", name: "thumbnail", widget: "image"}
       - {label: "本文", name: "body", widget: "markdown"}
-  - label: "Member" # 管理画面のサイドバーで使う
-    name: "member" # 管理画面のパスで使う　例：/admin/collections/blog
-    folder: "content/member" # Markdownを保存するディレクトリ。Hugoのsectionにあたる
-    create: true # 新しいページを作ることを許可する
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Markdownのファイル名　例：YYYY-MM-DD-title.md
-    fields: # ページ作成画面で使う。Front Matterの値を書く
-      - {label: "タイトル", name: "title", widget: "string"}
+  - name: "member"
+    label: "会員病院"
+    folder: "content/member"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "病院名", name: "title", widget: "string"}
       - {label: "公開日", name: "date", widget: "datetime"}
+      - {label: "病院説明", name: "description", widget: "string"}
+      - {label: "募集の有無", name: "recruitment", widget: "select", options: ["募集中", "募集なし"]}
+      - {label: "市町村名", name: "tag", widget: "string"}
       - {label: "サムネイル画像", name: "thumbnail", widget: "image"}
-      - {label: "レーティング", name: "rating", widget: "number"}
       - {label: "本文", name: "body", widget: "markdown"}
   - name: "recruit"
     label: "採用情報"
@@ -41,7 +43,7 @@ collections:
     create: true
     slug: "{{id}}"
     fields:
-      - {label: "タイトル", name: "title", widget: "string"}
+      - {label: "病院名", name: "title", widget: "string"}
       - {label: "公開日", name: "date", widget: "datetime"}
       - {label: "募集人数", name: "description", widget: "string"}
       - {label: "市町村名", name: "tag", widget: "string"}
