@@ -46,6 +46,6 @@ collections:
       - {label: "病院名", name: "title", widget: "string"}
       - {label: "公開日", name: "date", widget: "datetime", format: "YYYY,MM,DD"}
       - {label: "募集人数", name: "description", widget: "string"}
-      - {label: "市町村名", name: "tag", widget: "string"}
+      - {label: "市町村名", name: "tag", widget: "select", options: ["和泉市", "泉大津市", "泉佐野市", "貝塚市", "岸和田市", "熊取町", "堺市", "泉南市", "高石市", "田尻町", "忠岡町", "岬町"]}
       - {label: "サムネイル画像", name: "thumbnail", widget: "image"}
       - {label: "本文", name: "body", widget: "markdown"}
