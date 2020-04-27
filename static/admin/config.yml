@@ -31,10 +31,10 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "病院名", name: "title", widget: "string"}
-      - {label: "公開日", name: "date", widget: "datetime"}
+      - {label: "公開日", name: "date", widget: "datetime", format: "YYYY,MM,DD"}
       - {label: "病院説明", name: "description", widget: "string"}
-      - {label: "募集の有無", name: "recruitment", widget: "select", options: ["募集中", "募集なし"]}
-      - {label: "市町村名", name: "tag", widget: "string"}
+      - {label: "募集の有無", name: "recruitment", widget: "list", options: ["募集あり", "募集なし"]}
+      - {label: "市町村名", name: "tag", widget: "list"}
       - {label: "サムネイル画像", name: "thumbnail", widget: "image"}
       - {label: "本文", name: "body", widget: "markdown"}
   - name: "recruit"
@@ -44,7 +44,7 @@ collections:
     slug: "{{id}}"
     fields:
       - {label: "病院名", name: "title", widget: "string"}
-      - {label: "公開日", name: "date", widget: "datetime"}
+      - {label: "公開日", name: "date", widget: "datetime", format: "YYYY,MM,DD"}
       - {label: "募集人数", name: "description", widget: "string"}
       - {label: "市町村名", name: "tag", widget: "string"}
       - {label: "サムネイル画像", name: "thumbnail", widget: "image"}
