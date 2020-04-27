@@ -33,7 +33,7 @@ collections:
       - {label: "病院名", name: "title", widget: "string"}
       - {label: "公開日", name: "date", widget: "datetime", format: "YYYY,MM,DD"}
       - {label: "病院説明", name: "description", widget: "string"}
-      - {label: "募集の有無", name: "recruitment", widget: "relation", searchFields: ["募集あり", "募集なし"], valueFields: ["募集あり"]}
+      - {label: "募集の有無", name: "recruitment", widget: "list", option: ["募集あり", "募集なし"]}
       - {label: "市町村名", name: "tag", widget: "list"}
       - {label: "サムネイル画像", name: "thumbnail", widget: "image"}
       - {label: "本文", name: "body", widget: "markdown"}
