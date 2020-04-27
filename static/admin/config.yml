@@ -36,14 +36,14 @@ collections:
       - {label: "レーティング", name: "rating", widget: "number"}
       - {label: "本文", name: "body", widget: "markdown"}
   - name: "recruit"
-    label: "Recruit"
+    label: "採用情報"
     folder: "content/recruit"
     create: true
     slug: "{{id}}"
     fields:
       - {label: "タイトル", name: "title", widget: "string"}
       - {label: "公開日", name: "date", widget: "datetime"}
-      - {label: "募集人数", name: "description"", widget: "string"}
+      - {label: "募集人数", name: "description", widget: "string"}
       - {label: "市町村名", name: "tag", widget: "string"}
       - {label: "サムネイル画像", name: "thumbnail", widget: "image"}
       - {label: "本文", name: "body", widget: "markdown"}
