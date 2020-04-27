@@ -1,13 +1,15 @@
-+++
-author = "sensyuvets"
-title = "綾園動物病院"
-date = "2019-04-09"
-description = "新卒2名"
-categories = [""]
-tags = [
-    "高石市",
-]
-+++
+---
+author: sensyuvets
+title: 綾園動物病院
+date: 2019-04-09T00:00:00.000Z
+description: 新卒2名
+thumbnail: /images/img-15.jpg
+tags:
+  - 高石市
+tag: 泉大津市
+categories:
+  - ""
+---
 
 ## 病院について
 
