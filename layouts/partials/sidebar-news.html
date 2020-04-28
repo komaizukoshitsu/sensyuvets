@@ -1,4 +1,4 @@
-<aside class="widget-sidebar col s12 l4 px40-l_px30-m">
+<aside class="widget-sidebar col s12 offset-m1 m10 l4 px40-l_px30-m">
     <div class="recentPost widget-item">
         <h5 class="widget-title border-hrz-lr">RECENT POST</h5>
         {{ with .CurrentSection }}
@@ -28,17 +28,6 @@
     </div>
     <div class="catList widget-item">
         <h5 class="widget-title border-hrz-lr">CATEGORY</h5>
-        {{/*  {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
-            {{ if eq "categories" $taxonomyName }}
-                <ul class="widget-body">
-                    {{ range $catName, $entries := $taxonomy }}
-                        {{ range where $entries.Pages "Section" "news" }}
-                            <li><a href="{{ $.Site.BaseURL | relURL }}categories/{{ $catName | urlize }}">{{ $catName }}<span class="count">({{ $entries.Count }})</span></a></li>
-                        {{ end }}
-                    {{ end }}
-                </ul>
-            {{ end }}
-        {{ end }}  */}}
         {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
             {{ if eq "categories" $taxonomyName }}
                 <div class="widget-body">
@@ -59,7 +48,8 @@
             {{ if eq "tags" $taxonomyName }}
                 <ul class="widget-body">
                     {{ range $tagName, $entries := $taxonomy }}
-                        {{ range where $entries.Pages "Section" "news" }}
+                        {{/*  {{ range where $entries.Pages "Section" "news" }}  */}}
+                        {{ if ge (where $entries.Pages "Section" "news") 1 }} 
                             <li><a href="{{ $.Site.BaseURL | relURL }}tags/{{ $tagName | urlize }}">{{ $tagName }}</a></li>
                         {{ end }}
                     {{ end }}
@@ -67,18 +57,4 @@
             {{ end }}
         {{ end }}
     </div>
-    {{/*  <div class="profile widget-item">
-        <p><img src="/images/img-1.jpg" class="responsive-img"></p>
-        <div class="widget-body">
-            <p>私たちは大阪府堺市以南の地域（泉州）を中心とした、小動物臨床に携わる獣医師の集まりです。</p>
-        </div>
-    </div>
-    <div class="arcList widget-item">
-        <h5 class="widget-title">ARCHIVE</h5>
-        <ul>
-            {{ range $name, $items := .Site.Taxonomies.archives }}
-            <li><a href="{{ $.Site.BaseURL }}archives/{{ $name | urlize | lower }}">{{ $name }} ({{ .Count }})</a></li>
-            {{ end }}
-        </ul>
-    </div>  */}}
 </aside>

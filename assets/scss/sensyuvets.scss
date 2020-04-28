@@ -273,7 +273,7 @@ table {
 				content: 'navigate_next';
 				font-family: 'Material Icons';
 				//font-size: $h4-fsize;
-				padding: 0 10px;
+				padding: 0 5px;
 				vertical-align: -0.2em;
 			}
 		}
@@ -1036,7 +1036,7 @@ table {
 			//text-align: center;
 			border-top: 1px solid #EEE;
 			border-bottom: 1px solid #EEE;
-			padding: 30px 0;
+			padding: 15px 0;
 			//height: 100px;
 			//line-height: 100px;
 
@@ -1078,11 +1078,10 @@ table {
 
 	&.member {
 		.entry-wrap {
-
 			.entry-header {
 
 				.entry-title-wrap {
-					margin-bottom: 0;
+					//margin-bottom: 0;
 	
 					.hospital-name {
 						margin-bottom: 15px;
@@ -1152,6 +1151,7 @@ table {
 		.entry-wrap {
 			border-top: 6px solid $keyCol-1;
 			padding-top: 30px;
+			margin-bottom: 60px;
 			
 			.entry-header {
 				border-bottom: 1px solid $gray-lighter;
@@ -1655,15 +1655,9 @@ table {
 	.single {
 		&.news {
 			.post-nav {
-				//height: 100px;
-				//line-height: 100px;
-				//display: flex;
-				//align-items: center;
-				//justify-content: space-between;
-				
+				padding: 30px 0;
+
 				a {
-					//height: 100px;
-					//line-height: 100px;
 
 					i {
 						//height: 100px;
@@ -1695,7 +1689,7 @@ table {
 					}
 				}
 			}
-		}
+		}		
 	}
 
 	.list {
@@ -1713,6 +1707,26 @@ table {
 }
 
 @media (min-width: 993px) { // PCの処理
+
+	.single {
+		&.member,
+		&.recruit {
+			.entry-wrap {
+				margin-bottom: 0;
+			}
+		}
+
+		&.member {
+			.entry-wrap {
+				.entry-header {
+	
+					.entry-title-wrap {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
 }
 
 @media (min-width: 1201px) { // Large PCの処理

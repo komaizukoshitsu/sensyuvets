@@ -6,14 +6,14 @@
         <div class="row">    
             <main class="col s12 offset-m1 m10 l8 px40-l_px30-m">
                 <article class="entry-wrap row">
-                    <!-- <p><img class="responsive-img" src="{{ .Params.src | safeURL }}" alt="ヘッダー画像"></p> -->
                     <header class="entry-header col s12">
                         <div class="row">
                             <div class="entry-title-wrap col s12 l6">
-                                
-                                <!-- {{ partial "tags" . }} -->
                                 <h1 class="hospital-name">{{ .Title }}</h1>
-                                {{ partial "recruitment" . }}
+                                {{/*  {{ range .Params.recruitment }}
+                                    <span class="badge-recruitment">{{ . }}</span>
+                                {{ end }}  */}}
+                                {{ with .Params.recruitment }}<span class="badge-recruitment">{{ delimit . ", " }}</span>{{ end }}
                             </div>
                             <h2 class="subTitle col s12 l6">{{ .Description }}</h2>
                         </div>
@@ -21,7 +21,7 @@
                     <div align="start" class="entry-body col s12">{{ .Content }}</div>
                     
                 </article>
-                <p class="center-align show-on-small-only"><a href="#" onclick="javascript:window.history.back(-1);return false;" class="close-button"><i class="material-icons ">close</i></a></p>
+                <p class="center-align hide-on-large-only"><a href="#" onclick="javascript:window.history.back(-1);return false;" class="close-button"><i class="material-icons ">close</i></a></p>
             </main>
             {{ partial "sidebar-member" . }}
         </div>

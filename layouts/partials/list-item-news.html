@@ -19,8 +19,8 @@
             <h4 class="thumb-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
         </div>
         <ul class="tag-list">
-            {{ range .Params.tags }}
-            <li class="item-tag"><span>{{ . }}</span></li>
+            {{ with .Params.tags }}
+            <li class="item-tag"><span>{{ delimit . ", " }}</span></li>
             {{ end }}
         </ul>
     </div>

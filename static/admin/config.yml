@@ -9,6 +9,7 @@ local_backend: true
 
 publish_mode: editorial_workflow
 locale: 'ja'
+timezone: Asia/Tokyo
 media_folder: "static/images"
 public_folder: "/images"
 
@@ -23,7 +24,7 @@ collections:
       preview: true
     fields: # ページ作成画面で使う。Front Matterの値を書く
       - {label: "タイトル", name: "title", widget: "string"}
-      - {label: "公開日", name: "date", widget: "datetime", format: "YYYY,MM,DD"}
+      - {label: "公開日", name: "date", widget: "datetime", dateFormat: "YYYY,MM,DD"}
       # - {label: "更新日", name: "updateDate", widget: "datetime", format: "YYYY,MM,DD"}
       # - {label: "サムネイル画像", name: "thumbnail", widget: "image"}
       - {label: "本文", name: "body", widget: "markdown"}
@@ -35,8 +36,16 @@ collections:
     fields:
       - {label: "病院名", name: "title", widget: "string"}
       - {label: "公開日", name: "date", widget: "datetime", format: "YYYY,MM,DD"}
-      - {label: "病院説明", name: "description", widget: "string"}
-      - {label: "募集の有無", name: "recruitment", widget: "select", options: ["獣医師募集中", "募集なし"]}
+      - {label: "病院説明",name: "description", widget: "string"}
+      - {
+        label: "募集の有無",
+        name: "recruitment",
+        widget: "select",
+        options: [
+          {label: "獣医師募集中", value: "獣医師募集"}
+          {label: "募集なし", value: "募集なし"}
+          ]
+        }
       - {label: "市町村名", name: "tags", widget: "select", options: ["和泉市", "泉大津市", "泉佐野市", "貝塚市", "岸和田市", "熊取町", "堺市", "泉南市", "高石市", "田尻町", "忠岡町", "岬町"]}
       - {label: "サムネイル画像", name: "thumbnail", widget: "image"}
       - {label: "本文", name: "body", widget: "markdown"}

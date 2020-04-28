@@ -13,7 +13,7 @@
     <section class="about-wrap section grey lighten-5">
         <div class="container">
             <div class="row">
-                <div class="col s12">
+                <div class="col s12 offset-m1 m10 l12">
                     <div class="row">
                         <div class="section-title-wrap col s12 l4 px30 mb0-l_mb35-m">
                             <h2 class="h1 mb40">ABOUT<span class="ja">研究会について</span></h2>
@@ -82,7 +82,7 @@
                         </div>
                         <p class="col s12 offset-l2 l6 px30">泉州獣医臨床研究会は大阪府南部の泉州地域を中心に22病院61名（2019年8月現在）が集まり、獣医師間のつながりの形成・知識の共有・若手獣医師の教育を目的として活動しています。</p>
                     </div>
-                    <div class="row equal-height px17_5-l_px30-s mb40">
+                    <div class="row equal-height px17_5 mb40">
                         {{ range $index, $page := first 4 (where .Site.RegularPages "Section" "recruit") }}
                             {{ partial "list-item-recruit-index" . }}
                         {{ end }}
