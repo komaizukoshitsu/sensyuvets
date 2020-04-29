@@ -44,17 +44,12 @@
     </div>
     <div class="tagCloud widget-item">
         <h5 class="widget-title border-hrz-lr">TAG</h5>
-        {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
-            {{ if eq "tags" $taxonomyName }}
+        {{ if not (eq (len $.Site.Taxonomies.tags) 0) }}
                 <ul class="widget-body">
-                    {{ range $tagName, $entries := $taxonomy }}
-                        {{/*  {{ range where $entries.Pages "Section" "news" }}  */}}
-                        {{ if ge (where $entries.Pages "Section" "news") 1 }} 
-                            <li><a href="{{ $.Site.BaseURL | relURL }}tags/{{ $tagName | urlize }}">{{ $tagName }}</a></li>
-                        {{ end }}
-                    {{ end }}
+                    {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
+                    <li><a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a></li>
+                {{ end }}
                 </ul>
-            {{ end }}
         {{ end }}
     </div>
 </aside>

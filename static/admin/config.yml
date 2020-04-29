@@ -15,18 +15,16 @@ public_folder: "/images"
 
 # 編集オブジェクト
 collections:
-  - name: "news" # 管理画面のパスで使う　例：/admin/collections/blog
-    label: "お知らせ" # 管理画面のサイドバーで使う
-    folder: "content/news" # Markdownを保存するディレクトリ。Hugoのsectionにあたる
-    create: true # 新しいページを作ることを許可する
-    slug: "{{year}}{{month}}{{day}}{{minute}}{{second}}" # Markdownのファイル名　例：YYYY-MM-DD-title.md
+  - name: "news"
+    label: "お知らせ"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}{{month}}{{day}}{{minute}}{{second}}"
     editor:
       preview: true
-    fields: # ページ作成画面で使う。Front Matterの値を書く
+    fields:
       - {label: "タイトル", name: "title", widget: "string"}
-      - {label: "公開日", name: "date", widget: "datetime", dateFormat: "YYYY,MM,DD"}
-      # - {label: "更新日", name: "updateDate", widget: "datetime", format: "YYYY,MM,DD"}
-      # - {label: "サムネイル画像", name: "thumbnail", widget: "image"}
+      - {label: "公開日", name: "date", widget: "date", format: "YYYY,MM,DD"}
       - {label: "本文", name: "body", widget: "markdown"}
   - name: "member"
     label: "会員病院"
@@ -35,20 +33,44 @@ collections:
     slug: "{{year}}{{month}}{{day}}{{minute}}{{second}}"
     fields:
       - {label: "病院名", name: "title", widget: "string"}
-      - {label: "公開日", name: "date", widget: "datetime", format: "YYYY,MM,DD"}
-      - {label: "病院説明",name: "description", widget: "string"}
-      - {
-        label: "募集の有無",
-        name: "recruitment",
-        widget: "select",
+      - {label: "公開日", name: "date", widget: "date", format: "YYYY,MM,DD"}
+      - {label: "病院説明", name: "description", widget: "string"}
+      - label: "市町村名"
+        name: "city"
+        widget: "select"
         options: [
-          {label: "獣医師募集中", value: "獣医師募集"}
-          {label: "募集なし", value: "募集なし"}
+          "和泉市", "泉大津市", "泉佐野市", "貝塚市", "岸和田市", "熊取町", "堺市", "泉南市", "高石市", "田尻町", "忠岡町", "岬町"
           ]
-        }
-      - {label: "市町村名", name: "tags", widget: "select", options: ["和泉市", "泉大津市", "泉佐野市", "貝塚市", "岸和田市", "熊取町", "堺市", "泉南市", "高石市", "田尻町", "忠岡町", "岬町"]}
-      - {label: "サムネイル画像", name: "thumbnail", widget: "image"}
-      - {label: "本文", name: "body", widget: "markdown"}
+      - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}
+      - label: "病院について"
+        name: "info"
+        widget: "object"
+        fields:
+          - {label: "院長", name: "director", widget: "string"}
+          - {label: "開院", name: "open", widget: "string"}
+          - {label: "従業員", name: "staff", widget: "string"}
+          - {label: "診療対象動物", name: "animals", widget: "string"}
+          - {label: "特色", name: "features", widget: "string"}
+          - {label: "WEBサイト", name: "website", widget: "string"}
+      - label: "連絡先"
+        name: "contact"
+        widget: "object"
+        fields:
+          - {label: "住所", name: "address", widget: "string"}
+          - {label: "TEL", name: "tel", widget: "string"}
+          - {label: "FAX", name: "fax", widget: "string"}
+          - {label: "MAIL", name: "mail", widget: "string"}
+      - label: "獣医師募集"
+        name: "recruit"
+        widget: "object"
+        fields:
+          - {label: "募集する", name: "recruiting", widget: "boolean", default: false}
+          - {label: "給与", name: "salary", widget: "string"}
+          - {label: "休日", name: "holiday", widget: "string"}
+          - {label: "賞与・昇給", name: "bonus", widget: "string"}
+          - {label: "手当", name: "allowance", widget: "string"}
+          - {label: "福利厚生", name: "welfare", widget: "string"}
+          - {label: "その他", name: "option", widget: "string"}
   - name: "recruit"
     label: "採用情報"
     folder: "content/recruit"
@@ -56,8 +78,8 @@ collections:
     slug: "{{year}}{{month}}{{day}}{{minute}}{{second}}"
     fields:
       - {label: "病院名", name: "title", widget: "string"}
-      - {label: "公開日", name: "date", widget: "datetime", format: "YYYY,MM,DD"}
+      - {label: "公開日", name: "date", widget: "date", format: "YYYY,MM,DD"}
       - {label: "募集人数", name: "description", widget: "string"}
-      - {label: "市町村名", name: "tags", widget: "select", options: ["和泉市", "泉大津市", "泉佐野市", "貝塚市", "岸和田市", "熊取町", "堺市", "泉南市", "高石市", "田尻町", "忠岡町", "岬町"]}
-      - {label: "サムネイル画像", name: "thumbnail", widget: "image"}
+      - {label: "市町村名", name: "city", widget: "select", options: ["和泉市", "泉大津市", "泉佐野市", "貝塚市", "岸和田市", "熊取町", "堺市", "泉南市", "高石市", "田尻町", "忠岡町", "岬町"]}
+      - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}
       - {label: "本文", name: "body", widget: "markdown"}
