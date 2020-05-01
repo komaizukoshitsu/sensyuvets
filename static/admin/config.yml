@@ -10,7 +10,7 @@ local_backend: true
 publish_mode: editorial_workflow
 locale: 'ja'
 timezone: Asia/Tokyo
-media_folder: "static/images"
+media_folder: "content/images"
 public_folder: "/images"
 
 # 編集オブジェクト
@@ -24,7 +24,10 @@ collections:
       preview: true
     fields:
       - {label: "タイトル", name: "title", widget: "string"}
-      - {label: "公開日", name: "date", widget: "date", format: "YYYY,MM,DD"}
+      - {label: "公開日", name: "date", widget: "datetime", default: "", dateFormat: "YYYY,MM,DD", timeFormat: "HH:mm", format: "LLL"}
+      - {label: "更新日", name: "ridedate", widget: "datetime", default: "", dateFormat: "YYYY,MM,DD", timeFormat: "HH:mm", format: "LLL"}
+      - {label: "タグ", name: "tags", widget: "list"}
+      - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}
       - {label: "本文", name: "body", widget: "markdown"}
   - name: "member"
     label: "会員病院"
@@ -33,7 +36,6 @@ collections:
     slug: "{{year}}{{month}}{{day}}{{minute}}{{second}}"
     fields:
       - {label: "病院名", name: "title", widget: "string"}
-      - {label: "公開日", name: "date", widget: "date", format: "YYYY,MM,DD"}
       - {label: "病院説明", name: "description", widget: "string"}
       - label: "市町村名"
         name: "city"
@@ -46,31 +48,35 @@ collections:
         name: "info"
         widget: "object"
         fields:
-          - {label: "院長", name: "director", widget: "string"}
-          - {label: "開院", name: "open", widget: "string"}
-          - {label: "従業員", name: "staff", widget: "string"}
-          - {label: "診療対象動物", name: "animals", widget: "string"}
-          - {label: "特色", name: "features", widget: "string"}
-          - {label: "WEBサイト", name: "website", widget: "string"}
+          - {label: "院長", name: "director", widget: "string", required: false}
+          - {label: "開院", name: "open", widget: "string", required: false}
+          - {label: "診療科", name: "department", widget: "string", required: false}
+          - {label: "診療対象動物", name: "animals", widget: "string", required: false}
+          - {label: "従業員", name: "staff", widget: "string", required: false}
+          - {label: "設備", name: "facility, widget: "string", required: false}
+          - {label: "特色", name: "features", widget: "string", required: false}
+          - {label: "WEBサイト", name: "website", widget: "string", required: false}
       - label: "連絡先"
         name: "contact"
         widget: "object"
         fields:
-          - {label: "住所", name: "address", widget: "string"}
-          - {label: "TEL", name: "tel", widget: "string"}
-          - {label: "FAX", name: "fax", widget: "string"}
-          - {label: "MAIL", name: "mail", widget: "string"}
+          - {label: "住所", name: "address", widget: "string", required: false}
+          - {label: "TEL", name: "tel", widget: "string", required: false}
+          - {label: "FAX", name: "fax", widget: "string", required: false}
+          - {label: "MAIL", name: "mail", widget: "string", required: false}
       - label: "獣医師募集"
         name: "recruit"
         widget: "object"
         fields:
-          - {label: "募集する", name: "recruiting", widget: "boolean", default: false}
-          - {label: "給与", name: "salary", widget: "string"}
-          - {label: "休日", name: "holiday", widget: "string"}
-          - {label: "賞与・昇給", name: "bonus", widget: "string"}
-          - {label: "手当", name: "allowance", widget: "string"}
-          - {label: "福利厚生", name: "welfare", widget: "string"}
-          - {label: "その他", name: "option", widget: "string"}
+          - {label: "募集する", name: "recruiting", widget: "boolean", default: false, required: false}
+          - {label: "公開日", name: "date", widget: "datetime", default: "", dateFormat: "YYYY,MM,DD", timeFormat: "HH:mm", format: "LLL"}
+          - {label: "メッセージ", name: "message", widget: "string", required: false}
+          - {label: "給与", name: "salary", widget: "string", required: false}
+          - {label: "休日", name: "holiday", widget: "string", required: false}
+          - {label: "賞与・昇給", name: "bonus", widget: "string", required: false}
+          - {label: "手当", name: "allowance", widget: "string", required: false}
+          - {label: "福利厚生", name: "welfare", widget: "string", required: false}
+          - {label: "その他", name: "option", widget: "string", required: false}
   - name: "recruit"
     label: "採用情報"
     folder: "content/recruit"
@@ -78,7 +84,7 @@ collections:
     slug: "{{year}}{{month}}{{day}}{{minute}}{{second}}"
     fields:
       - {label: "病院名", name: "title", widget: "string"}
-      - {label: "公開日", name: "date", widget: "date", format: "YYYY,MM,DD"}
+      - {label: "公開日", name: "publishDate", widget: "date", format: "YYYY,MM,DD"}
       - {label: "募集人数", name: "description", widget: "string"}
       - {label: "市町村名", name: "city", widget: "select", options: ["和泉市", "泉大津市", "泉佐野市", "貝塚市", "岸和田市", "熊取町", "堺市", "泉南市", "高石市", "田尻町", "忠岡町", "岬町"]}
       - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}

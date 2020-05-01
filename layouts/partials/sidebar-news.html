@@ -8,16 +8,22 @@
                         <a href="{{ .RelPermalink }}">
                             <div class="thumb-img col s5">
                                 <p class="zoomIn">
-                                    {{ $eyecatch_image := findRE "<img.*?src=([^>]*)?>" .Content 1 }}
-                                    {{ range $eyecatch_image }}
-                                    {{ . | safeHTML }}
-                                    {{ end }}
+                                    {{ partial "bundle-image" . }}
+                                    {{/*  {{ $thumb := strings.TrimPrefix "/images/" .Params.thumbnail }}
+                                    {{ with .Site.GetPage "section" "images" }}
+                                        {{ if $src := .Resources.GetMatch $thumb }}
+                                            {{ $small := ($src.Fill "300x200 center q90") }}
+                                            <img src="{{ $small.RelPermalink }}" class="responsive-img">
+                                        {{ else }}
+                                            <img src="{{ .Site.BaseURL }}images/img-default.jpg"  class="responsive-img" alt="noimage">
+                                        {{ end}}
+                                    {{ end }}  */}}
                                 </p>
                             </div>
                         </a>
                         <div class="thumb-caption col s7">
                             <div class="thumb-title-wrap">
-                                <div class="meta">{{ partial "time" . }}</div>
+                                <div class="meta"><time>{{ .Date.Format "2006.01.02" }}</time></div>
                                 <h5 class="thumb-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h5>
                             </div>
                         </div>
@@ -26,7 +32,7 @@
             </ul>
         {{ end }}
     </div>
-    <div class="catList widget-item">
+    {{/*  <div class="catList widget-item">
         <h5 class="widget-title border-hrz-lr">CATEGORY</h5>
         {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
             {{ if eq "categories" $taxonomyName }}
@@ -41,15 +47,24 @@
                 </div>
             {{ end }}
         {{ end }}
-    </div>
+    </div>  */}}
     <div class="tagCloud widget-item">
         <h5 class="widget-title border-hrz-lr">TAG</h5>
-        {{ if not (eq (len $.Site.Taxonomies.tags) 0) }}
-                <ul class="widget-body">
-                    {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
-                    <li><a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a></li>
+        <ul class="widget-body">
+            {{/*  {{ range where .Site.RegularPages "Section" "news"}}
+                {{ range $name := .Params.tags }}
+                    {{ if gt (len $name) 0 }}
+                        <li><a href="">{{ $name }}</a>
+                    {{ end }}
                 {{ end }}
-                </ul>
-        {{ end }}
+            {{end}}
+            {{ range $k, $g := .Site.Params.tags }}
+                
+                    <p>{{ $k | humanize }}</p>
+            {{end}}  */}}
+            {{ range $name, $taxonomy := .Site.Params.tags }}
+                <li><a href="/tags/{{ $name | urlize }}">{{ $name }}</a>
+            {{ end }}
+        </ul>
     </div>
 </aside>

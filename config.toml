@@ -3,61 +3,54 @@ title = "泉州しゃこクラブHPへようこそ"
 author = "泉州しゃこクラブ"
 copyright = "Copyright © 2020-, Sensyu Syako Club; all rights reserved."
 paginate = 10
-languageCode = "en"
-DefaultContentLanguage = "en"
+languageCode = "ja"
+DefaultContentLanguage = "ja"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
 
 [Params]
-site_name_jp = "泉州しゃこクラブ"
-author = "泉州しゃこクラブ"
-description = "泉州獣医臨床研究会"
+# site_name_jp = "泉州しゃこクラブ"
+# author = "泉州しゃこクラブ"
+# description = "泉州獣医臨床研究会"
 
 [menu]
-
-  
   [[menu.main]]
-    identifier = "about"
-    name = "研究会について"
-    url = "/about/"
-    weight = 2
-  [[menu.main]]
-    parent = "about"
+    identifier = "about_act"
     name = "活動内容"
     url = "/about/"
-    weight = 1
-  [[menu.main]]
-    parent = "about"
-    name = "会員病院"
-    url = "/member/"
     weight = 2
   [[menu.main]]
-    parent = "about"
+    identifier = "member"
+    name = "会員病院"
+    url = "/member/"
+    weight = 3
+  [[menu.main]]
+    identifier = "about_org"
     name = "運営組織"
     url = "/about/#運営組織"
-    weight = 3
+    weight = 4
   [[menu.main]]
     identifier = "news"
     name = "お知らせ"
     url = "/news/"
-    weight = 4
-  [[menu.main]]
-    identifier = "recruit"
-    name = "求人情報"
-    url = "/recruit/"
-    weight = 9
+    weight = 1
   [[menu.main]]
     identifier = "link"
     name = "リンク"
     url = "/link/"
     weight = 10
+  # [[menu.main]]
+    # parent = "about"
+    # name = "運営組織"
+    # url = "/about/#運営組織"
+    # weight = 3
 
 
 [taxonomies]
-category = "categories"
-tag = "tags"
-series = "series"
-recruitment = "recruitment"
+# category = "categories"
+# tag = "tags"
+# series = "series"
+# recruitment = "recruitment"
 
 
 [privacy]

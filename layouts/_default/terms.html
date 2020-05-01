@@ -9,7 +9,7 @@
                 <div class="list-title-wrap">
                     <h1 class=""><span class="ja">{{ .Title }}：</span></h1>
                 </div>
-                    {{ if eq .Title "Tags"}}
+                    {{/*  {{ if eq .Title "Tags"}}
                         {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
                             {{ if eq "tags" $taxonomyName }}
                                 <ul class="">
@@ -20,20 +20,12 @@
                                     {{ end }}
                                 </ul>
                             {{ end }}
-                        {{ end }}
-                    {{ else if eq .Title "Categories"}}
-                        {{ range $categoryName, $categories := .Site.Taxonomies }}
-                            {{ if eq "categories" $categoryName }}
-                                <ul>
-                                    {{ range $catName, $entries := $categories }}
-                                        {{ if ge (where $entries.Pages "Section" "news") 1 }} 
-                                            <li><a href="{{ $.Site.BaseURL | relURL }}categories/{{ $catName | urlize }}">{{ $catName }}<span class="count">({{ $entries.Count }})</span></a>
-                                        {{ end }}
-                                    {{ end }}
-                                </ul>
+                        {{ end }}  */}}
+                        <ul class="">
+                            {{ range (where .Site.RegularPages "Section" "news") }}
+                                <li><a href="{{ .RelPermalink }}">{{ .Params.tags }}<span class="count">({{ .Count }})</span></a>
                             {{ end }}
-                        {{ end }}
-                    {{ end }}
+                        </ul>
             </main>
             
             {{ partial "sidebar-news" . }}

@@ -32,7 +32,7 @@
         {{ end }}  */}}
         
         
-        <li class="post-nav-arrow{{ if not $pag.HasPrev }} disabled{{ end }}"><a {{ if $pag.HasPrev }}href="{{ $pag.Prev.URL }}"{{ end }} class="page-link" aria-label="Previous"><span><i class="material-icons">arrow_back</i></span></a></li>
+        <li class="post-nav-arrow{{ if not $pag.HasPrev }} disabled{{ end }}"><a {{ if $pag.HasPrev }}href="{{ $pag.Prev.URL }}"{{ end }} class="page-link" aria-label="Previous"><span><i class="material-icons">chevron_left</i></span></a></li>
         {{ $ellipsed := false }}
         {{ $shouldEllipse := false }}
         {{ range $pag.Pagers }}
@@ -52,7 +52,7 @@
                 <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
             {{ end }}
         {{ end }}
-        <li class="post-nav-arrow{{ if not $pag.HasNext }} disabled{{ end }}"><a {{ if $pag.HasNext }}href="{{ $pag.Next.URL }}"{{ end }} class="page-link" aria-label="Next"><span><i class="material-icons">arrow_forward</i></span></a></li>
+        <li class="post-nav-arrow{{ if not $pag.HasNext }} disabled{{ end }}"><a {{ if $pag.HasNext }}href="{{ $pag.Next.URL }}"{{ end }} class="page-link" aria-label="Next"><span><i class="material-icons">chevron_right</i></span></a></li>
         {{/*  <li class="page-item{{ if not $pag.HasNext }} disabled{{ end }}">
         <a {{ if $pag.HasNext }}href="{{ $pag.Next.URL }}"{{ end }} class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
         </li>  */}}

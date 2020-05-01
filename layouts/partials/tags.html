@@ -1,5 +1,5 @@
 <ul class="tag-list">
-{{ with .Params.tags }}
-<li class="item-tag"><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}"><span>{{ delimit . "" }}</span></a>
+{{ range .Params.tags }}
+<li class="item-tag"><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}"><span>{{ . }}</span></a>
 {{ end }}
 </ul>

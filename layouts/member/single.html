@@ -10,15 +10,112 @@
                         <div class="row">
                             <div class="entry-title-wrap col s12 l6">
                                 <h1 class="hospital-name">{{ .Title }}</h1>
-                                {{/*  {{ range .Params.recruitment }}
-                                    <span class="badge-recruitment">{{ . }}</span>
-                                {{ end }}  */}}
-                                {{ with .Params.recruitment }}<span class="badge-recruitment">{{ delimit . ", " }}</span>{{ end }}
+                                {{/*  {{ $s := "true" }}  */}}
+                                {{ if eq (.Params.recruit.recruiting) true}}
+                                    <span class="badge-recruitment">獣医師募集中</span>
+                                {{ else }}
+                                    false
+                                {{ end }}
                             </div>
-                            <h2 class="subTitle col s12 l6">{{ .Description }}</h2>
+                            <h2 class="subTitle col s12 l6">{{ .Params.description }}</h2>
                         </div>
                     </header>
-                    <div align="start" class="entry-body col s12">{{ .Content }}</div>
+                    {{/*  <div align="start" class="entry-body col s12">{{ .Content }}</div>  */}}
+                    <div class="entry-body col s12">
+                        <h2>病院について</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>院長</th>
+                                    <th>{{ .Params.info.director }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>開院</td>
+                                    <td>{{ .Params.info.open }}</td>
+                                </tr>
+                                <tr>
+                                    <td>従業員</td>
+                                    <td>{{ .Params.info.staff }}</td>
+                                </tr>
+                                <tr>
+                                    <td>診療対象動物</td>
+                                    <td>{{ .Params.info.animals }}</td>
+                                </tr>
+                                <tr>
+                                    <td>特色</td>
+                                    <td>{{ .Params.info.features }}</td>
+                                </tr>
+                                <tr>
+                                    <td>WEBサイト</td>
+                                    <td>{{ .Params.info.website }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2>連絡先</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>住所</th>
+                                    <th>{{ .Params.contact.address }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>TEL</td>
+                                    <td>{{ .Params.contact.tel }}</td>
+                                </tr>
+                                <tr>
+                                    <td>FAX</td>
+                                    <td>{{ .Params.contact.fax }}</td>
+                                </tr>
+                                <tr>
+                                    <td>MAIL</td>
+                                    <td>{{ .Params.contact.mail }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        {{ if eq (.Params.recruit.recruiting) true}}
+                            <div class="recruit-wrap">
+                                <div class="recruit-title-wrap">
+                                    <h2>募集内容</h2>
+                                    <div class="meta"><time>{{ .Date.Format "2006.01.02" }}</time></div>
+                                </div>
+                                <p class="mb20">{{ .Params.recruit.message }}</p>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>給与</th>
+                                            <th>{{ .Params.recruit.salary }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>休日</td>
+                                            <td>{{ .Params.recruit.holiday }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>賞与・昇給</td>
+                                            <td>{{ .Params.recruit.bonus }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>手当</td>
+                                            <td>{{ .Params.recruit.allowance }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>福利厚生</td>
+                                            <td>{{ .Params.recruit.welfare }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>その他</td>
+                                            <td>{{ .Params.recruit.option }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        {{ end }}
+                    </div>
                     
                 </article>
                 <p class="center-align hide-on-large-only"><a href="#" onclick="javascript:window.history.back(-1);return false;" class="close-button"><i class="material-icons ">close</i></a></p>

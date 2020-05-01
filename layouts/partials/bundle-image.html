@@ -1,0 +1,19 @@
+{{/*  {{ $altText := .Get "alt" }}
+{{ $caption := .Get "caption" }}  */}}
+{{ $thumb := strings.TrimPrefix "/images/" .Params.thumbnail }}
+{{ with .Site.GetPage "section" "images" }}
+    {{ if $src := .Resources.GetMatch $thumb }}
+        <img
+            srcset="
+                {{ ($src.Fill "600x400 q90").RelPermalink }} 600w,
+                {{ ($src.Fill "1200x800 q90").RelPermalink }} 992w"
+            src="{{ .Site.BaseURL }}images/placeholder.jpg" class="responsive-img">
+    {{ else }}
+        <img src="{{ .Site.BaseURL }}images/img-default.jpg"  class="responsive-img" alt="noimage">
+    {{ end}}
+{{ end }}
+
+{{/*  srcset="
+                {{ ($src.Fill "300x200").RelPermalink }} 600w,
+                {{ ($src.Fill "600x400").RelPermalink }} 992w,
+                {{ ($src.Fill "1200x800").RelPermalink }} 2x"  */}}

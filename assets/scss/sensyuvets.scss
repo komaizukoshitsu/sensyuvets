@@ -1,6 +1,6 @@
 @import "base";
 @import "mixins";
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 $keyCol: #333;
 $keyCol-1: #B9A37D;
@@ -34,8 +34,7 @@ table {
 	th,
 	td{
 		display: block;
-		padding-right: 20px;
-		padding-left: 20px;
+		padding: 10px;
 		line-height: 1.8;
 
 		&:first-child {
@@ -511,9 +510,10 @@ table {
 		}
 	}
 }
+
 .index {
 	.section {
-		padding: 100px 0;
+		padding: 50px 0;
 	}
 
 	.section-title-wrap {
@@ -709,7 +709,7 @@ table {
 .single,
 .list {
 	&.section {
-		padding-top: 80px;
+		padding-top: 40px;
 		margin-bottom: 100px;
 	}
 
@@ -1090,7 +1090,7 @@ table {
 
 				.subTitle {
 					font-size: $h5-fsize;
-					padding: 0;
+					//padding: 0;
 					margin: 0;
 					line-height: 1.8;
 					border: none;
@@ -1117,14 +1117,29 @@ table {
 				}
 
 				table {
+
 					th,
 					td {
+						padding-right: 0;
+						padding-left: 0;
 						background-color: transparent;
 					}
 				}
-				
 
-				
+				.recruit-wrap {
+					padding: 25px;
+					background-color: #faf4ee;
+					@include border-radius(10px);
+
+					table {
+						margin-bottom: 0;
+
+						tr {
+							border-top: 1px solid $silver;
+							border-color: $silver;
+						}
+					}
+				}
 			}
 
 			.close-button {
@@ -1160,16 +1175,26 @@ table {
 
 			.entry-body {
 				h2 {
+					color: $keyCol-1;
 					margin-bottom: 15px;
 				}
+
+				.recruit-title-wrap {
+					display: flex;
+					justify-content: space-between;
+				}
+				
 
 				table {
 					margin-bottom: 50px;
 					
 					th,
 					td {
-						padding-top: 10px;
-						padding-bottom: 10px;
+						
+
+						&:first-child {
+							padding-bottom: 0;
+						}
 					}
 				}
 
@@ -1233,7 +1258,7 @@ table {
 			letter-spacing: .05em;
 			font-size: $h1-fsize;
 			margin-top: 0;
-			margin-bottom: 60px;
+			margin-bottom: 40px;
 		}
 
 		.ja {
@@ -1258,12 +1283,8 @@ table {
 	}
 
 	&.member {	
-		.thumb-hrz {
-			.thumb-caption {
-				.thumb-desc {
-					//margin-bottom: 0;
-				}
-			}
+		.badge-recruitment { 
+			margin-top: 10px;
 		}
 	}
 
@@ -1426,49 +1447,46 @@ table {
 			width: 40px;
 			height: 40px;
 			line-height: 40px;
-			border: 1px solid $white;
-			@include border-radius(50%);
-
-			a {
-				font-size: $h5-fsize;
-				font-weight: 600;
-				font-family: 'Open Sans', sans-serif;
-				padding: 0;
-				width: 40px;
-				height: 40px;
-				line-height: 40px;
-
-				&:hover {
-					background-color: transparent;
-				}
-			}
-
-			&.active {
-				background-color: transparent;
-				border: 1px solid $silver;
-				//@include border-radius(50%);
+			//border: 1px solid $white;
 
 				a {
-					color: $keyCol;
+					font-size: $h5-fsize;
+					font-weight: 400;
+					font-family: 'Open Sans', sans-serif;
+					padding: 0;
+					width: 40px;
+					height: 40px;
+					line-height: 40px;
+					@include border-radius(50%);
+				}
+
+				&.active {
+					background-color: transparent;
+					//border: 1px solid $silver;
+					//@include border-radius(50%);
+
+					a {
+						color: $keyCol;
+						font-weight: 700;
+					}
+				}
+
+				&.post-nav-arrow i {
+					font-size: $h5-fsize;
+					//color: $keyCol;
+					width: 40px;
+					height: 40px;
+					line-height: 40px;
 				}
 			}
 
-			&.post-nav-arrow i {
-				font-size: $h5-fsize;
-				//color: $keyCol;
-				width: 40px;
-				height: 40px;
-				line-height: 40px;
-			}
-			}
-
-			&::after {
-				content: ".";
-				clear: both;
-				height: 0;
-				display: block;
-				visibility: hidden;
-			}
+			// &::after {
+			// 	content: ".";
+			// 	clear: both;
+			// 	height: 0;
+			// 	display: block;
+			// 	visibility: hidden;
+			// }
 		}
 	}
 }
@@ -1494,7 +1512,6 @@ table {
 }
 
 .is_PC {
-
 	.header-nav .mainmenu > li,
 	.header-nav .submenu > li,
 	.breadcrumbs li,
@@ -1562,7 +1579,23 @@ table {
 				text-decoration: none;
 			}
 		}
+
+		.pagination ul li {
+			a {
+				&:hover {
+					background-color: $gray-lighter;
+				}
+			}
+
+			&.disabled,
+			&.active {
+				a:hover {
+					background-color: transparent;
+				}
+			}
+		}
 	}
+
 	.thumb-title a {
 		transition: .2s;
 
@@ -1606,48 +1639,186 @@ table {
 			background-color: $keyCol-1;
 			border: 1px solid $keyCol-1;
 		}
-	}
-
-	
+	}	
 }
 
 .is_SP {
+	-webkit-tap-highlight-color: transparent; /* 強調をなくす */
+
+	.header-nav .mainmenu > li,
+	.header-nav .submenu > li,
+	.breadcrumbs li,
+	.hospital-list li,
+	.catList li {
+		a {
+			transition: .2s;
+		}
+
+		&.hover > a {
+			color: $keyCol-1;
+		}
+	}
+	.sidenav .mainmenu > li {
+		a {
+			transition: .2s;
+		}
+
+		&.hover {
+			
+
+			> a {
+				color: $keyCol-1;
+			}
+		}
+	}
+
+	.index .about-wrap .about-list {
+		.list-item > .material-icons {
+			transition: .2s;
+		}
+
+		a {
+			transition: .2s;
+
+			&.hover {
+				color: $keyCol-1;
+
+				&.list-item > .material-icons {
+					padding: 0;
+				}
+			}
+		}
+	}
+
+	.single {
+		&.news,
+		&.member,
+		&.recruit {
+			.entry-body {
+				a {
+					//transition: .2s;
+
+					&.hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+
+		&.news {
+			.entry-footer .tag-list .item-tag {
+				a span {
+					transition: .2s;
+				}
+
+				&.hover a span {
+					background-color: $keyCol-2;
+					border-color: $keyCol-2;
+				}
+			}
+		}
+	}
+
+	.list {
+		&.about .list-body {
+			a.hover {
+				text-decoration: none;
+			}
+		}
+
+		.pagination ul li {
+			a {
+				&.hover {
+					background-color: $gray-lighter;
+				}
+			}
+
+			&.disabled,
+			&.active {
+				a.hover {
+					background-color: transparent;
+				}
+			}
+		}
+	}
+
+	.thumb-title a {
+		transition: .2s;
+
+		&.hover {
+			color: $keyCol-1;
+		}
+	}
 	
+	.post-nav a {
+		transition: .2s;
+
+		&.post-nav-prev.hover {
+			padding-left: 0;
+			color: $keyCol-1;
+		}
+
+		&.post-nav-next.hover {
+			padding-right: 0;
+			color: $keyCol-1;
+		}
+	}
+
+	.tagCloud li {
+		a {
+			transition: .2s;
+		}
+
+		&.hover > a {
+			//color: white;
+			background-color: $keyCol-2;
+			border-color: $keyCol-2;
+		}
+	}
+
+	.button-default,
+	.single.member .entry-wrap .entry-body .button-recruit {
+		transition: .2s;
+
+		&.hover {
+			color: white;
+			background-color: $keyCol-1;
+			border: 1px solid $keyCol-1;
+		}
+	}
 }
 
 @media (min-width: 601px) { // TB用
 	table {
 		margin: 0;
-		
-		tr {
-			//border-top: 1px solid $gray-lighter;
-			//border-color: $gray-lighter;
-		}
-	
-		th {
-			//font-weight: normal;
-		}
 	
 		th,
 		td{
 			display: table-cell;
-			padding-right: 20px;
-			padding-left: 20px;
-			//line-height: 1.8;
+			padding-right: 10px;
+			padding-left: 10px;
 	
 			&:first-child {
-				//font-weight: 700;
-				//color: $gray-light;
 				width: 140px;
-				//background-color: $gray-lightest;
 			}
 		}
 	}
 	
 	.index {
+		.section {
+			padding: 100px 0;
+		}
+
 		.about-wrap .about-list .list-item {
 					height: 100px;
 					line-height: 100px;
+		}
+	}
+
+	.single,
+	.list {
+		&.section {
+			padding-top: 80px;
 		}
 	}
 
@@ -1674,6 +1845,18 @@ table {
 			}
 		}
 
+		&.member .entry-wrap .entry-body table {		
+			th,
+			td {
+				//padding-top: 10px;
+				//padding-bottom: 10px;
+				
+				&:first-child {
+					padding-bottom: 10px;
+				}
+			}
+		}
+
 		&.recruit {
 			.entry-wrap {
 				.entry-header {
@@ -1688,12 +1871,16 @@ table {
 					}
 				}
 			}
-		}		
+		}	
 	}
 
 	.list {
 		.list-title-wrap {
 			padding: 0 22.5px;
+
+			h1 {
+				margin-bottom: 60px;
+			}
 		}
 
 		&.member,

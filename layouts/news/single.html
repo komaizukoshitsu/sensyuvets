@@ -8,7 +8,8 @@
                     <article class="entry-wrap">
                         <header class="entry-header">
                             <div class="meta">
-                                {{ partial "time" . }}
+                                {{/*  {{ partial "time" . }}  */}}
+                                <time>{{ .Params.releaseDate }}</time>
                             </div>
                             <div class="entry-title-wrap">
                                 <h1>{{ .Title }}</h1>

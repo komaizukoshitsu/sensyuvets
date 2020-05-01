@@ -16,8 +16,8 @@
                 <div class="col s12 offset-m1 m10 l12">
                     <div class="row">
                         <div class="section-title-wrap col s12 l4 px30 mb0-l_mb35-m">
-                            <h2 class="h1 mb40">ABOUT<span class="ja">研究会について</span></h2>
-                            <p class="h4">泉州獣医臨床研究会は、大阪府堺市以南の地域（泉州）を中心とした、小動物臨床に携わる獣医師の集まりです。</p>
+                            <h2 class="h1 mb40-m_mb20-s">ABOUT<span class="ja">研究会について</span></h2>
+                            <p>泉州獣医臨床研究会は、大阪府堺市以南の地域（泉州）を中心とした、小動物臨床に携わる獣医師の集まりです。</p>
                         </div>
                         <div class="about-list col s12 offset-l2 l6 px30">
                             <a class="list-item" href="{{ .Site.BaseURL }}about/">
@@ -59,14 +59,16 @@
     </section>
     <section class="news-wrap section">
         <div class="container">
-            <div class="section-title-wrap row mb60">
+            <div class="section-title-wrap row mb60-m_mb40-s">
                 <div class="col s12 offset-m1 m10 l12">
                     <h2 class="h1">NEWS<span class="ja">お知らせ</span></h2>
                 </div>
             </div>
             <div class="row mb40 equal-height">
                 {{ range first 6 (where .Site.RegularPages "Section" "news") }}
-                    {{ partial "list-item-news-index" . }}
+                    <article class="thumb-wrap col s12 offset-m1 m10 l4 px30">
+                        {{ partial "list-item-news" . }}
+                    </article>
                 {{ end }}
             </div>
             <p class="center-align"><a class="button-default" href="{{ .Site.BaseURL }}news/">VIEW MORE</a></p>
@@ -76,15 +78,15 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 offset-m1 m10 l12">
-                    <div class="row mb60">
-                        <div class="section-title-wrap col s12 l4 px30 mb0-l_mb35-m">
+                    <div class="row mb60-m_mb40-s">
+                        <div class="section-title-wrap col s12 l4 px30 mb0-l_mb20-m">
                             <h2 class="h1">RECRUIT<span class="ja">求人情報</span></h2>
                         </div>
                         <p class="col s12 offset-l2 l6 px30">泉州獣医臨床研究会は大阪府南部の泉州地域を中心に22病院61名（2019年8月現在）が集まり、獣医師間のつながりの形成・知識の共有・若手獣医師の教育を目的として活動しています。</p>
                     </div>
                     <div class="row equal-height px17_5 mb40">
                         {{ range $index, $page := first 4 (where .Site.RegularPages "Section" "recruit") }}
-                            {{ partial "list-item-recruit-index" . }}
+                            {{ partial "list-item-member" . }}
                         {{ end }}
                     </div>
                     <p class="center-align"><a class="button-default" href="{{ .Site.BaseURL }}recruit/">VIEW MORE</a></p>

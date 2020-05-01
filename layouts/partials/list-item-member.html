@@ -18,12 +18,13 @@
             <div class="thumb-title-wrap">
                 <h4 class="thumb-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
                 <ul class="tag-list">
-                    {{ range .Params.tags }}
-                    <li class="item-tag"><span>{{ . }}</span></li>
-                    {{ end }}
+                    <li class="item-tag"><span>{{ .Params.city }}</span></li>
                 </ul>
             </div>
             <p class="thumb-desc">{{ .Description }}</p>
+            {{ if eq (.Params.recruit.recruiting) true}}
+                <span class="badge-recruitment">獣医師募集中</span>
+            {{ end }}
         </div>
     </div>
 </article>
