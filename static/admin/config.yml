@@ -24,7 +24,7 @@ collections:
       preview: true
     fields:
       - {label: "タイトル", name: "title", widget: "string"}
-      - {label: "公開日", name: "date", widget: "datetime", default: "", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm", format: "LLL"}
+      - {label: "公開日", name: "date", widget: "datetime", default: "", dateFormat: "YYYY,MM,DD", timeFormat: "HH:mm Z", format: ""}
       - {label: "更新日", name: "ridedate", widget: "datetime", default: "", dateFormat: "YYYY,MM,DD", timeFormat: "HH:mm Z", format: "", required: false}
       - {label: "タグ", name: "tags", widget: "list"}
       - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}
