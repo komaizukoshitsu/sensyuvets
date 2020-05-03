@@ -76,10 +76,16 @@ $num: 5;
   padding-right: 20px !important;
 }
 
+.px22_5-s {
+	padding-right: 22.5px !important;
+	padding-left: 22.5px !important;
+}
+
 .px17_5-l_px30-s {
 	padding-right: 30px !important;
 	padding-left: 30px !important;
 }
+
 .px40-l_px30-m {
 	padding-left: 30px !important;
 	padding-right: 30px !important;
@@ -125,18 +131,6 @@ $num: 5;
 }
 
 .mb0-m_mb50-s {
-	margin-bottom: 50px !important;
-}
-
-.mb0-l_mb20-m {
-	margin-bottom: 20px !important;
-}
-
-.mb0-l_mb35-m {
-	margin-bottom: 35px !important;
-}
-
-.mb0-l_mb50-m {
 	margin-bottom: 50px !important;
 }
 
@@ -200,8 +194,26 @@ $num: 5;
 .mb200-m_mb100-s {
 	margin-bottom: 100px !important;
 }
+.mb0-l_mb20-m {
+	margin-bottom: 20px !important;
+}
+.mb0-l_mb20-m_mb15-s {
+	margin-bottom: 15px !important;
+}
+
+.mb0-l_mb35-m {
+	margin-bottom: 35px !important;
+}
+
+.mb0-l_mb50-m {
+	margin-bottom: 50px !important;
+}
 
 @media (min-width: 601px) { // TB用
+	.px22_5-s {
+		padding-right: 0 !important;
+		padding-left: 0 !important;
+	}
 	.pr30-m_pr0-s {
 		padding-right: 30px !important;
 	}
@@ -214,6 +226,11 @@ $num: 5;
 	.px15-m_px0-s {
 		padding-left: 15px !important;
 		padding-right: 15px !important;
+	}
+
+	.px30-m {
+		padding-left: 30px !important;
+		padding-right: 30px !important;
 	}
 
 	.px30-m_px20-s {
@@ -336,6 +353,10 @@ $num: 5;
 	.mb200-m_mb100-s {
 		margin-bottom: 200px !important;
 	}
+
+	.mb0-l_mb20-m_mb15-s {
+		margin-bottom: 20px !important;
+	}
 }
 
 @media (min-width: 993px) { // PCの処理
@@ -386,6 +407,9 @@ $num: 5;
 		padding-right: 50px !important;
 	}
 	.mb0-l_mb20-m {
+		margin-bottom: 0 !important;
+	}
+	.mb0-l_mb20-m_mb15-s {
 		margin-bottom: 0 !important;
 	}
 	.mb0-l_mb35-m {

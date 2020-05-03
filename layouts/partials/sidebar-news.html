@@ -62,8 +62,12 @@
                 
                     <p>{{ $k | humanize }}</p>
             {{end}}  */}}
-            {{ range $name, $taxonomy := .Site.Params.tags }}
-                <li><a href="/tags/{{ $name | urlize }}">{{ $name }}</a>
+            
+            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                {{ if ge (len $name) 0 }}
+                    <script>console.log({{ $name }});</script>
+                    <li><a href="/tags/{{ $name | urlize }}">{{ $name }}</a>
+                {{ end }}
             {{ end }}
         </ul>
     </div>

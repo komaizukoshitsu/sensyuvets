@@ -1,7 +1,7 @@
 baseURL = "/"
 title = "泉州しゃこクラブHPへようこそ"
 author = "泉州しゃこクラブ"
-copyright = "Copyright © 2020-, Sensyu Syako Club; all rights reserved."
+copyright = "© Sensyu Syako Club; all rights reserved."
 paginate = 10
 languageCode = "ja"
 DefaultContentLanguage = "ja"
@@ -48,7 +48,8 @@ footnoteReturnLinkContents = "^"
 
 [taxonomies]
 # category = "categories"
-# tag = "tags"
+tag = "tags"
+city = "city"
 # series = "series"
 # recruitment = "recruitment"
 

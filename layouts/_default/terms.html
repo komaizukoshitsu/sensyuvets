@@ -23,7 +23,7 @@
                         {{ end }}  */}}
                         <ul class="">
                             {{ range (where .Site.RegularPages "Section" "news") }}
-                                <li><a href="{{ .RelPermalink }}">{{ .Params.tags }}<span class="count">({{ .Count }})</span></a>
+                                <li><a href="{{ .RelPermalink }}">{{ .Params.tags }}</a>
                             {{ end }}
                         </ul>
             </main>

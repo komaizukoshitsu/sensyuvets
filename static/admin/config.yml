@@ -29,6 +29,15 @@ collections:
       - {label: "タグ", name: "tags", widget: "list"}
       - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}
       - {label: "本文", name: "body", widget: "markdown"}
+  - name: "about"
+    label: "研究会について"
+    folder: "content/about"
+    create: false
+    editor:
+      preview: true
+    fields:
+      - {label: "タイトル", name: "title", widget: "string"}
+      - {label: "本文", name: "body", widget: "markdown"}
   - name: "member"
     label: "会員病院"
     folder: "content/member"
@@ -69,7 +78,7 @@ collections:
         widget: "object"
         fields:
           - {label: "募集する", name: "recruiting", widget: "boolean", default: false, required: false}
-          - {label: "公開日", name: "date", widget: "datetime", default: "", dateFormat: "YYYY,MM,DD", timeFormat: "HH:mm", format: "LLL"}
+          - {label: "公開日", name: "date", widget: "datetime", default: "", dateFormat: "YYYY,MM,DD", timeFormat: "HH:mm Z", format: ""}
           - {label: "メッセージ", name: "message", widget: "string", required: false}
           - {label: "給与", name: "salary", widget: "string", required: false}
           - {label: "休日", name: "holiday", widget: "string", required: false}
@@ -77,15 +86,12 @@ collections:
           - {label: "手当", name: "allowance", widget: "string", required: false}
           - {label: "福利厚生", name: "welfare", widget: "string", required: false}
           - {label: "その他", name: "option", widget: "string", required: false}
-  - name: "recruit"
-    label: "採用情報"
-    folder: "content/recruit"
-    create: true
-    slug: "{{year}}{{month}}{{day}}{{minute}}{{second}}"
+  - name: "link"
+    label: "リンク"
+    folder: "content/link"
+    create: false
+    editor:
+      preview: true
     fields:
-      - {label: "病院名", name: "title", widget: "string"}
-      - {label: "公開日", name: "publishDate", widget: "date", format: "YYYY,MM,DD"}
-      - {label: "募集人数", name: "description", widget: "string"}
-      - {label: "市町村名", name: "city", widget: "select", options: ["和泉市", "泉大津市", "泉佐野市", "貝塚市", "岸和田市", "熊取町", "堺市", "泉南市", "高石市", "田尻町", "忠岡町", "岬町"]}
-      - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}
+      - {label: "タイトル", name: "title", widget: "string"}
       - {label: "本文", name: "body", widget: "markdown"}

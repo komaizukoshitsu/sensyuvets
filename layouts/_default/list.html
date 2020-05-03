@@ -2,19 +2,23 @@
 
 {{ partial "breadcrumb" . }}
 
-<section class="list section">
+<section class="list member section">
     <div class="container">
         <div class="row">
-            <main class="col s12 offset-m1 m10 l8 px17_5">
-                <div class="list-title-wrap">
-                    <h1 class=""><span class="ja">{{ .Title }}：</span></h1>
+            <main class="col s12 offset-m1 m10 l8 px40-l_px30-m">
+                <div class="list-title-wrap fadein">
+                    <h1>Tag<span class="ja">:&nbsp;{{ .Title }}</span></h1>
                 </div>
-                <div class="row equal-height">
-                    {{ range (.Paginator 10).Pages }} {{ partial "list-item-news" . }} {{ end }}
+                <div class="row mb40">
+                    {{ range (.Paginator 10).Pages }}
+                        <article class="thumb-wrap col s12 fadein">
+                            {{ partial "list-item-member" . }}
+                        </article>
+                    {{ end }}
                 </div>
                 {{ partial "paginator" . }}
             </main>
-            {{ partial "sidebar-news" . }}
+            {{ partial "sidebar-member" . }}
         </div>
     </div>
 </section>

@@ -30,9 +30,7 @@
 
 <script>
 
-    {{/*  window.onload = function(){
-        console.log( 'これは' + (typeof {{$tags}}));
-    }  */}}
+    
 
     //
 	// UAParser.js
@@ -42,7 +40,7 @@
 
 	//var topBtn = $('#scroll-top'); // スクロールトップボタン用
 	//topBtn.hide(); // スクロールトップボタン用
-
+    //var arr = 'mobile' || 'tablet';
 	if (result.device.type !== 'mobile') { // モバイル端末以外から閲覧されている場合
 		document.getElementById('body').classList.add('is_PC');
 	} else { // モバイル端末から閲覧されている場合
@@ -58,15 +56,6 @@
 	}).on('touchend', function(){
 		$(this).removeClass('hover');
     });
-    
-    
-    //
-    // Collapsible
-    //
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.collapsible');
-        var instances = M.Collapsible.init(elems);
-    });
 
 
     //
@@ -78,6 +67,28 @@
 		var instances = M.Sidenav.init(elems, options);
     });
     
+    //
+    // Scroll FadeIn Effect
+    //
+    $(window).on('load', function() {
+        scroll_effect();
+
+        $(window).scroll(function(){
+            scroll_effect();
+        });
+
+        function scroll_effect(){
+            $('.fadein').each(function(){
+                var targetElement = $(this).offset().top,
+                    scroll = $(window).scrollTop(),
+                    windowHeight = $(window).height();
+                if (scroll > targetElement - windowHeight){
+                    $(this).addClass('scrollin');
+                }
+            });
+        }
+    });
+
 
     //
 	// Carousel
@@ -93,6 +104,10 @@
         var instances = M.Carousel.init(elems, options);
     });
 
+
+    //
+    // add current to nav
+    //
     $(document).ready(function() {
         var activeUrl = location.pathname.split("/")[2];
           navList = $(".hospital-list").find("a");

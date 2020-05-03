@@ -50,10 +50,18 @@ table {
 .header {
 	.header-nav {
 		.brand-logo {
-			font-size: $h4-fsize;
-			letter-spacing: .05em;
-			//line-height: 70px;
+			//font-size: $h4-fsize;
+			//letter-spacing: .05em;
+			height: 70px;
 			padding: 0 15px;
+			display: flex;
+			align-items: center;
+
+			img {
+				//display: inline-block;
+				width: 160px;
+				height: auto;
+			}
 		}
 
 		.sidenav-trigger {
@@ -66,8 +74,12 @@ table {
 		padding-top: 60px;
 
 		.brand-logo {
-			width: 100px;
-			margin: 60px auto 30px auto;
+			display: block;
+			margin-bottom: 15px;
+
+			img {
+				width: 180px;
+			}
 		}
 
 		.mainmenu {
@@ -106,7 +118,7 @@ table {
 
 #cover-wrap {
 	position: relative;
-	height: 100vh;
+	height: calc(100vh - 70px);
 	background-image: url("/images/img-18.jpg");
 	background-size: cover;
 	background-position: center center;
@@ -255,6 +267,16 @@ table {
 	}
 }
 
+.city-list {
+	display: inline-flex;
+
+	.item-tag span {
+		font-size: $h5-fsize;
+		color: $silver;
+		background-color: transparent;
+	}
+}
+
 .breadcrumbs-wrap {
 	background-color: $gray-lightest;
 
@@ -316,10 +338,13 @@ table {
 	}
 }
 
-.widget-sidebar,
-.widget-footer {
+.widget-sidebar {
 	.widget-item {
 		margin-bottom: 60px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 	
 	.widget-title {
@@ -578,83 +603,18 @@ table {
 		}
 	}
 
-	.about-section {
-		&.carousel.carousel-slider {
-			.carousel-fixed-item {
-				top: 50px;
+	.member-wrap {
+		.thumb-wrap .thumb-caption {
+			.thumb-title-wrap .thumb-title {
+				display: block;
+				margin-bottom: 10px;
 			}
-
-			.carousel-item {
-				padding: 60px 30px;
-	
-				.outer {
-					display: table;
-					width: 100%;
-					height: 100%;
-	
-					.inner {
-						display: table-cell;
-						vertical-align: middle;
-		
-						h2 {
-							letter-spacing: .05em;
-							margin-bottom: 20px;
-						}
-					}
-				}
-				
-				p {
-					font-size: $h4-fsize;
-	
-					a {
-						font-size: $h5-fsize;
-					}
-				}
+			.thumb-desc {
+				display: none;
 			}
 		}
 	}
-
-	.recruit-wrap {
-
-		.thumb-vrt {
-			text-align: center;
-			margin-bottom: 40px;
-			//min-width: 250px;
-			//padding-top: 25px;
-			//margin-right: 30px;
-
-			> div {
-				@include border-radius(10px);
-			}
-
-			.thumb-img {
-				margin-bottom: 20px;
-
-				img {
-					width: 120px;
-					height: 120px;
-					object-fit: cover;
-					@include border-radius(50%);
-				}
-			}
-
-			.thumb-caption {
-				//padding: 25px;
-
-				.thumb-title {
-					margin-bottom: 15px;
-					//padding: 10px 0;
-					//border-top: 1px solid $keyCol-1;
-					//border-bottom: 1px solid $keyCol-1;
-				}
-
-				.thumb-desc {
-					margin-bottom: 10px;
-				}
-			}
-		}
-	}
-
+	
 	.form-wrap {
 		.col {
 			//padding: 0 15px;
@@ -702,6 +662,8 @@ table {
 			text-decoration: none;
 			letter-spacing: .1em;
 			border: 1px solid $silver;
+			cursor: pointer;
+			transition: .2s;
 		}
 	}
 }
@@ -1273,18 +1235,21 @@ table {
 			padding: 0 22.5px;
 		}
 	}
-	&.member,
-	&.recruit {
-		.tag-list .item-tag span {
-			font-size: $h5-fsize;
-			color: $silver;
-			background-color: transparent;
-		}
-	}
+	
+	// &.member,
+	// &.recruit {
+	// 	.tag-list .item-tag span {
+	// 		font-size: $h5-fsize;
+	// 		color: $silver;
+	// 		background-color: transparent;
+	// 	}
+	// }
 
 	&.member {	
-		.badge-recruitment { 
-			margin-top: 10px;
+		.thumb-caption {
+			.badge-recruitment { 
+				margin-top: 10px;
+			}
 		}
 	}
 
@@ -1448,6 +1413,7 @@ table {
 			height: 40px;
 			line-height: 40px;
 			//border: 1px solid $white;
+			@include border-radius(50%);
 
 				a {
 					font-size: $h5-fsize;
@@ -1457,7 +1423,7 @@ table {
 					width: 40px;
 					height: 40px;
 					line-height: 40px;
-					@include border-radius(50%);
+					background-color: transparent;
 				}
 
 				&.active {
@@ -1468,6 +1434,7 @@ table {
 					a {
 						color: $keyCol;
 						font-weight: 700;
+						cursor: default;
 					}
 				}
 
@@ -1581,15 +1548,15 @@ table {
 		}
 
 		.pagination ul li {
-			a {
-				&:hover {
-					background-color: $gray-lighter;
-				}
+			transition: .2s;
+
+			&:hover {
+				background-color: $gray-lighter;
 			}
 
 			&.disabled,
 			&.active {
-				a:hover {
+				&:hover {
 					background-color: transparent;
 				}
 			}
@@ -1639,7 +1606,15 @@ table {
 			background-color: $keyCol-1;
 			border: 1px solid $keyCol-1;
 		}
-	}	
+	}
+
+	.form-submit {
+		&:hover {
+			color: white;
+			background-color: $keyCol-1;
+			border: 1px solid $keyCol-1;
+		}
+	}
 }
 
 .is_SP {
@@ -1664,8 +1639,6 @@ table {
 		}
 
 		&.hover {
-			
-
 			> a {
 				color: $keyCol-1;
 			}
@@ -1727,15 +1700,15 @@ table {
 		}
 
 		.pagination ul li {
-			a {
-				&.hover {
-					background-color: $gray-lighter;
-				}
+			transition: .2s;
+
+			&.hover {
+				background-color: $gray-lighter;
 			}
 
 			&.disabled,
 			&.active {
-				a.hover {
+				&.hover {
 					background-color: transparent;
 				}
 			}
@@ -1893,7 +1866,9 @@ table {
 }
 
 @media (min-width: 993px) { // PCの処理
-
+	.nav-wrapper {
+		padding: 0 30px;
+	}
 	.single {
 		&.member,
 		&.recruit {

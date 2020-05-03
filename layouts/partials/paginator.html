@@ -47,9 +47,9 @@
                 {{ $ellipsed = true }}
             {{ end }}
             {{ if $showNumber }}
-                <li class="page-item{{ if eq . $pag }} active{{ end }}"><a class="page-link" href="{{ .URL }}">{{ .PageNumber }}</a></li>
+                <li class="page-item{{ if eq . $pag }} active{{ end }}"><a class="page-link" href="{{ .URL }}">{{ .PageNumber }}</a>
             {{ else if $shouldEllipse }}
-                <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+                <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span>
             {{ end }}
         {{ end }}
         <li class="post-nav-arrow{{ if not $pag.HasNext }} disabled{{ end }}"><a {{ if $pag.HasNext }}href="{{ $pag.Next.URL }}"{{ end }} class="page-link" aria-label="Next"><span><i class="material-icons">chevron_right</i></span></a></li>

@@ -1,15 +1,23 @@
 <aside class="widget-sidebar col s12 l4 px40-l_px30-m hide-on-med-and-down">
     <div class="memberList widget-item">
         <h5 class="widget-title border-hrz-lr">会員病院一覧</h5>
-        <div>
-            <ul id="pagelist" class="hospital-list">
-                {{ range (where .Site.RegularPages "Section" "member") }}
-                    <li><a href="{{ .RelPermalink }}">{{ .Title }}
-                        {{ if eq (.Params.recruit.recruiting) true}}
-                            <span class="badge-recruitment">獣医師募集中</span>
-                        {{ end }}</a>
+        <ul id="pagelist" class="hospital-list">
+            {{ range (where .Site.RegularPages "Section" "member") }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}
+                    {{ if eq (.Params.recruit.recruiting) true}}
+                        <span class="badge-recruitment">獣医師募集中</span>
+                    {{ end }}</a>
+            {{ end }}
+        </ul>
+    </div>
+    <div class="tagCloud widget-item">
+        <h5 class="widget-title border-hrz-lr">TAG</h5>
+        <ul class="widget-body">                
+            {{ range $name, $taxonomy := .Site.Taxonomies.city }}
+                {{ if ge (len $name) 0 }}
+                    <li><a href="/city/{{ $name | urlize }}">{{ $name }}</a>
                 {{ end }}
-            </ul>
-        </div>
+            {{ end }}
+        </ul>
     </div>
 </aside>

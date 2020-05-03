@@ -1,30 +1,19 @@
-<article class="thumb-wrap col s12">
-    <div class="row">
-        <a href="{{ .RelPermalink }}">
-            <div class="thumb-img col s12 l5 mb0-l_mb20-m">
-                <p class="zoomIn">
-                    {{ $eyecatch_image := findRE "<img.*?src=([^>]*)?>" .Content 1 }}
-                    {{ if ge (len $eyecatch_image ) 1 }}
-                        {{ range $eyecatch_image }}
-                        {{ . | safeHTML }}
-                        {{ end }}
-                    {{ else }}
-                        <img src="{{ .Site.BaseURL }}images/img-4.jpg"  class="responsive-img" alt="noimage">
-                    {{ end}}
-                </p>
-            </div>
-        </a>
-        <div class="thumb-caption col s12 l7 pl30-l">
-            <div class="thumb-title-wrap">
-                <h4 class="thumb-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
-                <ul class="tag-list">
-                    <li class="item-tag"><span>{{ .Params.city }}</span></li>
-                </ul>
-            </div>
-            <p class="thumb-desc">{{ .Description }}</p>
-            {{ if eq (.Params.recruit.recruiting) true}}
-                <span class="badge-recruitment">獣医師募集中</span>
-            {{ end }}
+<div class="row">
+    <a href="{{ .RelPermalink }}">
+        <div class="thumb-img col s12 l5 mb0-l_mb20-m_mb15-s">
+            <p class="zoomIn">{{ partial "bundle-image" . }}</p>
         </div>
+    </a>
+    <div class="thumb-caption col s12 l7 pl30-l">
+        <div class="thumb-title-wrap">
+            <h4 class="thumb-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+            <ul class="city-list">
+                <li class="item-tag"><span>{{ .Params.city }}</span></li>
+            </ul>
+        </div>
+        <p class="thumb-desc">{{ .Description }}</p>
+        {{ if eq (.Params.recruit.recruiting) true}}
+            <span class="badge-recruitment">獣医師募集中</span>
+        {{ end }}
     </div>
-</article>
+</div>
