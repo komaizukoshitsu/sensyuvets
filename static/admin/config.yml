@@ -1,8 +1,8 @@
 # GitHubのブランチ指定
 backend:
-  #name: github
-  name: git-gateway
-  #repo: komaizukoshitsu/sensyuvets
+  name: github
+  #name: git-gateway
+  repo: komaizukoshitsu/sensyuvets
   branch: master
 
 local_backend: true
