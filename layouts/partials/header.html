@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
     <head>
-        {{ partial "head-open" . }}
+        {{- partial "head-open" . -}}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ .Title }}</title>
-        {{ if .Site.Params.favicon }}
-            <link rel="icon" href="{{ .Site.Params.favicon | absURL }}">
-        {{ end }}
-        {{ partial "css" . }} {{ hugo.Generator }}
-        {{ with .OutputFormats.Get "RSS" }}
+        {{- if .Site.Params.favicon }}<link rel="icon" href="{{ .Site.Params.favicon | absURL }}">{{- end }}
+        {{- partial "css" . -}} {{ hugo.Generator }}
+        {{- with .OutputFormats.Get "RSS" }}
             <link href="{{ .RelPermalink }}" rel="alternate" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" />
             <link href="{{ .RelPermalink }}" rel="feed" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" />
-        {{ end }}
-
-        {{ if .Site.GoogleAnalytics }}
+        {{- end }}
+        {{- if .Site.GoogleAnalytics }}
             <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
             <script>
               window.dataLayer = window.dataLayer || [];
@@ -22,74 +19,72 @@
               gtag('js', new Date());
               gtag('config', '{{ .Site.GoogleAnalytics }}');
             </script>
-        {{ end }}
-
-        {{ if .Site.Params.MathJax | default true }}
+        {{- end }}
+        {{- if .Site.Params.MathJax | default true }}
             <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        {{ end }}
-
-        {{ partial "head-close" . }}
+        {{- end }}
+        {{- partial "head-close" . -}}
     </head>
-
     <body id="body">
         <header class="header">
-        {{ partial "body-open" . }}
-        <nav class="header-nav">
-            <div class="nav-wrapper">
-                <a href="#" data-target="slide-out" class="sidenav-trigger burger show-on-medium-and-down"><span></span><span></span><span></span></a>
+            {{- partial "body-open" . -}}
+            <nav class="header-nav">
+                <div class="nav-wrapper">
+                    <a href="#" data-target="slide-out" class="sidenav-trigger burger show-on-medium-and-down"><span></span><span></span><span></span></a>
+                    <a href="{{ .Site.BaseURL }}" class="brand-logo"><img src="{{ .Site.BaseURL }}images/logo.svg"></a>
+                    {{- if .Site.Menus.main }}
+                        <ul id="nav-mobile" class="mainmenu right hide-on-med-and-down">
+                            {{- range sort .Site.Menus.main }}
+                                <li>
+                                    {{- if .HasChildren }}
+                                    {{- .Name }}
+                                        <ul class="submenu">
+                                            {{- range .Children }}
+                                                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                                            {{- end }}
+                                        </ul>
+                                    {{- else -}}
+                                        <a href="{{ .URL }}">{{ .Name }}</a>
+                                    {{- end -}}
+                                </li>
+                            {{- end }}
+                        </ul>
+                    {{- end }}
+                    {{- if .Site.Menus.icon }}
+                        <ul class="nav navbar-nav navbar-right">
+                            {{- range sort .Site.Menus.icon }}
+                                <li class="navbar-icon"><a href="{{ .URL }}"><i class="fa fa-{{ .Name }}"></i></a></li>
+                            {{- end }}
+                        </ul>
+                    {{- end }}
+                </div>
+            </nav>
+            <div id="slide-out" class="sidenav px30-m_px20-s">
                 <a href="{{ .Site.BaseURL }}" class="brand-logo"><img src="{{ .Site.BaseURL }}images/logo.svg"></a>
-                {{ if .Site.Menus.main }}
-                    <ul id="nav-mobile" class="mainmenu right hide-on-med-and-down">
-                        {{ range sort .Site.Menus.main }}
+                {{- if .Site.Menus.main -}}
+                    <ul class="mainmenu">
+                        {{- range sort .Site.Menus.main -}}
                             <li>
-                                {{ if .HasChildren }}
-                                {{ .Name }}
+                                {{- if .HasChildren -}}
+                                {{- .Name }}
                                     <ul class="submenu">
-                                        {{ range .Children }}
-                                            <li><a href="{{ .URL }}">{{ .Name }}</a>
-                                        {{ end }}
+                                        {{- range .Children }}
+                                            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                                        {{- end }}
                                     </ul>
-                                {{ else }}
+                                {{- else }}
                                     <a href="{{ .URL }}">{{ .Name }}</a>
-                                {{ end }}
-                        {{ end }}
+                                {{- end -}}
+                            </li>
+                        {{- end }}
                     </ul>
-                {{ end }}
-                {{ if .Site.Menus.icon }}
-                    <ul class="nav navbar-nav navbar-right">
-                        {{ range sort .Site.Menus.icon }}
+                {{- end }}
+                {{- if .Site.Menus.icon }}
+                    <ul class="">
+                        {{- range sort .Site.Menus.icon }}
                             <li class="navbar-icon"><a href="{{ .URL }}"><i class="fa fa-{{ .Name }}"></i></a></li>
-                        {{ end }}
+                        {{- end }}
                     </ul>
-                {{ end }}
+                {{- end }}
             </div>
-        </nav>
-        <div id="slide-out" class="sidenav px30-m_px20-s">
-            <a href="{{ .Site.BaseURL }}" class="brand-logo"><img src="{{ .Site.BaseURL }}images/logo.svg"></a>
-            {{ if .Site.Menus.main }}
-                <ul class="mainmenu">
-                    {{ range sort .Site.Menus.main }}
-                        <li>
-                            {{ if .HasChildren }}
-                            {{ .Name }}
-                                <ul class="submenu">
-                                    {{ range .Children }}
-                                        <li><a href="{{ .URL }}">{{ .Name }}</a>
-                                    {{ end }}
-                                </ul>
-                            {{ else }}
-                                <a href="{{ .URL }}">{{ .Name }}</a>
-                            {{ end }}
-                        
-                    {{ end }}
-                </ul>
-            {{ end }}
-            {{ if .Site.Menus.icon }}
-                <ul class="">
-                    {{ range sort .Site.Menus.icon }}
-                        <li class="navbar-icon"><a href="{{ .URL }}"><i class="fa fa-{{ .Name }}"></i></a></li>
-                    {{ end }}
-                </ul>
-            {{ end }}
-        </div>
-    </header>
+        </header>

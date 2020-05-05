@@ -10,15 +10,15 @@
                     <h1>Tag<span class="ja">:&nbsp;{{ .Title }}</span></h1>
                 </div>
                 <div class="row mb40">
-                    {{ range (.Paginator 10).Pages }}
+                    {{- range (.Paginator 10).Pages }}
                         <article class="thumb-wrap col s12 fadein">
-                            {{ partial "loop-member" . }}
+                            {{- partial "loop-member" . }}
                         </article>
-                    {{ end }}
+                    {{- end }}
                 </div>
-                {{ partial "paginator" . }}
+                {{- partial "paginator" . }}
             </main>
-            {{ partial "sidebar-member" . }}
+            {{- partial "sidebar-member" . }}
         </div>
     </div>
 </section>

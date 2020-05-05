@@ -1,7 +1,5 @@
-{{ partial "header" . }}
-
-{{ partial "breadcrumb" . }}
-
+{{- partial "header" . }}
+{{- partial "breadcrumb" . }}
 <section class="list news section">
     <div class="container">
         <div class="row">
@@ -10,18 +8,16 @@
                     <h1>NEWS<span class="ja">お知らせ</span></h1>
                 </div>
                 <div class="row equal-height">
-                    {{ range (.Paginator 10).Pages }}
+                    {{- range (.Paginator 10).Pages -}}
                         <article class="thumb-wrap col s12 l6 px30 fadein">
                             {{ partial "loop-news" . }}
                         </article>
-                    {{ end }}
+                    {{- end -}}
                 </div>
             </main>
-            {{ partial "sidebar-news" . }}
+            {{- partial "sidebar-news" . }}
         </div>
     </div>
 </section>
-
-{{ partial "paginator" . }}
-
-{{ partial "footer-index" . }}
+{{- partial "paginator" . }}
+{{- partial "footer-index" . }}

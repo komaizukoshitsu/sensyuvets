@@ -3,21 +3,21 @@
         <div class="row">
             <ol class="breadcrumbs col s12">
                 <li><a href="/">TOP</a></li>
-                {{ template "breadcrumb" dict "p1" . "p2" .Permalink }}
+                {{- template "breadcrumb" dict "p1" . "p2" .Permalink }}
             </ol>
         </div>
     </div>
 </div>
 <!-- templates -->
-{{ define "breadcrumb" }}
-    {{ if .p1.Parent }}
-        {{ if ne .p1.Parent .IsHome }}
-            {{ template "breadcrumb" dict "p1" .p1.Parent }}
-        {{ end }}
-        {{ if eq .p2 .p1.Permalink }}
+{{- define "breadcrumb" }}
+    {{- if .p1.Parent }}
+        {{- if ne .p1.Parent .IsHome }}
+            {{- template "breadcrumb" dict "p1" .p1.Parent }}
+        {{- end }}
+        {{- if eq .p2 .p1.Permalink }}
             <li>{{ .p1.Title }}</li>
-        {{ else }}
+        {{- else }}
             <li><a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a></li>
-        {{ end }}
-    {{ end }}
-{{ end }}
+        {{- end }}
+    {{- end }}
+{{- end }}

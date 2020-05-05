@@ -1,7 +1,5 @@
-{{ partial "header" . }}
-
-{{ partial "breadcrumb" . }}
-
+{{- partial "header" . }}
+{{- partial "breadcrumb" . }}
 <section class="list about section">
     <div class="container">
         <div class="row">
@@ -10,13 +8,11 @@
                     <div class="list-title-wrap">
                         <h1>LINK<span class="ja">リンク</span></h1>
                     </div>
-                    {{ .Content }}
+                    {{- .Content }}
                 </main>
             </div>
         </div>
     </div>
 </section>
-
-{{ partial "paginator" . }}
-
-{{ partial "footer-index" . }}
+{{- partial "paginator" . }}
+{{- partial "footer-index" . }}

@@ -1,33 +1,19 @@
         <footer class="footer">
             <nav class="footer-nav">
-                {{ if .Site.Menus.main }}
+                {{- if .Site.Menus.main }}
                     <ul class="">
-                        <li><a href="{{ .Site.BaseURL }}" class="">TOP</a>
-                        {{ range sort .Site.Menus.main }}
-                            <li>
-                                {{ if .HasChildren }}
-                                {{ .Name }}
-                                    <ul class="submenu">
-                                        {{ range .Children }}
-                                            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                                        {{ end }}
-                                    </ul>
-                                {{ else }}
-                                    <a href="{{ .URL }}">{{ .Name }}</a>
-                                {{ end }}
-                        {{ end }}
+                        <li><a href="{{ .Site.BaseURL }}" class="">TOP</a></li>
+                        {{- range sort .Site.Menus.main }}
+                            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                        {{- end }}
                     </ul>
-                {{ end }}
+                {{- end }}
             </nav>
             <div class="copyright">
                 <small class="">{{ .Site.Copyright | default "&copy; All rights reserved. Powered by [Hugo](https://gohugo.io) and [Minimal](https://github.com/calintat/minimal)." | markdownify }}</small>
             </div>
         </footer>
-
-        {{ partial "body-close" . }}
-
-        {{ partial "js" . }}
-        
+        {{- partial "body-close" . }}
+        {{- partial "js" . }}   
     </body>
-
 </html>

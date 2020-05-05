@@ -1,52 +1,32 @@
 <aside class="widget-sidebar col s12 offset-m1 m10 l4 px40-l_px30-m">
     <div class="recentPost widget-item">
         <h5 class="widget-title border-hrz-lr">RECENT POST</h5>
-        {{ with .CurrentSection }}
-            <ul class="widget-body">
-                {{ range first 5 ( where .Site.Pages "Section" "news" )}}
-                    <li class="thumb-wrap row">
-                        <a href="{{ .RelPermalink }}">
-                            <div class="thumb-img col s5">
-                                <p class="zoomIn">
-                                    {{ partial "bundle-image" . }}
-                                </p>
-                            </div>
-                        </a>
-                        <div class="thumb-caption col s7">
-                            <div class="thumb-title-wrap">
-                                <div class="meta"><time>{{ .Date.Format "2006.01.02" }}</time></div>
-                                <h5 class="thumb-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h5>
-                            </div>
+        <ul class="widget-body">
+            {{- range first 5 ( where .Site.Pages "Section" "news" )}}
+                <li class="thumb-wrap row">
+                    <a href="{{ .RelPermalink }}">
+                        <div class="thumb-img col s5">
+                            <p class="zoomIn">
+                                {{- partial "bundle-image" . }}
+                            </p>
                         </div>
-                    </li>
-                {{ end }}
-            </ul>
-        {{ end }}
+                    </a>
+                    <div class="thumb-caption col s7">
+                        <div class="thumb-title-wrap">
+                            <div class="meta"><time>{{ .Date.Format "2006.01.02" }}</time></div>
+                            <h5 class="thumb-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h5>
+                        </div>
+                    </div>
+                </li>
+            {{- end }}
+        </ul>
     </div>
-    {{/*  <div class="catList widget-item">
-        <h5 class="widget-title border-hrz-lr">CATEGORY</h5>
-        {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
-            {{ if eq "categories" $taxonomyName }}
-                <div class="widget-body">
-                    <ul class="">
-                    {{ range $catName, $entries := $taxonomy }}
-                        {{ if ge (where $entries.Pages "Section" "news") 1 }} 
-                            <li><a href="{{ $.Site.BaseURL | relURL }}categories/{{ $catName | urlize }}">{{ $catName }}<span class="count">({{ $entries.Count }})</span></a>
-                        {{ end }}
-                    {{ end }}
-                    </ul>
-                </div>
-            {{ end }}
-        {{ end }}
-    </div>  */}}
     <div class="tagCloud widget-item">
         <h5 class="widget-title border-hrz-lr">TAG</h5>
         <ul class="widget-body">
-            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-                {{/*  {{ if ge (len $name) 0 }}  */}}
-                    <li><a href="/tags/{{ $name | urlize }}">{{ $name }}</a>
-                {{/*  {{ end }}  */}}
-            {{ end }}
+            {{- range $name, $taxonomy := .Site.Taxonomies.tags }}
+                <li><a href="/tags/{{ $name | urlize }}">{{ $name }}</a></li>
+            {{- end }}
         </ul>
     </div>
 </aside>

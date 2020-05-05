@@ -1,21 +1,14 @@
-
-    <a href="{{ .RelPermalink }}">
-        <p class="thumb-img mb20-m_mb10-s zoomIn">{{ partial "bundle-image" . }}</p>
-    </a>
-    <div class="thumb-caption">
-        <div class="meta"><time>{{ .Date.Format "2006.01.02" }}</time></div>
-        <div class="thumb-title-wrap">
-            <h4 class="thumb-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
-        </div>
-        {{/*  <ul class="tag-list">
-            {{ with .Params.tags }}
-            <li class="item-tag"><span>{{ delimit . ", " }}</span></li>
-            {{ end }}
-        </ul>  */}}
-        <ul class="tag-list">
-            {{ range .Params.tags }}
-                <li class="item-tag"><span>{{ . }}</span>
-            {{ end }}
-        </ul>
-        
+<a href="{{ .RelPermalink }}">
+    <p class="thumb-img mb20-m_mb10-s zoomIn">{{ partial "bundle-image" . }}</p>
+</a>
+<div class="thumb-caption">
+    <div class="meta"><time>{{ .Date.Format "2006.01.02" }}</time></div>
+    <div class="thumb-title-wrap">
+        <h4 class="thumb-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
     </div>
+    <ul class="tag-list">
+        {{- range .Params.tags }}
+            <li class="item-tag"><span>{{ . }}</span></li>
+        {{- end }}
+    </ul>
+</div>

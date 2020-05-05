@@ -8,12 +8,12 @@
                     <h1 class=""><span class="ja">{{ .Title }}：</span></h1>
                 </div>
                 <ul class="">
-                    {{- range $name, $taxonomy := .Site.Taxonomies.tags }}
-                        <li><a href="/tags/{{ $name | urlize }}">{{ $name }}<span>({{ .Count }})</span></a></li>
+                    {{- range $name, $taxonomy := .Site.Taxonomies.city }}
+                        <li><a href="/city/{{ $name | urlize }}">{{ $name }}<span>({{ .Count }})</span></a></li>
                     {{- end }}
                 </ul>
             </main>
-            {{- partial "sidebar-news" . }}
+            {{- partial "sidebar-member" . }}
         </div>
     </div>
 </section>
