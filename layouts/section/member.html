@@ -9,10 +9,10 @@
                 <div class="list-title-wrap fadein">
                     <h1>MEMBER<span class="ja">会員病院</span></h1>
                 </div>
-                <div class="row mb40">
+                <div class="row mb40-m_mb0-s">
                     {{ range (.Paginator 10).Pages }}
                         <article class="thumb-wrap col s12 fadein">
-                            {{ partial "list-item-member" . }}
+                            {{ partial "loop-member" . }}
                         </article>
                     {{ end }}
                 </div>

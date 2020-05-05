@@ -3,21 +3,12 @@
         <h5 class="widget-title border-hrz-lr">RECENT POST</h5>
         {{ with .CurrentSection }}
             <ul class="widget-body">
-                {{ range first 5 ( where .Site.RegularPages "Section" "news" )}}
+                {{ range first 5 ( where .Site.Pages "Section" "news" )}}
                     <li class="thumb-wrap row">
                         <a href="{{ .RelPermalink }}">
                             <div class="thumb-img col s5">
                                 <p class="zoomIn">
                                     {{ partial "bundle-image" . }}
-                                    {{/*  {{ $thumb := strings.TrimPrefix "/images/" .Params.thumbnail }}
-                                    {{ with .Site.GetPage "section" "images" }}
-                                        {{ if $src := .Resources.GetMatch $thumb }}
-                                            {{ $small := ($src.Fill "300x200 center q90") }}
-                                            <img src="{{ $small.RelPermalink }}" class="responsive-img">
-                                        {{ else }}
-                                            <img src="{{ .Site.BaseURL }}images/img-default.jpg"  class="responsive-img" alt="noimage">
-                                        {{ end}}
-                                    {{ end }}  */}}
                                 </p>
                             </div>
                         </a>
@@ -51,23 +42,10 @@
     <div class="tagCloud widget-item">
         <h5 class="widget-title border-hrz-lr">TAG</h5>
         <ul class="widget-body">
-            {{/*  {{ range where .Site.RegularPages "Section" "news"}}
-                {{ range $name := .Params.tags }}
-                    {{ if gt (len $name) 0 }}
-                        <li><a href="">{{ $name }}</a>
-                    {{ end }}
-                {{ end }}
-            {{end}}
-            {{ range $k, $g := .Site.Params.tags }}
-                
-                    <p>{{ $k | humanize }}</p>
-            {{end}}  */}}
-            
             {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-                {{ if ge (len $name) 0 }}
-                    <script>console.log({{ $name }});</script>
+                {{/*  {{ if ge (len $name) 0 }}  */}}
                     <li><a href="/tags/{{ $name | urlize }}">{{ $name }}</a>
-                {{ end }}
+                {{/*  {{ end }}  */}}
             {{ end }}
         </ul>
     </div>

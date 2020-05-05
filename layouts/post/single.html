@@ -16,7 +16,7 @@
         {{ if $related }}
             <h4 class="page-header">Related</h4>
             <div class="row">
-                {{ range $related }} {{ partial "list-item-news" . }} {{ end }}
+                {{ range $related }} {{ partial "loop-news" . }} {{ end }}
             </div>
         {{ end }}
 

@@ -1,5 +1,5 @@
-<aside class="widget-sidebar col s12 l4 px40-l_px30-m hide-on-med-and-down">
-    <div class="memberList widget-item">
+<aside class="widget-sidebar col s12 offset-m1 m10 l4 px40-l_px30-m">
+    <div class="memberList widget-item hide-on-med-and-down">
         <h5 class="widget-title border-hrz-lr">会員病院一覧</h5>
         <ul id="pagelist" class="hospital-list">
             {{ range (where .Site.RegularPages "Section" "member") }}

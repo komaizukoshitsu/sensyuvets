@@ -64,10 +64,10 @@
                     <h2 class="h1">NEWS<span class="ja">お知らせ</span></h2>
                 </div>
             </div>
-            <div class="row mb40 equal-height">
+            <div class="row mb40-m_mb0-s equal-height">
                 {{ range first 6 (where .Site.RegularPages "Section" "news") }}
                     <article class="thumb-wrap col s12 offset-m1 m10 l4 px30 fadein">
-                        {{ partial "list-item-news" . }}
+                        {{ partial "loop-news" . }}
                     </article>
                 {{ end }}
             </div>
@@ -84,11 +84,11 @@
                         </div>
                         <p class="col s12 offset-l2 l6 px30">泉州獣医臨床研究会は大阪府南部の泉州地域を中心に22病院61名（2019年8月現在）が集まり、獣医師間のつながりの形成・知識の共有・若手獣医師の教育を目的として活動しています。</p>
                     </div>
-                    <div class="row mb40">
+                    <div class="row mb40-m_mb0-s">
                         <div class="equal-height px22_5-s">
                             {{ range first 4 (where .Site.RegularPages "Section" "member") }}
                                 <article class="thumb-wrap col s6 m6 px30-m fadein">
-                                    {{ partial "list-item-member" . }}
+                                    {{ partial "loop-member" . }}
                                 </article>
                             {{ end }}
                         </div>

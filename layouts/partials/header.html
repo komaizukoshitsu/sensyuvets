@@ -46,13 +46,12 @@
                                 {{ .Name }}
                                     <ul class="submenu">
                                         {{ range .Children }}
-                                            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                                            <li><a href="{{ .URL }}">{{ .Name }}</a>
                                         {{ end }}
                                     </ul>
                                 {{ else }}
                                     <a href="{{ .URL }}">{{ .Name }}</a>
                                 {{ end }}
-                            </li>
                         {{ end }}
                     </ul>
                 {{ end }}
