@@ -1,14 +1,14 @@
 <!-- reset -->
-{{ $style := resources.Get "scss/reset.scss" | toCSS | minify | fingerprint }}
+{{ $style := resources.Get "scss/reset.scss" | toCSS | postCSS (dict "config" "./assets/scss/postcss.config.js") | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 <!-- materialize -->
-{{- $style := resources.Get "scss/materialize.scss" | toCSS | minify | fingerprint -}}
+{{- $style := resources.Get "scss/materialize.scss" | toCSS | postCSS (dict "config" "./assets/scss/postcss.config.js") | minify | fingerprint -}}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 <!-- style -->
-{{- $style := resources.Get "scss/style.scss" | toCSS | minify | fingerprint -}}
+{{- $style := resources.Get "scss/style.scss" | toCSS | postCSS (dict "config" "./assets/scss/postcss.config.js") | minify | fingerprint -}}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 <!-- style -->
-{{- $style := resources.Get "scss/sensyuvets.scss" | toCSS | minify | fingerprint -}}
+{{- $style := resources.Get "scss/sensyuvets.scss" | toCSS | postCSS (dict "config" "./assets/scss/postcss.config.js") | minify | fingerprint -}}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 <!-- custom -->
 {{- range .Site.Params.css -}}<link rel="stylesheet" href="{{ . | absURL }}">{{- end -}}

@@ -1,0 +1,25 @@
+<article class="thumb-wrap fadein">
+    <div class="row">
+        <a class="thumb-img col s12 l5 zoomIn" href="{{ .RelPermalink }}">
+            <p class="">
+                {{- $thumb := strings.TrimPrefix "/images/" .Params.link1.thumbnail }}
+                {{- with .Site.GetPage "section" "images" }}
+                    {{- if $src := .Resources.GetMatch $thumb }}
+                        <img
+                            srcset="
+                                {{ ($src.Fill "600x400 q90").RelPermalink }} 600w,
+                                {{ ($src.Fill "1200x800 q90").RelPermalink }} 992w"
+                            src="{{ .Site.BaseURL }}images/placeholder.jpg" class="responsive-img">
+                    {{- else }}
+                        <img src="{{ .Site.BaseURL }}images/img-default.jpg"  class="responsive-img" alt="noimage">
+                    {{- end}}
+                {{- end }}
+            </p>
+        </a>
+        <div class="thumb-caption col s12 l7 pl30-l">
+            <div class="thumb-title-wrap">
+                <h4 class="thumb-title"><a href="{{ .Params.link1.URL }}">{{ .Title }}</a></h4>
+            </div>
+        </div>
+    </div>
+</article>

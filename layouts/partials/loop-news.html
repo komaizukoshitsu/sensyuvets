@@ -1,5 +1,7 @@
 <a href="{{ .RelPermalink }}">
-    <p class="thumb-img mb20-m_mb10-s zoomIn">{{ partial "bundle-image" . }}</p>
+    <p class="thumb-img mb20-m_mb10-s zoomIn">
+        {{- partial "bundle-image" . }}
+    </p>
 </a>
 <div class="thumb-caption">
     <div class="meta"><time>{{ .Date.Format "2006.01.02" }}</time></div>

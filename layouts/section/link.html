@@ -1,6 +1,6 @@
 {{- partial "header" . }}
 {{- partial "breadcrumb" . }}
-<section class="list about section">
+<section class="list link section">
     <div class="container">
         <div class="row">
             <div class="list-wrap col s12 offset-m1 m10 offset-l2 l8 px40-l_px30-m">
@@ -8,7 +8,7 @@
                     <div class="list-title-wrap">
                         <h1>LINK<span class="ja">リンク</span></h1>
                     </div>
-                    {{- .Content }}
+                    {{- partial "loop-link" . }}
                 </main>
             </div>
         </div>

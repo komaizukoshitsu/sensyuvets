@@ -1,14 +1,15 @@
-{{ partial "header" . }}
-
+{{- partial "header" . }}
 <main class="index">
-    <div id="cover-wrap" class="">
+    <div id="cover-wrap">
         <div class="cover-text">
-            <h1 class="">{{ .Site.Title }}</h1>
-            <h2 class="">{{ markdownify .Site.Params.Description }}</h2>
+            <h1>{{ .Site.Title }}</h1>
+            <h2>{{ markdownify .Site.Params.Description }}</h2>
         </div>
     </div>
     <div class="intro container">
-        {{ with .Content }} <div class="homepage-content text-justify">{{ . }}</div> {{ end }}
+        {{- with .Content -}}
+            <div class="homepage-content text-justify">{{ . }}</div>
+        {{- end -}}
     </div>
     <section class="about-wrap section grey lighten-5">
         <div class="container">
@@ -23,19 +24,18 @@
                             <a class="list-item fadein" href="{{ .Site.BaseURL }}about/">
                                 <div class="list-item-title-wrap">
                                     <i class="medium material-icons">chat_bubble_outline</i>
-                                    <div class="">
-                                        <h3 class="">活動内容</h3>
+                                    <div>
+                                        <h3>活動内容</h3>
                                         <p>知識・技術の共有や若手獣医師の育成を行っています。</p>
                                     </div>
                                 </div>
                                 <i class="material-icons">arrow_forward</i>
-                                
                             </a>
                             <a class="list-item fadein" href="{{ .Site.BaseURL }}member/">
                                 <div class="list-item-title-wrap">
                                     <i class="medium material-icons">pets</i>
                                     <div>
-                                        <h3 class="">会員病院</h3>
+                                        <h3>会員病院</h3>
                                         <p>泉州地域における獣医師間のつながりを形成しています。</p>
                                     </div>
                                 </div>
@@ -45,7 +45,7 @@
                                 <div class="list-item-title-wrap">
                                     <i class="medium material-icons">people</i>
                                     <div>
-                                        <h3 class="">運営組織</h3>
+                                        <h3>運営組織</h3>
                                         {{/*  <p>運営組織はこちら。</p>  */}}
                                     </div>
                                 </div>
@@ -65,11 +65,11 @@
                 </div>
             </div>
             <div class="row mb40-m_mb0-s equal-height">
-                {{ range first 6 (where .Site.RegularPages "Section" "news") }}
+                {{- range first 6 (where .Site.RegularPages "Section" "news") -}}
                     <article class="thumb-wrap col s12 offset-m1 m10 l4 px30 fadein">
-                        {{ partial "loop-news" . }}
+                        {{- partial "loop-news" . }}
                     </article>
-                {{ end }}
+                {{- end -}}
             </div>
             <p class="center-align"><a class="button-default fadein" href="/news/">VIEW MORE</a></p>
         </div>
@@ -86,11 +86,11 @@
                     </div>
                     <div class="row mb40-m_mb0-s">
                         <div class="equal-height px22_5-s">
-                            {{ range first 4 (where .Site.RegularPages "Section" "member") }}
+                            {{- range first 4 (where .Site.RegularPages "Section" "member") -}}
                                 <article class="thumb-wrap col s6 m6 px30-m fadein">
-                                    {{ partial "loop-member" . }}
+                                    {{- partial "loop-member" . }}
                                 </article>
-                            {{ end }}
+                            {{- end -}}
                         </div>
                     </div>
                     <p class="center-align"><a class="button-default" href="/member/">VIEW MORE</a></p>
@@ -99,8 +99,7 @@
         </div>
     </section>
     <section class="form-wrap section">
-        {{ partial "form" . }}
+        {{- partial "form" . }}
     </section>
 </main>
-
-{{ partial "footer-index" . }}
+{{- partial "footer-index" . }}

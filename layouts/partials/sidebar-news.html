@@ -2,7 +2,7 @@
     <div class="recentPost widget-item">
         <h5 class="widget-title border-hrz-lr">RECENT POST</h5>
         <ul class="widget-body">
-            {{- range first 5 ( where .Site.Pages "Section" "news" )}}
+            {{- range first 5 ( where .Site.RegularPages "Section" "news" )}}
                 <li class="thumb-wrap row">
                     <a href="{{ .RelPermalink }}">
                         <div class="thumb-img col s5">

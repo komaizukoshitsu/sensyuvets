@@ -87,12 +87,6 @@ table {
 			margin-bottom: 15px;
 			border-bottom: 1px solid $gray-lighter;
 
-			li {
-				&:first-child {
-					//margin-bottom: 0;
-				}
-			}
-
 			li, a {
 				font-size: $h4-fsize;
 				font-family: 'Josefin Sans', sans-serif;
@@ -305,25 +299,6 @@ table {
 	}
 }
 
-.thumb-vrt {
-	//margin-bottom: 40px;
-	//@include border-radius(5px);
-	//overflow: hidden;
-
-	.thumb-caption {
-		//padding: 20px;
-
-		.thumb-title {
-			font-size: $h4-fsize;
-			letter-spacing: .05em;
-
-			a {
-				transition: .2s;
-			}
-		}
-	}	
-}
-
 .thumb-wrap {
 	margin-bottom: 40px;
 
@@ -439,11 +414,11 @@ table {
 			margin-left: 5px;
 			font-size: $h6-fsize;
 			color: $keyCol-1;
-			line-height: auto;
+			line-height: 1;
 			height: auto;
 			padding: 0;
 			background-color: transparent;
-			border-radius: none;
+			@include border-radius(0);
 		}
 	}
 
@@ -639,10 +614,6 @@ table {
 	}
 	
 	.form-wrap {
-		.col {
-			//padding: 0 15px;
-		}
-
 		label {
 			display: block;
 			font-weight: 600;
@@ -650,10 +621,6 @@ table {
 			letter-spacing: .1em;
 			line-height: normal;
 			margin-bottom: 10px;
-		}
-
-		input, textarea {
-			
 		}
 
 		input[type=text],
@@ -847,12 +814,7 @@ table {
 				blockquote {
 					padding: 0 20px;
 					margin: 36px 0;
-					//font-size: 17.5px;
 					border-left: 5px solid #eee;
-			
-					p {
-						//margin: 10px 0;
-					}
 				}
 			
 				ul,
@@ -1501,13 +1463,7 @@ table {
 	}
 
 	.index .about-wrap .about-list {
-		.list-item > .material-icons {
-			//transition: .2s;
-		}
-
 		a {
-			//transition: .2s;
-
 			&:hover {
 				color: $keyCol-1;
 
@@ -1534,10 +1490,6 @@ table {
 
 		&.news {
 			.entry-footer .tag-list .item-tag {
-				a span {
-					//transition: .2s;
-				}
-
 				&:hover a span {
 					background-color: $keyCol-2;
 					border-color: $keyCol-2;
@@ -1650,10 +1602,6 @@ table {
 		}
 	}
 	.sidenav .mainmenu > li {
-		a {
-			//transition: .2s;
-		}
-
 		&.hover {
 			> a {
 				color: $keyCol-1;
@@ -1662,10 +1610,6 @@ table {
 	}
 
 	.index .about-wrap .about-list {
-		.list-item > .material-icons {
-			//transition: .2s;
-		}
-
 		a {
 			//transition: .2s;
 
@@ -1693,10 +1637,6 @@ table {
 
 		&.news {
 			.entry-footer .tag-list .item-tag {
-				a span {
-					//transition: .2s;
-				}
-
 				&.hover a span {
 					background-color: $keyCol-2;
 					border-color: $keyCol-2;
@@ -1812,22 +1752,13 @@ table {
 		&.news {
 			.post-nav {
 				padding: 30px 0;
-				//margin-bottom: 80px;
 
-				a {
-
-					i {
-						//height: 100px;
-    					//line-height: 100px;
-					}
-				}
 				.post-nav-prev {
 					float: left;
 				}
 
 				.post-nav-next {
 					float: right;
-					//text-align: right;
 				}
 			}
 		}

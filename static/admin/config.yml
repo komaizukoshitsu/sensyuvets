@@ -20,21 +20,17 @@ collections:
     folder: "content/news"
     create: true
     slug: "{{year}}{{month}}{{day}}{{minute}}{{second}}"
-    editor:
-      preview: true
     fields:
       - {label: "タイトル", name: "title", widget: "string"}
       - {label: "公開日", name: "date", widget: "datetime", default: "", dateFormat: "YYYY,MM,DD", timeFormat: "HH:mm Z", format: ""}
       - {label: "更新日", name: "ridedate", widget: "datetime", default: "", dateFormat: "YYYY,MM,DD", timeFormat: "HH:mm Z", format: "", required: false}
-      - {label: "タグ", name: "tags", widget: "list"}
+      - {label: "タグ（カンマ区切りで複数入力可）", name: "tags", widget: "list"}
       - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}
       - {label: "本文", name: "body", widget: "markdown"}
   - name: "about"
     label: "研究会について"
     folder: "content/about"
     create: false
-    editor:
-      preview: true
     fields:
       - {label: "タイトル", name: "title", widget: "string"}
       - {label: "本文", name: "body", widget: "markdown"}
@@ -90,8 +86,40 @@ collections:
     label: "リンク"
     folder: "content/link"
     create: false
-    editor:
-      preview: true
     fields:
       - {label: "タイトル", name: "title", widget: "string"}
-      - {label: "本文", name: "body", widget: "markdown"}
+      - label: "リンク1"
+        name: "link1"
+        widget: "object"
+        fields:
+          - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}
+          - {label: "リンク先名称", name: "name", widget: "string"}
+          - {label: "リンク先URL", name: "URL", widget: "string"}
+      - label: "リンク2"
+        name: "link2"
+        widget: "object"
+        fields:
+          - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}
+          - {label: "リンク先名称", name: "name", widget: "string"}
+          - {label: "リンク先URL", name: "URL", widget: "string"}
+      - label: "リンク3"
+        name: "link3"
+        widget: "object"
+        fields:
+          - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}
+          - {label: "リンク先名称", name: "name", widget: "string"}
+          - {label: "リンク先URL", name: "URL", widget: "string"}
+      - label: "リンク4"
+        name: "link4"
+        widget: "object"
+        fields:
+          - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}
+          - {label: "リンク先名称", name: "name", widget: "string"}
+          - {label: "リンク先URL", name: "URL", widget: "string"}
+      - label: "リンク5"
+        name: "link5"
+        widget: "object"
+        fields:
+          - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}
+          - {label: "リンク先名称", name: "name", widget: "string"}
+          - {label: "リンク先URL", name: "URL", widget: "string"}

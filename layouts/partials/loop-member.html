@@ -1,8 +1,6 @@
 <div class="row">
-    <a href="{{ .RelPermalink }}">
-        <div class="thumb-img col s12 l5 mb0-l_mb20-m_mb15-s">
-            <p class="zoomIn">{{ partial "bundle-image" . }}</p>
-        </div>
+    <a class="thumb-img col s12 l5 mb0-l_mb20-m_mb15-s" href="{{ .RelPermalink }}">
+        <p class="zoomIn">{{ partial "bundle-image" . }}</p>
     </a>
     <div class="thumb-caption col s12 l7 pl30-l">
         <div class="thumb-title-wrap">
@@ -12,8 +10,8 @@
             </ul>
         </div>
         <p class="thumb-desc">{{ .Description }}</p>
-        {{ if eq (.Params.recruit.recruiting) true}}
+        {{- if eq (.Params.recruit.recruiting) true}}
             <span class="badge-recruitment">獣医師募集中</span>
-        {{ end }}
+        {{- end }}
     </div>
 </div>
