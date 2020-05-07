@@ -10,8 +10,29 @@
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  <script>     
-    CMS.registerPreviewStyle("previewStyle.css");
+  <script>
+    {{/*  CMS.registerPreviewStyle("previewStyle.css");  */}}
+    var NewsPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        var title = entry.getIn(['data', 'title']);
+        var date = entry.getIn(['data', 'date']);
+        {{/*  var body = entry.getIn(['data', 'body']);  */}}
+        var tags = entry.getIn(['data', 'tags']);
+
+        return h('div', {},
+          h('div', {}, date),
+          h('h1', {}, title),
+          h('div', {"className": "entry-body"}, this.props.widgetFor('body')),
+          h('ul', {"className": "tag-list"},
+            h('li', {}, tags)
+          )
+        );
+      }
+    });
+
+    CMS.registerPreviewTemplate("news", NewsPreview);
+    CMS.registerPreviewStyle("./previewStyle.css");
   </script>
 </body>
 </html>
