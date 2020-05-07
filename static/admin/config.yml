@@ -23,7 +23,7 @@ collections:
     fields:
       - {label: "タイトル", name: "title", widget: "string"}
       - {label: "公開日", name: "date", widget: "datetime"}
-      - {label: "更新日", name: "ridedate", widget: "datetime", default: "", dateFormat: "YYYY,MM,DD", timeFormat: "HH:mm Z", format: "", required: false}
+      - {label: "更新日", name: "ridedate", widget: "datetime", required: false}
       - {label: "タグ（カンマ区切りで複数入力可）", name: "tags", widget: "list"}
       - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}
       - {label: "本文", name: "body", widget: "markdown"}
