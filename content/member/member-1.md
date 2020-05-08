@@ -1,7 +1,5 @@
 ---
 title: 綾園動物病院
-date: 2019-03-26
-description: 町の小さな動物病院です。皮膚科と歯科に力を入れています。 診療を通じて、ペット達や飼主さんが幸せな時間を過ごせるようにサポートしています。
 city: 高石市
 info:
   director: 濱岡 圭治
@@ -17,12 +15,14 @@ contact:
   fax: 072-265-5776
   mail: ayazono_vet@yahoo.co.jp
 author: sensyuvets
+date: 2019-03-26T00:00:00.000Z
 tags:
   - 高石市
 recruitment:
   - 獣医師募集中!
 categories:
   - ""
+description: 町の小さな動物病院です。皮膚科と歯科に力を入れています。 診療を通じて、ペット達や飼主さんが幸せな時間を過ごせるようにサポートしています。
 recruit:
   salary: 28万円～
   holiday: 水曜、土日祝午後
@@ -31,6 +31,7 @@ recruit:
   welfare: 社会保険完備
   option: 学会所属・参加費用負担
   recruiting: true
+  date: May 8, 2020 5:40 PM
 ---
 
 町の小さな動物病院です。皮膚科と歯科に力を入れています。  
