@@ -22,7 +22,7 @@ collections:
     slug: "{{year}}{{month}}{{day}}{{minute}}{{second}}"
     fields:
       - {label: "タイトル", name: "title", widget: "string"}
-      - {label: "公開日", name: "date", widget: "datetime"}
+      - {label: "公開日", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
       - {label: "更新日", name: "ridedate", widget: "datetime", required: false}
       - {label: "タグ（カンマ区切りで複数入力可）", name: "tags", widget: "list"}
       - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}
