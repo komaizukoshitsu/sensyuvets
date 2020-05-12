@@ -12,7 +12,8 @@ module.exports = {
                 'h4',
                 'ul',
                 'li',
-            ]
+            ],
+            whitelistPatternsChildren: [/^g-recaptcha$/]
         },
         autoprefixer: {
             browsers: [
