@@ -1,14 +1,30 @@
-+++
-author = "sensyuvets"
-title = "泉南動物病院"
-date = "2019-04-16"
-description = "地域の中核病院として、動物と御家族、スタッフから愛される動物病院を目指しています。"
-categories = [""]
-tags = [
-    "泉南郡",
-]
-recruitment = ["獣医師募集中!"]
-+++
+---
+title: 泉南動物病院
+city: 熊取町
+info:
+  director: 横井 慎一
+  open: 1995年
+  staff: 獣医師11名(男性5名、女性6名)、看護師11名、その他14名
+  animals: 犬、猫、ウサギ、フェレット、ハムスター
+  features: 新人研修プログラムの他、院内セミナーの開催や学会参加費の補助などスタッフが勉強しやすい環境を整えています。日本獣医皮膚科学会認定医、JAHA内科認定医、獣医腫瘍認定医、獣医療ソーシャルワーカーが所属しています。歓送迎会や誕生日会などスタッフ間のコミュニケーションを大切にしています。
+contact:
+  address: 〒590-0412　大阪府泉南郡熊取町紺屋2-1-3
+  mail: sennan.ah@gmail.com
+  fax: 072-453-0186
+  tel: 072-453-0298
+author: sensyuvets
+date: 2019-04-16
+tags:
+  - 泉南郡
+recruitment:
+  - 獣医師募集中!
+categories:
+  - ""
+description: 地域の中核病院として、動物と御家族、スタッフから愛される動物病院を目指しています。
+recruit:
+  date: May 12, 2020 5:01 PM
+  recruiting: true
+---
 
 泉南動物病院
 
