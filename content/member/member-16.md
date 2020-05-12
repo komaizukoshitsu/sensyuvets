@@ -1,14 +1,30 @@
-+++
-author = "sensyuvets"
-title = "つむら動物病院"
-date = "2019-04-16"
-description = "当院は飼主様に寄り添う治療をモットーとし、地域密着型の病院として診療しています。"
-categories = [""]
-tags = [
-    "堺市",
-]
-recruitment = ["獣医師募集中!"]
-+++
+---
+title: つむら動物病院
+city: 堺市
+info:
+  director: 津村 文彰
+  open: 2015年
+  staff: 獣医師2名、看護師5名、その他2名
+  animals: 犬、猫、うさぎ、ハムスター、フェレット
+  features: 働きやすい職場づくりに力を入れています。
+contact:
+  address: 〒590-0126　大阪府堺市南区泉田中150
+  mail: tsumu@tsumura-ah.jp
+  fax: 072-291-2751
+  tel: 072-291-1181
+author: sensyuvets
+date: 2019-04-16
+tags:
+  - 堺市
+recruitment:
+  - 獣医師募集中!
+categories:
+  - ""
+description: 当院は飼主様に寄り添う治療をモットーとし、地域密着型の病院として診療しています。
+recruit:
+  date: May 12, 2020 5:09 PM
+  recruiting: true
+---
 
 つむら動物病院
 
