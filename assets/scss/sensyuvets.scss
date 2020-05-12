@@ -655,6 +655,10 @@ table {
 			cursor: pointer;
 			transition: .2s;
 		}
+
+		.g-recaptcha > div {
+			margin: 0 auto;
+		}
 	}
 }
 
