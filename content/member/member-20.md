@@ -1,14 +1,24 @@
-+++
-author = "sensyuvets"
-title = "まつおか動物病院"
-date = "2019-04-16"
-description = "最新の獣医療を取り入れながら地域の中核拠点となるべく日々診療に奮闘しています。"
-categories = [""]
-tags = [
-    "阪南市",
-]
-recruitment = ["獣医師募集中!"]
-+++
+---
+city: 和泉市
+author: sensyuvets
+info:
+  director: 松岡 聰
+  animals: 犬、猫
+  staff: 獣医師7名、看護師8名（パート2名含む）
+  features: ・やるときはやる<br>・無駄なことはしない<br>・人にも動物にも負担を少なく
+date: 2019-04-16
+title: まつおか動物病院
+tags:
+  - 阪南市
+recruitment:
+  - 獣医師募集中!
+categories:
+  - ""
+description: 最新の獣医療を取り入れながら地域の中核拠点となるべく日々診療に奮闘しています。16列ヘリカルCTがあります。整形・軟部外科、腫瘍科、循環器科、皮膚科に力を入れています。
+recruit:
+  date: May 12, 2020 5:16 PM
+  recruiting: true
+---
 
 まつおか動物病院
 
