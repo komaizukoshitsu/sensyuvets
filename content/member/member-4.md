@@ -1,14 +1,28 @@
-+++
-author = "sensyuvets"
-title = "いぶきの動物病院"
-date = "2019-03-27"
-description = "大阪府和泉市にある動物病院です。"
-categories = [""]
-tags = [
-    "和泉市",
-]
-recruitment = ["獣医師募集中!"]
-+++
+---
+title: いぶきの動物病院
+city: 和泉市
+info:
+  director: 島田 大
+  staff: 獣医師6名（非常勤1名）、看護師6名、受付1名
+  animals: 犬、猫、ウサギ、鳥、フェレット、ハムスター、リス、チンチラ、ハリネズミ、モモンガ、トカゲ、カメ、ウーパールーパーなど
+contact:
+  address: 〒594-0041 　大阪府和泉市いぶき野2-9-1
+  mail: ds-vet@sound.ocn.ne.jp
+  fax: 0725-50-1000
+  tel: 0725-50-1000
+author: sensyuvets
+date: 2019-03-27
+tags:
+  - 和泉市
+recruitment:
+  - 獣医師募集中!
+categories:
+  - ""
+description: 大阪府和泉市にある動物病院です。犬・猫だけでなくエキゾチック動物も多く来院頂き、待合室はいつも色々な動物で賑わっています。レントゲン機器やエコー、その他各種機器は最新のものを随時取り入れ、またスタッフは院内・外部セミナーや勉強会に参加するなどしてソフト、ハード面共に随時更新して地域医療に奮闘しています。
+recruit:
+  date: May 12, 2020 4:45 PM
+  recruiting: true
+---
 
 {{< shared-image dir="member" src="img-3.jpg" >}}
 
