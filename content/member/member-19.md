@@ -1,14 +1,29 @@
-+++
-author = "sensyuvets"
-title = "ひらの動物病院"
-date = "2019-04-16"
-description = "アットホームで働きやすい環境で、最善の治療を患者さんに提供できるよう、スタッフ皆で向上心を持って一緒に勉強しています。"
-categories = [""]
-tags = [
-    "泉大津市",
-]
-recruitment = ["獣医師募集中!"]
-+++
+---
+title: ひらの動物病院
+city: 泉大津市
+info:
+  director: 平野 勇二
+  open: 1996年
+  animals: 犬、猫、小鳥、ウサギ、他小動物
+  features: 患者さん一人一人に寄り添える治療を話し合って見つけて行くオーダーメイド治療を目指しています。
+  staff: 獣医師5名、看護師11名
+contact:
+  address: 〒595-0071　大阪府泉大津市助松町3-2-40
+  fax: 0725-23-3447
+  tel: 0725-23-3443
+author: sensyuvets
+date: 2019-04-16
+tags:
+  - 泉大津市
+recruitment:
+  - 獣医師募集中!
+categories:
+  - ""
+description: アットホームで働きやすい環境で、最善の治療を患者さんに提供できるよう、スタッフ皆で向上心を持って一緒に勉強しています。
+recruit:
+  date: May 12, 2020 5:14 PM
+  recruiting: true
+---
 
 ひらの動物病院
 
