@@ -1,6 +1,6 @@
 <aside class="widget-sidebar col s12 offset-m1 m10 l4 px40-l_px30-m">
     <div class="recentPost widget-item">
-        <h5 class="widget-title border-hrz-lr">RECENT POST</h5>
+        <h2 class="widget-title border-hrz-lr">RECENT POST</h2>
         <ul class="widget-body">
             {{- range first 5 ( where .Site.RegularPages "Section" "news" )}}
                 <li class="thumb-wrap row">
@@ -14,7 +14,7 @@
                     <div class="thumb-caption col s7">
                         <div class="thumb-title-wrap">
                             <div class="meta"><time>{{ .Date.Format "2006.01.02" }}</time></div>
-                            <h5 class="thumb-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h5>
+                            <h3 class="thumb-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
                         </div>
                     </div>
                 </li>
@@ -22,7 +22,7 @@
         </ul>
     </div>
     <div class="tagCloud widget-item">
-        <h5 class="widget-title border-hrz-lr">TAG</h5>
+        <h2 class="widget-title border-hrz-lr">TAG</h2>
         <ul class="widget-body">
             {{- range $name, $taxonomy := .Site.Taxonomies.tags }}
                 <li><a href="/tags/{{ $name | urlize }}">{{ $name }}</a></li>

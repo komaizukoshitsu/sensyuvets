@@ -1,8 +1,8 @@
 # GitHubのブランチ指定
 backend:
-  #name: github
-  name: git-gateway
-  #repo: komaizukoshitsu/sensyuvets
+  name: github
+  #name: git-gateway
+  repo: komaizukoshitsu/sensyuvets
   branch: master
 
 local_backend: true
@@ -29,10 +29,11 @@ collections:
       - {label: "本文", name: "body", widget: "markdown"}
   - name: "about"
     label: "研究会について"
+    identifier_field: title
     folder: "content/about"
     create: false
     fields:
-      - {label: "タイトル", name: "title", widget: "string"}
+      - {label: "タイトル", name: "title", widget: "hidden"}
       - {label: "本文", name: "body", widget: "markdown"}
   - name: "member"
     label: "会員病院"
@@ -84,10 +85,11 @@ collections:
           - {label: "その他", name: "option", widget: "string", required: false}
   - name: "link"
     label: "リンク"
+    identifier_field: title
     folder: "content/link"
     create: false
     fields:
-      - {label: "タイトル", name: "title", widget: "string"}
+      - {label: "タイトル", name: "title", widget: "hidden"}
       - label: "リンク1"
         name: "link1"
         widget: "object"

@@ -89,7 +89,8 @@ table td:first-child {
   letter-spacing: .05em;
 }
 
-.news h2 {
+.news h2,
+.about h2 {
   font-size: 2.4rem;
   background-color: #f7f7f9;
   border-left: 8px solid #B9A37D;
@@ -98,15 +99,18 @@ table td:first-child {
   letter-spacing: .05em;
 }
 
-.news h2 + h3 {
+.news h2 + h3,
+.about h2 + h3 {
   margin-top: 45px;
 }
 
-.news h2 + p {
+.news h2 + p,
+.about h2 + p {
   margin-top: 36px;
 }
 
-.news h3 {
+.news h3,
+.about h3 {
   font-size: 2.1rem;
   border-top: 2px solid #B9A37D;
   border-bottom: 2px solid #B9A37D;
@@ -116,15 +120,20 @@ table td:first-child {
 }
 
 .news h3 + h4,
-.news h3 + p {
+.news h3 + p,
+.about h3 + h4,
+.about h3 + p
+ {
   margin-top: 36px;
 }
 
-.news h3 + table {
+.news h3 + table,
+.about h3 + table {
   margin-top: 45px;
 }
 
-.news h4 {
+.news h4,
+.about h4 {
   position: relative;
   font-size: 1.7rem;
   padding-left: 28px;
@@ -132,7 +141,8 @@ table td:first-child {
   letter-spacing: .05em;
 }
 
-.news h4::before {
+.news h4::before,
+.about h4::before {
   content: "";
   position: absolute;
   width: 18px;
@@ -143,7 +153,8 @@ table td:first-child {
   background-color: #B9A37D;
 }
 
-.news h4::after {
+.news h4::after,
+.about h4::after {
   content: "";
   position: absolute;
   width: 4px;
@@ -154,61 +165,76 @@ table td:first-child {
   background-color: white;
 }
 
-.news h4 + p {
+.news h4 + p,
+.about h4 + p {
   margin-top: 27px;
 }
 
-.news p {
+.news p,
+.about p {
   //font-size: 1.4rem;
   line-height: 1.8;
   margin: 18px 0;
 }
 
-.news p img {
+.news p img,
+.about p img {
   max-width: 100%;
   height: auto;
 }
 
-.news p + table {
+.news p + table,
+.about p + table {
   margin-top: 0;
 }
 
-.news a {
+.news a,
+.about a {
   color: #B9A37D;
   text-decoration: underline;
 }
 
-.news table {
+.news table,
+.about table {
   margin: 36px 0;
 }
 
 .news table th:first-child,
-.news table td:first-child {
+.news table td:first-child,
+.about table th:first-child,
+.about table td:first-child {
     background-color: #f7f7f9;
 }
 
-.news blockquote {
+.news blockquote,
+.about blockquote {
   padding: 0 20px;
   margin: 36px 0;
   border-left: 5px solid #eee;
 }
 
 .news ul,
-.news ol {
+.news ol,
+.about ul,
+.about ol {
   padding-left: 40px;
   margin: 36px 0;
 }
 
 .news ul li,
-.news ol li {
+.news ol li,
+.about ul li,
+.about ol li {
   line-height: 1.8;
 }
 
-.news ul li {
+.news ul li,
+.about ul li {
   list-style-type: disc;
 }
 
-.news ol li {
+.news ol li,
+.about ol li {
   list-style-type: decimal;
 }
 
@@ -322,10 +348,27 @@ table td:first-child {
   margin-bottom: 40px;
 }
 
-.member .entry-header h1{
+.member .entry-header .entry-title-wrap {
   width: 50%;
   float: left;
+}
+
+.member .entry-header .entry-title-wrap h1 {
+  font-size: 2.4rem;
   margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.member .entry-header .badge-recruitment {
+	display: inline-block;
+	font-size: 1.4rem;
+	color: #333;
+	line-height: 26px;
+	letter-spacing: .05em;
+	height: 26px;
+	padding: 0 10px;
+	background-color: #EEDCC7;
+	border-radius: 13px;
 }
 
 .member .entry-header .subTitle {
@@ -346,6 +389,7 @@ table td:first-child {
 }
 
 .member .entry-body h2 {
+  font-size: 2.1rem;
   color: #B9A37D;
   margin-top: 0;
   margin-bottom: 15px;
@@ -364,6 +408,11 @@ table td:first-child {
   padding: 25px;
   background-color: #faf4ee;
   border-radius: 10px;
+}
+
+.member .entry-body .recruit-wrap .recruit-title-wrap {
+  display: flex;
+  justify-content: space-between;
 }
 
 .member .entry-body .recruit-wrap table {

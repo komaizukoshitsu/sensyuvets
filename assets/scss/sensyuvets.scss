@@ -1125,6 +1125,7 @@ table {
 
 			.entry-body {
 				h2 {
+					font-size: 2.1rem;
 					color: $keyCol-1;
 					margin-bottom: 15px;
 				}
@@ -1193,15 +1194,6 @@ table {
 			padding: 0 22.5px;
 		}
 	}
-	
-	// &.member,
-	// &.recruit {
-	// 	.tag-list .item-tag span {
-	// 		font-size: $h5-fsize;
-	// 		color: $silver;
-	// 		background-color: transparent;
-	// 	}
-	// }
 
 	&.member {	
 		.thumb-caption {
@@ -1214,29 +1206,6 @@ table {
 			margin-bottom: 50px;
 		}
 	}
-
-	// &.activity {
-	// 	h1 {
-	// 		margin-bottom: 30px;
-	// 	}
-
-	// 	h2 {
-	// 		font-size: $h2-fsize;
-	// 		background-color: $gray-lightest;
-	// 		border-left: 8px solid $keyCol-1;
-	// 		padding: 8px 15px;
-	// 		margin: 0 0 18px 0;
-	// 		letter-spacing: .05em;
-
-	// 		+ p {
-	// 			margin-bottom: 36px;
-	// 		}
-	// 	}
-
-	// 	.button-wrap {
-	// 		margin-bottom: 25px;
-	// 	}
-	// }
 
 	&.about {
 		.list-wrap .list-body {
@@ -1342,6 +1311,12 @@ table {
 				color: $keyCol-1;
 				text-decoration: underline;
 			}	
+		}
+	}
+
+	&.link {
+		.list-title-wrap {
+			padding: 0;
 		}
 	}
 
@@ -1787,7 +1762,7 @@ table {
 
 		&.member {
 			.list-title-wrap {
-				padding: 0 0px;
+				padding: 0;
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 <article class="thumb-wrap fadein">
     <div class="row">
-        <a class="thumb-img col s12 l5 zoomIn" href="{{ .RelPermalink }}">
-            <p class="">
+        <a class="thumb-img col s12 l5 mb0-l_mb20-m_mb15-s" href="{{ .RelPermalink }}">
+            <p class="zoomIn">
                 {{- $thumb := strings.TrimPrefix "/images/" .Params.link1.thumbnail }}
                 {{- with .Site.GetPage "section" "images" }}
                     {{- if $src := .Resources.GetMatch $thumb }}
@@ -18,7 +18,7 @@
         </a>
         <div class="thumb-caption col s12 l7 pl30-l">
             <div class="thumb-title-wrap">
-                <h4 class="thumb-title"><a href="{{ .Params.link1.URL }}">{{ .Title }}</a></h4>
+                <h2 class="thumb-title"><a href="{{ .Params.link1.URL }}">{{ .Title }}</a></h2>
             </div>
         </div>
     </div>

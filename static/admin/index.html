@@ -15,9 +15,7 @@
       render: function() {
         var entry = this.props.entry;
         var title = entry.getIn(['data', 'title']);
-        {{/*  var date = this.props.widgetFor('date');  */}}
         var date = entry.getIn(['data', 'date']);
-        {{/*  var body = entry.getIn(['data', 'body']);  */}}
         var tags = entry.getIn(['data', 'tags']);
 
         return h('div', {"className": "news"},
@@ -48,8 +46,8 @@
         var tel = entry.getIn(['data', 'contact', 'tel']);
         var fax = entry.getIn(['data', 'contact', 'fax']);
         var mail = entry.getIn(['data', 'contact', 'mail']);
-        var date = this.props.entry.getIn(['data', 'recruit', 'date']);
-        {{/*  var recruiting =   */}}
+        var date = entry.getIn(['data', 'recruit', 'date']);
+        var recruiting = entry.getIn(['data', 'recruit', 'recruiting']);
         var message = entry.getIn(['data', 'recruit', 'message']);
         var salary = entry.getIn(['data', 'recruit', 'salary']);
         var holiday = entry.getIn(['data', 'recruit', 'holiday']);
@@ -58,80 +56,82 @@
         var welfare = entry.getIn(['data', 'recruit', 'welfare']);
         var option = entry.getIn(['data', 'recruit', 'option']);
 
-        return h('div', {"className": "member"},
-          h('div', {"className": "entry-header"},
-            h('div', {"className": "entry-title-wrap"},
-              h('h1', {}, title),
+        if(recruiting) {
+          return h('div', {"className": "member"},
+            h('div', {"className": "entry-header"},
+              h('div', {"className": "entry-title-wrap"},
+                h('h1', {}, title),
+                h('span', {"className": "badge-recruitment"}, "獣医師募集中"),
+              ),
+              h('h2', {"className": "subTitle"}, description),
             ),
-            h('h2', {"className": "subTitle"}, description),
-          ),
-          h('div', {"className": "entry-body"},
-            h('h2', {}, "病院について"),
-            h('table', {},
-              h('thead', {},
-                h('tr', {},
-                  h('th', {}, "院長"),
-                  h('th', {}, director),
+            h('div', {"className": "entry-body"},
+              h('h2', {}, "病院について"),
+              h('table', {},
+                h('thead', {},
+                  h('tr', {},
+                    h('th', {}, "院長"),
+                    h('th', {}, director),
+                  )
+                ),
+                h('tbody', {},
+                  h('tr', {},
+                    h('td', {}, "開院"),
+                    h('td', {}, open),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "診療科"),
+                    h('td', {}, department),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "診療対象動物"),
+                    h('td', {}, animals),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "従業員"),
+                    h('td', {}, staff),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "設備"),
+                    h('td', {}, facility),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "特色"),
+                    h('td', {}, features),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "WEBサイト"),
+                    h('td', {}, website),
+                  ),
                 )
               ),
-              h('tbody', {},
-                h('tr', {},
-                  h('td', {}, "開院"),
-                  h('td', {}, open),
+              h('h2', {}, "連絡先"),
+              h('table', {},
+                h('thead', {},
+                  h('tr', {},
+                    h('th', {}, "住所"),
+                    h('th', {}, address),
+                  )
                 ),
-                h('tr', {},
-                  h('td', {}, "診療科"),
-                  h('td', {}, department),
-                ),
-                h('tr', {},
-                  h('td', {}, "診療対象動物"),
-                  h('td', {}, animals),
-                ),
-                h('tr', {},
-                  h('td', {}, "従業員"),
-                  h('td', {}, staff),
-                ),
-                h('tr', {},
-                  h('td', {}, "設備"),
-                  h('td', {}, facility),
-                ),
-                h('tr', {},
-                  h('td', {}, "特色"),
-                  h('td', {}, features),
-                ),
-                h('tr', {},
-                  h('td', {}, "WEBサイト"),
-                  h('td', {}, website),
-                ),
-              )
-            ),
-            h('h2', {}, "連絡先"),
-            h('table', {},
-              h('thead', {},
-                h('tr', {},
-                  h('th', {}, "住所"),
-                  h('th', {}, address),
+                h('tbody', {},
+                  h('tr', {},
+                    h('td', {}, "TEL"),
+                    h('td', {}, tel),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "FAX"),
+                    h('td', {}, fax),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "MAIL"),
+                    h('td', {}, mail),
+                  ),
                 )
               ),
-              h('tbody', {},
-                h('tr', {},
-                  h('td', {}, "TEL"),
-                  h('td', {}, tel),
-                ),
-                h('tr', {},
-                  h('td', {}, "FAX"),
-                  h('td', {}, fax),
-                ),
-                h('tr', {},
-                  h('td', {}, "MAIL"),
-                  h('td', {}, mail),
-                ),
-              )
-            ),
-            
               h('div', {"className": "recruit-wrap"},
                 h('div', {"className": "recruit-title-wrap"}, 
                   h('h2', {}, "募集内容"),
+                  h('div', {}, date),
                 ),
                 h('p', {}, message),
                 h('table', {},
@@ -165,6 +165,106 @@
                   )
                 )
               )
+            )
+          );
+        } else {
+          return h('div', {"className": "member"},
+            h('div', {"className": "entry-header"},
+              h('div', {"className": "entry-title-wrap"},
+                h('h1', {}, title),
+              ),
+              h('h2', {"className": "subTitle"}, description),
+            ),
+            h('div', {"className": "entry-body"},
+              h('h2', {}, "病院について"),
+              h('table', {},
+                h('thead', {},
+                  h('tr', {},
+                    h('th', {}, "院長"),
+                    h('th', {}, director),
+                  )
+                ),
+                h('tbody', {},
+                  h('tr', {},
+                    h('td', {}, "開院"),
+                    h('td', {}, open),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "診療科"),
+                    h('td', {}, department),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "診療対象動物"),
+                    h('td', {}, animals),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "従業員"),
+                    h('td', {}, staff),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "設備"),
+                    h('td', {}, facility),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "特色"),
+                    h('td', {}, features),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "WEBサイト"),
+                    h('td', {}, website),
+                  ),
+                )
+              ),
+              h('h2', {}, "連絡先"),
+              h('table', {},
+                h('thead', {},
+                  h('tr', {},
+                    h('th', {}, "住所"),
+                    h('th', {}, address),
+                  )
+                ),
+                h('tbody', {},
+                  h('tr', {},
+                    h('td', {}, "TEL"),
+                    h('td', {}, tel),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "FAX"),
+                    h('td', {}, fax),
+                  ),
+                  h('tr', {},
+                    h('td', {}, "MAIL"),
+                    h('td', {}, mail),
+                  ),
+                )
+              )
+            )
+          );
+        }
+      }
+    });
+
+    var AboutPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+
+        return h('div', {"className": "about"},
+          h('div', {"className": "list-body"}, this.props.widgetFor('body')),
+        );
+      }
+    });
+
+    var LinkPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        var img = entry.getIn(['data', 'link1', 'thumbnail']);
+        var name = entry.getIn(['data', 'link1', 'name']);
+        var url = entry.getIn(['data', 'link1', 'url']);
+
+        return h('div', {"className": "link"},
+          h('div', {"className": "list-body"}, 
+            h('img', {}, img),
+            h('h2', {}, name),
           )
         );
       }
@@ -172,6 +272,8 @@
 
     CMS.registerPreviewTemplate("news", NewsPreview);
     CMS.registerPreviewTemplate("member", MemberPreview);
+    CMS.registerPreviewTemplate("about", AboutPreview);
+    CMS.registerPreviewTemplate("link", LinkPreview);
     {{/*  {{ $style := resources.Get "scss/previewStyle.scss" | toCSS | postCSS (dict "config" "../../assets/scss/postcss.config.js") | minify | fingerprint }}
     CMS.registerPreviewStyle({{ $style.Permalink }});  */}}
     CMS.registerPreviewStyle("./previewStyle.css");
