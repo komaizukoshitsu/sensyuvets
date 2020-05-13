@@ -47,7 +47,7 @@
                                 </tr>
                                 <tr>
                                     <td>WEBサイト</td>
-                                    <td>{{ .Params.info.website }}</td>
+                                    <td><a href="{{ .Params.info.website }}">{{ .Params.info.website }}</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -70,7 +70,7 @@
                                 </tr>
                                 <tr>
                                     <td>MAIL</td>
-                                    <td>{{ .Params.contact.mail }}</td>
+                                    <td><a href="mailto:{{ .Params.contact.mail }}">{{ .Params.contact.mail }}</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -79,7 +79,7 @@
                                 <div class="recruit-title-wrap">
                                     <h2>募集内容</h2>
                                     <div class="meta">
-                                        <time >{{ .Params.recruit.date }}</time>
+                                        <time >{{ .Params.recruit.date  }}</time>
                                     </div>
                                 </div>
                                 <p class="mb20">{{ .Params.recruit.message }}</p>

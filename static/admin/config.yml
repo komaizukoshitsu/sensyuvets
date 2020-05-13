@@ -47,7 +47,7 @@ collections:
         name: "city"
         widget: "select"
         options: [
-          "和泉市", "泉大津市", "泉佐野市", "貝塚市", "岸和田市", "熊取町", "堺市", "泉南市", "高石市", "田尻町", "忠岡町", "岬町"
+          "和泉市", "泉大津市", "泉佐野市", "貝塚市", "河内長野市", "岸和田市", "熊取町", "堺市", "泉南市", "高石市", "田尻町", "忠岡町", "阪南市", "岬町"
           ]
       - {label: "サムネイル画像", name: "thumbnail", widget: "image", required: false}
       - label: "病院について"
@@ -75,7 +75,7 @@ collections:
         widget: "object"
         fields:
           - {label: "募集する", name: "recruiting", widget: "boolean", default: false, required: false}
-          - {label: "公開日", name: "date", widget: "datetime", dateFormat: "YYYY.MM.DD", format: "LLL"}
+          - {label: "公開日", name: "date", widget: "datetime", dateFormat: "YYYY.MM.DD", format: "LL"}
           - {label: "メッセージ", name: "message", widget: "string", required: false}
           - {label: "対象", name: "target", widget: "string"}
           - {label: "給与", name: "salary", widget: "string", required: false}
