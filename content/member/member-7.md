@@ -15,8 +15,9 @@ contact:
   fax: 0725-44-0283
   tel: 0725-44-0209
 recruit:
-  date: May 13, 2020 9:47 AM
+  date: May 13, 2020
   recruiting: true
   message: ホームドクターとしての1次診療の病院です。
   salary: パート・アルバイト時給1,800円～（経験者歓迎）、常勤応相談
+  target: 若干名（既卒者）
 ---
