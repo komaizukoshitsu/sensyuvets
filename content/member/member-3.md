@@ -20,7 +20,8 @@ recruit:
   message: 1次～1.5次診療まで幅広くみています。ぜひ見学にお越し下さい！
   salary: 27万円～（基本給）
   welfare: 社会保険完備
-  date: May 13, 2020 9:37 AM
+  date: May 13, 2020
+  target: 新卒1名　※見学随時
   option: 学会・セミナー参加費の補助あり
   allowance: 住宅⼿当、通勤手当、皆勤手当、当直手当あり
   holiday: 完全週休2日
