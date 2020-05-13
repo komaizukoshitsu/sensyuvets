@@ -1,39 +1,47 @@
-+++
-author = "sensyuvets"
-title = "書き方参考"
-date = "2019-03-29"
-description = "マークダウンとシンタックスの例です"
-categories = "ブログ"
-tags = [
-    "",
-]
-+++
-
+---
+author: sensyuvets
+title: 書き方参考
+date: 2019-03-29
+description: マークダウンとシンタックスの例です
+categories: ブログ
+ridedate: May 14, 2020 8:16 AM
+tags:
+  - ブログ
+---
 {{< shared-image dir="news" src="img-4.jpg" >}}
 
 この記事では、Hugoコンテンツファイルで使用できる基本的なMarkdown構文のサンプルを紹介します。また、基本的なHTML要素がHugoテーマでCSSで装飾されているかどうかも示します。
+
 <!--more-->
 
 ## H2見出し
+
 次のHTMLの`<h1>`—`<h6>`要素は6レベルのセクション見出しを表しています。`<h1>`は最高のセクションレベル、`<h6>`は最低です。
 
 {{< highlight html >}}
+
 ## H2見出し
+
 {{< /highlight >}}
 
-
 ### H3見出し
+
 次のHTMLの`<h1>`—`<h6>`要素は6レベルのセクション見出しを表しています。`<h1>`は最高のセクションレベル、`<h6>`は最低です。
 
 {{< highlight html >}}
+
 ### H3見出し
+
 {{< /highlight >}}
 
 #### H4見出し
+
 次のHTMLの`<h1>`—`<h6>`要素は6レベルのセクション見出しを表しています。`<h1>`は最高のセクションレベル、`<h6>`は最低です。
 
 {{< highlight html >}}
+
 #### H4見出し
+
 {{< /highlight >}}
 
 ## 段落
@@ -50,14 +58,11 @@ blockquote要素は、別のソースから引用されたコンテンツを表�
 
 ### 引用（出典なし）
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-> **Note** that you can use *Markdown syntax* within a blockquote.
+> Tiam, ad mint andaepu dandae nostion secatur sequo quae. **Note** that you can use *Markdown syntax* within a blockquote.
 
 ### 引用（出典あり）
 
-> Don't communicate by sharing memory, share memory by communicating.</p>
-> — <cite>Rob Pike[^1]</cite>
-
+> Don't communicate by sharing memory, share memory by communicating.</p> — <cite>Rob Pike[^1]</cite>
 
 [^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 
@@ -65,16 +70,16 @@ blockquote要素は、別のソースから引用されたコンテンツを表�
 
 Tables aren't part of the core Markdown spec, but Hugo supports supports them out-of-the-box.
 
-   Name | Age
---------|------
-    Bob | 27
-  Alice | 23
+| Name  | Age |
+| ----- | --- |
+| Bob   | 27  |
+| Alice | 23  |
 
 ### 表内のインラインマークダウン
 
-| Inline&nbsp;&nbsp;&nbsp;     | Markdown&nbsp;&nbsp;&nbsp;  | In&nbsp;&nbsp;&nbsp;                | Table      |
-| ---------- | --------- | ----------------- | ---------- |
-| *italics*  | **bold**  | ~~strikethrough~~&nbsp;&nbsp;&nbsp; | `code`     |
+| Inline    | Markdown | In                | Table  |
+| --------- | -------- | ----------------- | ------ |
+| *italics* | **bold** | ~~strikethrough~~ | `code` |
 
 ## Code Blocks
 
@@ -93,22 +98,28 @@ html
 </body>
 </html>
 ```
+
 ### Code block indented with four spaces
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <title>Example HTML5 Document</title>
-    </head>
-    <body>
-      <p>Test</p>
-    </body>
-    </html>
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example HTML5 Document</title>
+</head>
+<body>
+  <p>Test</p>
+</body>
+</html>
+```
 
 ### Code block with Hugo's internal highlight shortcode
+
 {{< highlight html >}}
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -137,6 +148,7 @@ html
 ### Nested list
 
 * Item
+
 1. First Sub-item
 2. Second Sub-item
 
