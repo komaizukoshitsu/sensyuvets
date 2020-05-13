@@ -12,7 +12,7 @@ contact:
   fax: 0725-23-3447
   tel: 0725-23-3443
 author: sensyuvets
-date: 2019-04-16
+date: 2019-04-16T00:00:00.000Z
 tags:
   - 泉大津市
 recruitment:
@@ -21,8 +21,14 @@ categories:
   - ""
 description: アットホームで働きやすい環境で、最善の治療を患者さんに提供できるよう、スタッフ皆で向上心を持って一緒に勉強しています。
 recruit:
-  date: May 12, 2020 5:14 PM
+  date: May 13, 2020 10:00 AM
   recruiting: true
+  message: 地域で信頼される動物病院を目指し、セミナーの参加、勉強会を行い、常に新しい技術を患者さんに提供できる様頑張っています。
+  salary: 27万円〜（新卒）
+  holiday: 週休2日、有給休暇、年末年始休暇あり
+  bonus: 賞与あり
+  allowance: 月別で売り上げに応じて手当支給（1〜5万円）、住宅通勤等手当あり
+  welfare: 社会保険完備
 ---
 
 ひらの動物病院
