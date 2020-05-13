@@ -7,13 +7,14 @@ info:
   animals: 犬・猫
   features: １次診療を行っており、プラス眼科の専門性を高めています。 院長含めスタッフの年齢が若いので、みんな仲良く働いています。
   staff: 獣医師1名、看護師3名、その他3名
+  facility: 超音波、レントゲン
 contact:
   address: 〒594-1116 　大阪府和泉市納花町256-1
   tel: 0725-57-6966
   fax: 0725-57-6967
   mail: lucia@vesta.ocn.ne.jp
 author: sensyuvets
-date: 2019-04-16
+date: 2019-04-16T00:00:00.000Z
 tags:
   - 和泉市
 recruitment:
@@ -22,8 +23,14 @@ categories:
   - ""
 description: 犬、猫の１次診療を行っています。院長が眼科が好きなので、いろいろと検査機器を揃えています。勤務医の先生には一般診療にプラス専門分野を磨いてもらいたいと考えています。それに対して病院からできる限り応援していきます。
 recruit:
-  date: May 12, 2020 4:33 PM
+  date: May 13, 2020 10:08 AM
   recruiting: true
+  message: 犬猫の一次診療をしており、その中でも眼科に力を入れています。2016年にオープンした新しい病院です。＜特徴＞一般内科外科、眼科（二次診療レベルを目標としています）。勉強会、セミナーに積極的に参加していただきます（セミナー費用、一部支給）。
+  salary: 月25万円
+  bonus: 賞与あり
+  holiday: 火曜、その他曜日1日、日・祝日午後
+  welfare: 雇用労災
+  allowance: 住宅手当、通勤手当あり
 ---
 
 {{< shared-image dir="member" src="img-2.jpg" >}}
