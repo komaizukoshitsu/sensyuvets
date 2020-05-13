@@ -49,6 +49,7 @@
         var date = entry.getIn(['data', 'recruit', 'date']);
         var recruiting = entry.getIn(['data', 'recruit', 'recruiting']);
         var message = entry.getIn(['data', 'recruit', 'message']);
+        var target = entry.getIn(['data', 'recruit', 'target']);
         var salary = entry.getIn(['data', 'recruit', 'salary']);
         var holiday = entry.getIn(['data', 'recruit', 'holiday']);
         var bonus = entry.getIn(['data', 'recruit', 'bonus']);
@@ -137,11 +138,15 @@
                 h('table', {},
                   h('thead', {},
                     h('tr', {},
-                      h('th', {}, "給与"),
-                      h('th', {}, salary),
+                      h('th', {}, "対象"),
+                      h('th', {}, target),
                     )
                   ),
                   h('tbody', {},
+                    h('tr', {},
+                      h('td', {}, "給与"),
+                      h('td', {}, salary),
+                    ),
                     h('tr', {},
                       h('td', {}, "休日"),
                       h('td', {}, holiday),
