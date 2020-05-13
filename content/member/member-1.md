@@ -23,6 +23,7 @@ recruit:
   salary: 28万円～
   welfare: 社会保険完備
   date: May 8, 2020 5:40 PM
+  target: 新卒2名　※見学随時
   option: 学会所属・参加費用負担
   allowance: 通勤手当、住宅⼿当(一人暮らしもしくは世帯主)
   holiday: 水曜、土日祝午後
