@@ -1,15 +1,14 @@
-+++
-author = "Yamada Taro"
-title = "入交先生／犬の認知症と攻撃行動"
-date = "2019-03-10"
-description = "お知らせ1です"
-categories = [
-    "お知らせ",
-]
-tags = [
-    "外部講師セミナー",
-]
-+++
+---
+author: Yamada Taro
+title: 入交先生／犬の認知症と攻撃行動
+date: May 14, 2020 8:21 AM
+description: お知らせ1です
+categories:
+  - お知らせ
+ridedate: May 14, 2020 8:21 AM
+tags:
+  - 外部講師セミナー
+---
 
 {{< shared-image dir="news" src="img-1.jpg" >}}
 
