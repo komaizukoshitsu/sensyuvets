@@ -16,13 +16,14 @@ contact:
   fax: 072-291-2751
   tel: 072-291-1181
 recruit:
-  date: May 13, 2020 9:58 AM
   recruiting: true
   message: 一次診療病院として地域密着型の診療を行っております。
     昼休みが比較的長く自分の勉強の時間を作りやすいと思います。来院件数は約10,000件/年、手術件数は約300件/年です。
   salary: 26万円
-  bonus: 賞与あり（年2回）
+  welfare: 社会保険完備
+  date: May 13, 2020
+  target: 1名（新卒）　※見学随時
   allowance: 時間外手当、家賃補助、交通費支給あり
   holiday: 週休2日
-  welfare: 社会保険完備
+  bonus: 賞与あり（年2回）
 ---
