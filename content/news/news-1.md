@@ -1,11 +1,11 @@
 ---
 author: Yamada Taro
 title: 入交先生／犬の認知症と攻撃行動
-date: May 14, 2020 8:21 AM
+date: 05/14/2020
 description: お知らせ1です
 categories:
   - お知らせ
-ridedate: May 14, 2020 8:21 AM
+ridedate: 05/14/2020
 tags:
   - 外部講師セミナー
 ---
