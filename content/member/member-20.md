@@ -1,13 +1,19 @@
 ---
+title: まつおか動物病院
 city: 和泉市
-author: sensyuvets
 info:
   director: 松岡 聰
   animals: 犬、猫
   staff: 獣医師7名、看護師8名（パート2名含む）
   features: ●やるときはやる ●無駄なことはしない ●人にも動物にも負担を少なく
+  open: 1997年
+  facility: 16列CT、超⾳波、レントゲン
+contact:
+  address: 〒599-0204　大阪府阪南市鳥取423-3
+  tel: 072-472-6532
+  fax: 072-472-6537
+author: sensyuvets
 date: 2019-04-16T00:00:00.000Z
-title: まつおか動物病院
 tags:
   - 阪南市
 recruitment:
@@ -16,8 +22,15 @@ categories:
   - ""
 description: 最新の獣医療を取り入れながら地域の中核拠点となるべく日々診療に奮闘しています。16列ヘリカルCTがあります。整形・軟部外科、腫瘍科、循環器科、皮膚科に力を入れています。
 recruit:
-  date: May 12, 2020 5:16 PM
   recruiting: true
+  message: 大阪府の南端で1.5次病院を目指し日夜診療に励んでいます。手術・セミナー参加積極的にできます。総合診療を行なっておりますが、特に整形・軟部外科、腫瘍科、循環器科に力を入れています。
+  salary: 25万円〜（経験者応相談）
+  welfare: 社会保険完備
+  date: May 13, 2020 10:03 AM
+  option: セミナー補助あり
+  allowance: 通勤⼿当
+  holiday: 週休2日
+  bonus: 賞与あり
 ---
 
 まつおか動物病院
