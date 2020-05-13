@@ -75,7 +75,7 @@ collections:
         widget: "object"
         fields:
           - {label: "募集する", name: "recruiting", widget: "boolean", default: false, required: false}
-          - {label: "公開日", name: "date", widget: "datetime", format: "LLL"}
+          - {label: "公開日", name: "date", widget: "datetime", dateFormat: "YYYY.MM.DD", format: "LLL"}
           - {label: "メッセージ", name: "message", widget: "string", required: false}
           - {label: "対象", name: "target", widget: "string"}
           - {label: "給与", name: "salary", widget: "string", required: false}
