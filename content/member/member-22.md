@@ -15,12 +15,13 @@ contact:
   fax: 0725-57-6967
   mail: lucia@vesta.ocn.ne.jp
 recruit:
-  date: May 13, 2020 10:08 AM
   recruiting: true
   message: 犬猫の一次診療をしており、その中でも眼科に力を入れています。2016年にオープンした新しい病院です。＜特徴＞一般内科外科、眼科（二次診療レベルを目標としています）。勉強会、セミナーに積極的に参加していただきます（セミナー費用、一部支給）。
   salary: 月25万円
-  bonus: 賞与あり
-  holiday: 火曜、その他曜日1日、日・祝日午後
   welfare: 雇用労災
+  date: May 13, 2020
+  target: 1名（新卒）　※見学随時
   allowance: 住宅手当、通勤手当あり
+  holiday: 火曜、その他曜日1日、日・祝日午後
+  bonus: 賞与あり
 ---
