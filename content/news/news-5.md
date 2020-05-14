@@ -1,13 +1,13 @@
-+++
-author = "sensyuvets"
-title = "マークダウンとシンタックス"
-date = "2019-04-10"
-description = "研修会"
-categories = "お知らせ"
-tags = [
-    "新人研修",
-]
-+++
+---
+author: sensyuvets
+title: マークダウンとシンタックス
+date: 2020-05-14T02:29:29.469Z
+description: 研修会
+categories: お知らせ
+ridedate: 05/14/2020
+tags:
+  - 新人研修
+---
 
 {{< shared-image dir="news" src="img-4.jpg" >}}
 
