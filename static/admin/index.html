@@ -15,7 +15,7 @@
       render: function() {
         var entry = this.props.entry;
         var title = entry.getIn(['data', 'title']);
-        var date = entry.getIn(['data', 'date']);
+        var date = entry.getIn(['data', 'date']).toString();
         var tags = entry.getIn(['data', 'tags']);
 
         return h('div', {"className": "news"},
