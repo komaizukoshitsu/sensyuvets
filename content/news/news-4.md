@@ -1,7 +1,7 @@
 ---
 author: sensyuvets
 title: 書き方参考
-date: May 14, 2020
+date: 2020-05-14T02:07:43.647Z
 description: マークダウンとシンタックスの例です
 categories: ブログ
 ridedate: 05/14/2020
