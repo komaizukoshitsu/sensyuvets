@@ -9,7 +9,7 @@
                         <header class="entry-header">
                             <div class="meta">
                                 {{/*  {{ partial "time" . }}  */}}
-                                <time>{{ .Date }}</time>
+                                <time>{{ .Date.Format "2006.01.02" }}</time>
                             </div>
                             <div class="entry-title-wrap">
                                 <h1>{{ .Title }}</h1>
