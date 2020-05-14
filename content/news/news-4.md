@@ -1,10 +1,10 @@
 ---
 author: sensyuvets
 title: 書き方参考
-date: May 14, 2020 8:18 AM
+date: May 14, 2020
 description: マークダウンとシンタックスの例です
 categories: ブログ
-ridedate: May 14, 2020 8:18 AM
+ridedate: 05/14/2020
 tags:
   - ブログ
 ---
