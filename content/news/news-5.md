@@ -1,7 +1,7 @@
 ---
 author: sensyuvets
 title: マークダウンとシンタックス
-date: 2020-05-14T02:56:21.679Z
+date: "2020.05.14 12:00 "
 description: 研修会
 categories: お知らせ
 ridedate: 05/14/2020
